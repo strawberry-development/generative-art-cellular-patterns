@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative Art Cellular Patterns</title>
+  <style>
+    body {
+      margin: 0px;
+      overflow: scroll;
+      background-color: #1f1f1f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .canvas-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    canvas {
+      border: 2px solid #ddd;
+      image-rendering: pixelated;
+      transform-origin: 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-container">
+    <canvas id="originalCanvas"></canvas>
+    <canvas id="slowedCanvas"></canvas>
+  </div>
+
+  <script>
+    const originalCanvas = document.getElementById('originalCanvas');
+    const originalCtx = originalCanvas.getContext('2d');
+    const slowedCanvas = document.getElementById('slowedCanvas');
+    const slowedCtx = slowedCanvas.getContext('2d');
+
+    const WIDTH = window.innerWidth;
+    const HEIGHT = window.innerHeight;
+
+    const ASPECT_RATIO = 9 / 16;
+    const CANVAS_HEIGHT = HEIGHT;
+    const CANVAS_WIDTH = HEIGHT * ASPECT_RATIO;
+
+    originalCanvas.width = slowedCanvas.width = CANVAS_WIDTH;
+    originalCanvas.height = slowedCanvas.height = CANVAS_HEIGHT;
+
+    const CELL_SIZE = 12;
+    const GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
+    const GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
+
+    const cells = [];
+    
+    function init() {
+      for (let x = 0; x < GRID_WIDTH; x++) {
+        cells[x] = [];
+        for (let y = 0; y < GRID_HEIGHT; y++) {
+          cells[x][y] = Math.random() > 0.85 ? 1 : 0; // Randomly initialize cells with some alive
+        }
+      }
+    }
+
+    function draw(ctx) {
+      ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+      for (let x = 0; x < GRID_WIDTH; x++) {
+        for (let y = 0; y < GRID_HEIGHT; y++) {
+          if (cells[x][y] === 1) {
+            ctx.fillStyle = getRandomColor(); // Random color for each cell
+            ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+          }
+        }
+      }
+    }
+
+    function update() {
+      const nextCells = [];
+
+      for (let x = 0; x < GRID_WIDTH; x++) {
+        nextCells[x] = [];
+        for (let y = 0; y < GRID_HEIGHT; y++) {
+          const neighbors = countNeighbors(x, y);
+          if (cells[x][y] === 1) {
+            if (neighbors < 2 || neighbors > 3) {
+              nextCells[x][y] = 0;
+            } else {
+              nextCells[x][y] = 1;
+            }
+          } else {
+            if (neighbors === 3) {
+              nextCells[x][y] = 1;
+            } else {
+              nextCells[x][y] = 0;
+            }
+          }
+        }
+      }
+
+      cells.splice(0, cells.length, ...nextCells);
+    }
+
+    function countNeighbors(cx, cy) {
+      let count = 0;
+      for (let i = -1; i <= 1; i++) {
+        for (let j = -1; j <= 1; j++) {
+          const x = (cx + i + GRID_WIDTH) % GRID_WIDTH;
+          const y = (cy + j + GRID_HEIGHT) % GRID_HEIGHT;
+          if (cells[x][y] === 1 && !(i === 0 && j === 0)) {
+            count++;
+          }
+        }
+      }
+      return count;
+    }
+
+    function animateOriginal() {
+      update();
+      draw(originalCtx);
+      requestAnimationFrame(animateOriginal);
+    }
+
+    function animateSlowed() {
+      update();
+      draw(slowedCtx);
+      setTimeout(animateSlowed, 100); // Slowed down animation
+    }
+
+    function getRandomColor() {
+      const hue = Math.floor(Math.random() * 360); // Random hue
+      const saturation = '70%'; // Fixed saturation for vibrant colors
+      const lightness = '50%'; // Fixed lightness for balanced brightness
+      return `hsl(${hue}, ${saturation}, ${lightness})`;
+    }
+
+    async function recordAnimation(canvas, prefix) {
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); // Generate timestamp in ISO format
+      const filename = `${prefix}_${timestamp}.mp4`;
+      const stream = canvas.captureStream();
+      const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp8' });
+      const chunks = [];
+
+      mediaRecorder.ondataavailable = e => {
+        if (e.data.size > 0) {
+          chunks.push(e.data);
+        }
+      };
+
+      mediaRecorder.onstop = async () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      };
+
+      mediaRecorder.start();
+      await new Promise(resolve => setTimeout(resolve, 10000)); // Record for 10 seconds
+      mediaRecorder.stop();
+    }
+
+    init();
+    animateOriginal();
+    animateSlowed();
+    recordAnimation(originalCanvas, 'generative_art_original'); // Start recording original animation
+    recordAnimation(slowedCanvas, 'generative_art_slowed'); // Start recording slowed animation
+  </script>
+</body>
+</html>
