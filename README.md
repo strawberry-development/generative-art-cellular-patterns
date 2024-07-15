@@ -10,5 +10,5 @@ Work by launching `index.html`
 There can be great beauty in chaos
 
 | ![Example Art](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/generative_art_original_2024-07-13T20-34-15-548Z.gif) | ![Example Art Slowed](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/generative_art_slowed_2024-07-13T20-34-15-552Z.gif) |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|:---:|:---:|
 | Example Art | Example Art Slowed |
