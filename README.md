@@ -3,7 +3,8 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 ## Todo
 - review index to have a better display
-- slider ?
+- slider ? adjust size and other element
+- show generation
 
 ## Setup
 
