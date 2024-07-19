@@ -1,32 +1,30 @@
 body {
     margin: 0;
-    overflow: scroll;
     background-color: #1f1f1f;
+    color: #ddd;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #ddd;
-    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.canvas-container {
-    display: flex;
-    justify-content: space-around;
+header {
+    background-color: #262626;
     width: 100%;
-    margin: 20px 0;
-}
-
-canvas {
-    border: 2px solid #ddd;
-    image-rendering: pixelated;
-    transform-origin: 0 0;
+    text-align: center;
+    color: #ddd;
 }
 
 .controls {
     display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px; /* Ensure controls fit within a reasonable width */
 }
 
 .control-group {
@@ -37,6 +35,10 @@ canvas {
 
 label {
     margin-bottom: 5px;
+}
+
+input[type="range"], select {
+    width: 150px;
 }
 
 button {
@@ -52,4 +54,51 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    height: calc(100vh - 200px);
+}
+
+canvas {
+    border: 2px solid #ddd;
+    image-rendering: pixelated;
+    transform-origin: 0 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.generation-counter {
+    bottom: 0;
+    position: fixed;
+    font-size: 18px;
+    background-color: #262626;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+
+    input[type="range"], select {
+        width: 100px;
+    }
+}
+
+.left-border {
+    border-left: 2px solid #ddd;
+    padding-left: 15px;
 }
