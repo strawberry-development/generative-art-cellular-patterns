@@ -24,7 +24,7 @@ header {
     gap: 20px;
     padding: 10px;
     width: 100%;
-    max-width: 1200px; /* Ensure controls fit within a reasonable width */
+    max-width: 1200px;
 }
 
 .control-group {
@@ -65,6 +65,8 @@ button:hover {
     width: 100%;
     max-width: 1200px;
     height: calc(100vh - 200px);
+    overflow: scroll;
+    padding-bottom: 50px;
 }
 
 canvas {
