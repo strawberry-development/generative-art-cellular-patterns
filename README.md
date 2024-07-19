@@ -3,7 +3,6 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 This is the version **1.3** of the project.
 
-**This code is still a prototype and is my first GitHub publication.**
 ## Know issue
 - Record keep playing when it suposse to be pause
 - Awful design made by me (will be fix)
