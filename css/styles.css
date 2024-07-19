@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    overflow: scroll;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0;
+}
+
+canvas {
+    border: 2px solid #ddd;
+    image-rendering: pixelated;
+    transform-origin: 0 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #444;
+    border: none;
+    color: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
