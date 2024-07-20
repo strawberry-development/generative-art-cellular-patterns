@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generative Art Cellular Patterns</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Art Cellular Patterns</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
 </head>
 <body>
 <header>
-  <h1>Generative Art Cellular Patterns</h1>
+    <img src="img/logo.png" class="logo">
+  
+    <div style="display: flex;">
+        <button id="startButton">Start</button>
+        <button id="randomizeButton">Randomize</button>
+        <button id="themeToggle">Switch Theme</button>
+    </div>
 </header>
 <div class="main-container">
-  <div class="sidebar">
-    <div class="controls">
-      <div class="control-group">
-        <label for="cellSize">Cell Size: <span id="cellSizeValue">12</span></label>
-        <input type="range" id="cellSize" min="4" max="20" value="12">
-      </div>
-      <div class="control-group">
-        <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1</span></label>
-        <input type="range" id="animationSpeed" min="1" max="10" value="1">
-      </div>
-      <div class="control-group">
-        <label for="recordDuration">Record Duration (s): <span id="recordDurationValue">10</span></label>
-        <input type="range" id="recordDuration" min="5" max="20" value="10">
-      </div>
-      <div class="control-group">
-        <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">16:9</span></label>
-        <select id="aspectRatio">
-          <option value="16/9">16:9</option>
-          <option value="4/3">4:3</option>
-          <option value="1/1">1:1</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">800</span></label>
-        <input type="range" id="canvasWidth" min="200" max="1200" value="800">
-      </div>
-      <div class="control-group">
-        <label for="backgroundColor">Background Color:</label>
-        <input type="color" id="backgroundColor" value="#1f1f1f">
-      </div>
-      <div class="control-group">
-        <label for="colorPalette">Color Palette:</label>
-        <select id="colorPalette">
-          <option value="blackWhite">Black & White</option>
-          <option value="grey">Grey</option>
-          <option value="random">Random Colors</option>
-          <option value="warm">Warm Colors</option>
-          <option value="cold">Cold Colors</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label for="surviveRules">Survive Rules (comma-separated):</label>
-        <input type="text" id="surviveRules" value="2,3">
-      </div>
-      <div class="control-group">
-        <label for="birthRules">Birth Rules (comma-separated):</label>
-        <input type="text" id="birthRules" value="3">
-      </div>
-      <button id="startButton">Start</button>
-      <button id="randomizeButton">Randomize</button>
-      <button id="themeToggle">Switch Theme</button>
+    <div class="sidebar">
+        <div class="controls">
+            <div class="control-group">
+                <label for="cellSize">Cell Size: <span id="cellSizeValue">12</span></label>
+                <input type="range" id="cellSize" min="4" max="20" value="12">
+            </div>
+            <div class="control-group">
+                <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1</span></label>
+                <input type="range" id="animationSpeed" min="1" max="10" value="1">
+            </div>
+            <div class="control-group">
+                <label for="recordDuration">Record Duration (s): <span id="recordDurationValue">10</span></label>
+                <input type="range" id="recordDuration" min="5" max="20" value="10">
+            </div>
+            <div class="control-group">
+                <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">16:9</span></label>
+                <select id="aspectRatio">
+                    <option value="16/9">16:9</option>
+                    <option value="4/3">4:3</option>
+                    <option value="1/1">1:1</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">800</span></label>
+                <input type="range" id="canvasWidth" min="200" max="1200" value="800">
+            </div>
+            <div class="control-group">
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" value="#1f1f1f">
+            </div>
+            <div class="control-group">
+                <label for="colorPalette">Color Palette:</label>
+                <select id="colorPalette">
+                    <option value="blackWhite">Black & White</option>
+                    <option value="grey">Grey</option>
+                    <option value="random">Random Colors</option>
+                    <option value="warm">Warm Colors</option>
+                    <option value="cold">Cold Colors</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="surviveRules">Survive Rules (comma-separated):</label>
+                <input type="text" id="surviveRules" value="2,3">
+            </div>
+            <div class="control-group">
+                <label for="birthRules">Birth Rules (comma-separated):</label>
+                <input type="text" id="birthRules" value="3">
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="canvas-container">
-    <div class="canvas-panel">
-      <h2>Original</h2>
-      <canvas id="originalCanvas"></canvas>
+    <div class="canvas-container">
+        <div class="canvas-panel">
+            <h2>Original</h2>
+            <canvas id="originalCanvas"></canvas>
+        </div>
+        <div class="canvas-panel">
+            <h2>Slowed</h2>
+            <canvas id="slowedCanvas"></canvas>
+        </div>
     </div>
-    <div class="canvas-panel">
-      <h2>Slowed</h2>
-      <canvas id="slowedCanvas"></canvas>
-    </div>
-  </div>
 </div>
 <div class="generation-counter">
-  Generation: <span id="generationCount">0</span>
+    Generation: <span id="generationCount">0</span>
 </div>
 <script src="js/controls.js"></script>
 <script src="js/animation.js"></script>
