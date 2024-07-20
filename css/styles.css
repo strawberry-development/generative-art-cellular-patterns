@@ -39,9 +39,41 @@ body {
 
 header {
     background-color: var(--header-background-color);
-    width: 100%;
     color: var(--text-color);
     padding: 15px;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+header div:first-child img {
+    max-height: 45px;
+    margin-right: 15px;
+}
+
+header div:last-child {
+    display: flex;
+    gap: 15px;
+}
+
+header a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    background-color: var(--header-background-color);
     border-bottom: 2px solid var(--border-color);
 }
 
@@ -97,7 +129,7 @@ button {
     border: none;
     color: var(--text-color);
     border-radius: 5px;
-    margin: 10px 10px 0;
+    margin: 10px 10px;
     transition: background-color 0.3s ease;
 }
 
