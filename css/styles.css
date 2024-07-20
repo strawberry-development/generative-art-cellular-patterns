@@ -64,12 +64,11 @@ header div:last-child {
 
 header a {
     color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 header a:hover {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 nav {
@@ -102,7 +101,7 @@ nav {
 }
 
 .control-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 label {

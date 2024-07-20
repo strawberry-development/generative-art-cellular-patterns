@@ -44,27 +44,28 @@
                 <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1</span></label>
                 <input type="range" id="animationSpeed" min="1" max="10" value="1">
             </div>
+
             <div class="control-group">
                 <label for="recordDuration">Record Duration (s): <span id="recordDurationValue">10</span></label>
                 <input type="range" id="recordDuration" min="5" max="20" value="10">
             </div>
+
             <div class="control-group">
+                <h3>Dimension</h3>
                 <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">16:9</span></label>
                 <select id="aspectRatio">
                     <option value="16/9">16:9</option>
                     <option value="4/3">4:3</option>
                     <option value="1/1">1:1</option>
                 </select>
-            </div>
-            <div class="control-group">
                 <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">800</span></label>
                 <input type="range" id="canvasWidth" min="200" max="1200" value="800">
             </div>
+
             <div class="control-group">
+                <h3>Color</h3>
                 <label for="backgroundColor">Background Color:</label>
                 <input type="color" id="backgroundColor" value="#1f1f1f">
-            </div>
-            <div class="control-group">
                 <label for="colorPalette">Color Palette:</label>
                 <select id="colorPalette">
                     <option value="blackWhite">Black & White</option>
@@ -74,11 +75,11 @@
                     <option value="cold">Cold Colors</option>
                 </select>
             </div>
+
             <div class="control-group">
+                <h3>Rule</h3>
                 <label for="surviveRules">Survive Rules (comma-separated):</label>
                 <input type="text" id="surviveRules" value="2,3">
-            </div>
-            <div class="control-group">
                 <label for="birthRules">Birth Rules (comma-separated):</label>
                 <input type="text" id="birthRules" value="3">
             </div>
