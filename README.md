@@ -6,6 +6,7 @@ This is the version **1.3.1** of the project.
 ## Know issue
 - Record
 - Awful design made by me (will be fix)
+- Changing background randomize everything
 
 ## Setup
 
