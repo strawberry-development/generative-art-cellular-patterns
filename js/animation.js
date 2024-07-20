@@ -14,7 +14,7 @@ function animateSlowed() {
 
 async function recordAnimation(canvas, prefix) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename = `${prefix}_${timestamp}.mp4`;
+    let filename = `${prefix}_${timestamp}.mp4`;
     const stream = canvas.captureStream();
     const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp8' });
     const chunks = [];

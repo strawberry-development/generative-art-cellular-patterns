@@ -36,6 +36,28 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
     draw(slowedCtx);
 });
 
+document.getElementById('backgroundColor').addEventListener('input', (e) => {
+    backgroundColor = e.target.value;
+    init();
+    draw(originalCtx);
+    draw(slowedCtx);
+});
+
+document.getElementById('colorPalette').addEventListener('change', (e) => {
+    colorPalette = e.target.value;
+    init();
+    draw(originalCtx);
+    draw(slowedCtx);
+});
+
+document.getElementById('surviveRules').addEventListener('input', (e) => {
+    surviveRules = parseRules(e.target.value);
+});
+
+document.getElementById('birthRules').addEventListener('input', (e) => {
+    birthRules = parseRules(e.target.value);
+});
+
 document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
         animationRunning = false;

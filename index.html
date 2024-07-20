@@ -35,6 +35,28 @@
     <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">800</span></label>
     <input type="range" id="canvasWidth" min="200" max="1200" value="800">
   </div>
+  <div class="control-group">
+    <label for="backgroundColor">Background Color:</label>
+    <input type="color" id="backgroundColor" value="#1f1f1f">
+  </div>
+  <div class="control-group">
+    <label for="colorPalette">Color Palette:</label>
+    <select id="colorPalette">
+      <option value="blackWhite">Black & White</option>
+      <option value="grey">Grey</option>
+      <option value="random">Random Colors</option>
+      <option value="warm">Warm Colors</option>
+      <option value="cool">Cool Colors</option>
+    </select>
+  </div>
+  <div class="control-group">
+    <label for="surviveRules">Survive Rules (comma-separated):</label>
+    <input type="text" id="surviveRules" value="2,3">
+  </div>
+  <div class="control-group">
+    <label for="birthRules">Birth Rules (comma-separated):</label>
+    <input type="text" id="birthRules" value="3">
+  </div>
   <button id="startButton">Start</button>
   <button id="randomizeButton">Randomize</button>
 </div>
