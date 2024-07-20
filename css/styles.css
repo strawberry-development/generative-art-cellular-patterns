@@ -140,7 +140,7 @@ button:hover {
     flex: 1;
     display: flex;
     gap: 10px;
-    padding: 20px;
+    padding: 20px 20px calc(43px + 20px);
     overflow: auto;
     align-items: center;
     justify-content: center;
