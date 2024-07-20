@@ -50,8 +50,8 @@ function getCellColor() {
             return "#888888";
         case "warm":
             return getRandomWarmColor();
-        case "cool":
-            return getRandomCoolColor();
+        case "cold":
+            return getRandomcoldColor();
         case "random":
         default:
             return getRandomColor();
@@ -65,7 +65,7 @@ function getRandomWarmColor() {
     return `hsl(${hue}, ${saturation}, ${lightness})`;
 }
 
-function getRandomCoolColor() {
+function getRandomcoldColor() {
     const hue = Math.floor(Math.random() * 60) + 180;
     const saturation = '70%';
     const lightness = '50%';
