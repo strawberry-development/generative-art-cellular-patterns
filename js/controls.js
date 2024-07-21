@@ -38,14 +38,12 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
 
 document.getElementById('backgroundColor').addEventListener('input', (e) => {
     backgroundColor = e.target.value;
-    init();
     draw(originalCtx);
     draw(slowedCtx);
 });
 
 document.getElementById('colorPalette').addEventListener('change', (e) => {
     colorPalette = e.target.value;
-    init();
     draw(originalCtx);
     draw(slowedCtx);
 });
