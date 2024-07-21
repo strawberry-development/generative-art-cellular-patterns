@@ -40,3 +40,7 @@ class MersenneTwister {
         return this.next() / 0xffffffff;
     }
 }
+
+function generateRandomSeed() {
+    return Math.floor(Math.random() * 1_000_000_000);
+}
