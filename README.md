@@ -8,6 +8,8 @@ This is the version **1.4.0** of the project.
 - Awful design made by me (will be fix)
 - Changing background randomize everything
 
+- Currently working on seed and split the record w/ starting
+
 ## Setup
 
 Work by launching `index.html`
