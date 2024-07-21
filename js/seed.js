@@ -13,16 +13,25 @@ class MersenneTwister {
     }
 
     next() {
+        if (this.index >= 624) {
+            console.error('Index out of bounds:', this.index);
+            return 0;  // Handle the error gracefully
+        }
+
         if (this.index === 0) {
             this.twist();
         }
 
-        let y = this.mt[this.index++];
+        let y = this.mt[this.index];
+        this.index = (this.index + 1) % 624;
+
         y ^= (y >>> 11);
         y ^= (y << 7) & 0x9d2c5680;
         y ^= (y << 15) & 0xefc60000;
         y ^= (y >>> 18);
-        return y >>> 0;
+
+        let result = y >>> 0;
+        return result;
     }
 
     twist() {
@@ -33,11 +42,12 @@ class MersenneTwister {
                 this.mt[i] ^= 0x9908b0df;
             }
         }
-        this.index = 0;
+        this.index = 0;  // Ensure index is reset to 0 after twisting
     }
 
     random() {
-        return this.next() / 0xffffffff;
+        let rand = this.next() / 0xffffffff;
+        return rand;
     }
 }
 

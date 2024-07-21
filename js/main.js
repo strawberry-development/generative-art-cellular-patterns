@@ -20,11 +20,14 @@ let birthRules = [3];
 let colorPalette = "blackWhite";
 
 function init() {
+    const seed = generateRandomSeed();
+    const rng = new MersenneTwister(seed);
+
     cells = [];
     for (let x = 0; x < GRID_WIDTH; x++) {
         cells[x] = [];
         for (let y = 0; y < GRID_HEIGHT; y++) {
-            cells[x][y] = Math.random() > 0.85 ? 1 : 0;
+            cells[x][y] = rng.random() > 0.85 ? 1 : 0;
         }
     }
 }
