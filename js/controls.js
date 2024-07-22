@@ -56,6 +56,15 @@ document.getElementById('birthRules').addEventListener('input', (e) => {
     birthRules = parseRules(e.target.value);
 });
 
+document.getElementById('reset').addEventListener('click', () => {
+    const seed = document.getElementById('seedValue').innerText;
+    updateCanvasSize();
+    init(seed);
+    draw(originalCtx);
+    draw(slowedCtx);
+});
+
+
 document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
         animationRunning = false;
@@ -64,10 +73,18 @@ document.getElementById('startButton').addEventListener('click', () => {
         animationRunning = true;
         animateOriginal();
         animateSlowed();
-        recordAnimation(originalCanvas, 'generative_art_original');
-        recordAnimation(slowedCanvas, 'generative_art_slowed');
+        //recordAnimation(originalCanvas, 'generative_art_original');
+        //recordAnimation(slowedCanvas, 'generative_art_slowed');
         document.getElementById('startButton').innerText = 'Stop';
     }
+});
+
+document.getElementById('record').addEventListener('click', () => {
+    animationRunning = true;
+    animateOriginal();
+    animateSlowed();
+    recordAnimation(originalCanvas, 'generative_art_original');
+    recordAnimation(slowedCanvas, 'generative_art_slowed');
 });
 
 document.getElementById('randomizeButton').addEventListener('click', () => {
