@@ -1,8 +1,9 @@
 document.getElementById('cellSize').addEventListener('input', (e) => {
     CELL_SIZE = parseInt(e.target.value);
     document.getElementById('cellSizeValue').innerText = e.target.value;
+    const seed = document.getElementById('seedValue').innerText;
     updateCanvasSize();
-    init();
+    init(seed);
     draw(originalCtx);
     draw(slowedCtx);
 });
@@ -21,8 +22,9 @@ document.getElementById('aspectRatio').addEventListener('change', (e) => {
     const aspectRatioValue = e.target.value.split('/');
     ASPECT_RATIO = parseInt(aspectRatioValue[0]) / parseInt(aspectRatioValue[1]);
     document.getElementById('aspectRatioValue').innerText = e.target.value;
+    const seed = document.getElementById('seedValue').innerText;
     updateCanvasSize();
-    init();
+    init(seed);
     draw(originalCtx);
     draw(slowedCtx);
 });
@@ -30,8 +32,9 @@ document.getElementById('aspectRatio').addEventListener('change', (e) => {
 document.getElementById('canvasWidth').addEventListener('input', (e) => {
     CANVAS_WIDTH = parseInt(e.target.value);
     document.getElementById('canvasWidthValue').innerText = e.target.value;
+    const seed = document.getElementById('seedValue').innerText;
     updateCanvasSize();
-    init();
+    init(seed);
     draw(originalCtx);
     draw(slowedCtx);
 });
@@ -73,8 +76,6 @@ document.getElementById('startButton').addEventListener('click', () => {
         animationRunning = true;
         animateOriginal();
         animateSlowed();
-        //recordAnimation(originalCanvas, 'generative_art_original');
-        //recordAnimation(slowedCanvas, 'generative_art_slowed');
         document.getElementById('startButton').innerText = 'Stop';
     }
 });
