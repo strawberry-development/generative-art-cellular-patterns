@@ -11,35 +11,36 @@
     <link rel="manifest" href="img/site.webmanifest">
 </head>
 <body>
-
 <header>
-    <div>
-        <img src="img/logo_blank.png" class="logo">
-        <h2>GACP like /ɡapt/</h2>
+    <div class="header-logo">
+        <img src="img/logo_blank.png" alt="Generative Art Logo" class="logo">
+        <h1>GACP just like /ɡapt/</h1>
     </div>
-
-    <div>
-        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Access source code</a>
-        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a bug</a>
-        <em>Welcome to version 1.4.3</em>
-    </div>
+    <nav class="header-nav">
+        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Access Source Code</a>
+        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a Bug</a>
+        <span>Welcome to version 1.4.3</span>
+    </nav>
 </header>
 
-<nav>
-    <div style="display: flex;">
-        <button id="reset">Reset</button>
-        <button id="startButton">Start</button>
-        <button id="record">Record</button>
-        <button id="randomizeButton">Randomize</button>
-        <button id="themeToggle">Switch Theme</button>
+<nav class="main-nav">
+    <button id="themeToggle" style="left:10px;top:10px;position: absolute;">Switch Theme</button>
+    <div>
+        <button id="reset">🔄 Reset</button>
+        <button id="startButton">▶️ Start</button>
+        <button id="record">📝 Record</button>
+        <button id="randomizeButton">🎲 Randomize</button>
+        <!-- <button id="exportSettings">Export Settings</button> -->
+        <!-- <input type="file" id="importSettings" style="display: none;"> -->
+        <!-- <button id="importSettingsButton">Import Settings</button> -->
     </div>
 </nav>
 
-<div class="main-container">
-    <div class="sidebar">
-        <div class="controls">
+<main class="main-container">
+    <aside class="sidebar">
+        <section class="controls">
             <div class="control-group">
-                <label>Seed Value: <span id="seedValue"></span></label>
+                <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
                 <input type="text" id="seedInput" placeholder="Enter a new seed value">
                 <button onclick="seedApply()">Apply Seed</button>
             </div>
@@ -48,6 +49,7 @@
                 <label for="cellSize">Cell Size: <span id="cellSizeValue">12</span></label>
                 <input type="range" id="cellSize" min="4" max="20" value="12">
             </div>
+
             <div class="control-group">
                 <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1</span></label>
                 <input type="range" id="animationSpeed" min="1" max="10" value="1">
@@ -91,9 +93,10 @@
                 <label for="birthRules">Birth Rules (comma-separated):</label>
                 <input type="text" id="birthRules" value="3">
             </div>
-        </div>
-    </div>
-    <div class="canvas-container">
+        </section>
+    </aside>
+
+    <section class="canvas-container">
         <div class="canvas-panel">
             <h2>Original</h2>
             <canvas id="originalCanvas"></canvas>
@@ -102,11 +105,13 @@
             <h2>Slowed</h2>
             <canvas id="slowedCanvas"></canvas>
         </div>
-    </div>
-</div>
-<div class="generation-counter">
+    </section>
+</main>
+
+<footer class="generation-counter">
     <span>Generation: <span id="generationCount">0</span></span>
-</div>
+</footer>
+
 <script src="js/controls.js"></script>
 <script src="js/colorPalette.js"></script>
 <script src="js/seed.js"></script>
@@ -114,5 +119,6 @@
 <script src="js/animation.js"></script>
 <script src="js/main.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/localStorage.js"></script>
 </body>
 </html>

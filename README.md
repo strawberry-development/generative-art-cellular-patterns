@@ -6,6 +6,8 @@ This is the version **1.4.3** of the project.
 ## Know issue
 - Awful design made by me (will be fix)
 - Issue with record and play
+- Responsive issue
+- Other issue will be fix in the next day
 
 ## Setup
 

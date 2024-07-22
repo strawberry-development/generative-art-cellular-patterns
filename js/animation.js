@@ -39,7 +39,7 @@ async function recordAnimation(canvas, prefix) {
 
         // Stop animation when recording is done
         animationRunning = false;
-        document.getElementById('startButton').innerText = 'Start';
+        document.getElementById('startButton').innerText = '▶️ Start';
     };
 
     mediaRecorder.start();

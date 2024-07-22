@@ -73,12 +73,12 @@ document.getElementById('reset').addEventListener('click', () => {
 document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
         animationRunning = false;
-        document.getElementById('startButton').innerText = 'Start';
+        document.getElementById('startButton').innerText = '▶️ Start';
     } else {
         animationRunning = true;
         animateOriginal();
         animateSlowed();
-        document.getElementById('startButton').innerText = 'Stop';
+        document.getElementById('startButton').innerText = '🛑 Stop';
     }
 });
 

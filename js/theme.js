@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
-        themeToggle.textContent = savedTheme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+        themeToggle.textContent = savedTheme === 'dark' ? '☀️ Switch to Light Theme' : '🌙 Switch to Dark Theme';
     }
 
     themeToggle.addEventListener('click', () => {
@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+        themeToggle.textContent = newTheme === 'dark' ? '☀️ Switch to Light Theme' : '🌙 Switch to Dark Theme';
     });
 });
