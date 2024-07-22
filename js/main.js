@@ -19,9 +19,10 @@ let surviveRules = [2, 3];
 let birthRules = [3];
 let colorPalette = "blackWhite";
 
-function init() {
-    const seed = generateRandomSeed();
+function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
+    
+    document.getElementById('seedValue').innerText = seed;
 
     cells = [];
     for (let x = 0; x < GRID_WIDTH; x++) {

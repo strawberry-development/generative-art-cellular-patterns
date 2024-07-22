@@ -21,7 +21,7 @@
     <div>
         <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Access source code</a>
         <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a bug</a>
-        <em>Welcome to version 1.4.1</em>
+        <em>Welcome to version 1.4.2</em>
     </div>
 </header>
 
@@ -36,6 +36,12 @@
 <div class="main-container">
     <div class="sidebar">
         <div class="controls">
+            <div class="control-group">
+                <label>Seed Value: <span id="seedValue"></span></label>
+                <input type="text" id="seedInput" placeholder="Enter a new seed value">
+                <button onclick="seedApply()">Apply Seed</button>
+            </div>
+
             <div class="control-group">
                 <label for="cellSize">Cell Size: <span id="cellSizeValue">12</span></label>
                 <input type="range" id="cellSize" min="4" max="20" value="12">

@@ -75,3 +75,18 @@ document.getElementById('randomizeButton').addEventListener('click', () => {
     draw(originalCtx);
     draw(slowedCtx);
 });
+
+function seedApply() {
+    const seedInput = document.getElementById('seedInput').value.trim();
+
+    if (seedInput === '') {
+        alert('Seed value cannot be empty.');
+        return;
+    }
+    document.getElementById('seedValue').innerText = seedInput;
+
+    updateCanvasSize();
+    init(seedInput);
+    draw(originalCtx);
+    draw(slowedCtx);
+}

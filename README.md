@@ -1,7 +1,7 @@
 # Generative Art Cellular Patterns &middot; [![GNU License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/LICENSE)
 This web-based/ prototype showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns. 
 
-This is the version **1.4.1** of the project.
+This is the version **1.4.2** of the project.
 
 ## Know issue
 - Record
