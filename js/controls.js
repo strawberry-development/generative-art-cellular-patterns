@@ -61,6 +61,8 @@ document.getElementById('birthRules').addEventListener('input', (e) => {
 
 document.getElementById('reset').addEventListener('click', () => {
     const seed = document.getElementById('seedValue').innerText;
+    generationCount = 0;
+    document.getElementById('generationCount').innerText = generationCount;
     updateCanvasSize();
     init(seed);
     draw(originalCtx);

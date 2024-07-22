@@ -1,29 +1,27 @@
 /* Default Light Theme */
 :root {
-    --background-color: #f5f5f5;
-    --header-background-color: #e0e0e0;
-    --sidebar-background-color: #e0e0e0;
+    --background-color: #f0f1f5;
+    --pannel: #fff;
     --button-background-color: #ccc;
     --button-hover-background-color: #bbb;
     --input-background-color: #fff;
-    --border-color: #aaa;
+    --border-color: #f4f4f7;
     --text-color: #333;
+    --link-color: #f8bbd0;
     --canvas-border-color: #333;
-    --generation-counter-background-color: #e0e0e0;
 }
 
 /* Dark Theme */
 [data-theme='dark'] {
     --background-color: #1e1e1e;
-    --header-background-color: #2d2d2d;
-    --sidebar-background-color: #2d2d2d;
+    --pannel: #2d2d2d;
     --button-background-color: #444;
     --button-hover-background-color: #555;
     --input-background-color: #222;
     --border-color: #555;
     --text-color: #ddd;
+    --link-color: #f8bbd0;
     --canvas-border-color: #ddd;
-    --generation-counter-background-color: #2d2d2d;
 }
 
 body {
@@ -38,7 +36,7 @@ body {
 }
 
 header {
-    background-color: var(--header-background-color);
+    background-color: var(--pannel);
     color: var(--text-color);
     padding: 15px;
     border-bottom: 2px solid var(--border-color);
@@ -63,16 +61,17 @@ header div:last-child {
 }
 
 header a {
-    color: var(--text-color);
-    text-decoration: underline;
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
 }
 
 header a:hover {
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 nav {
-    background-color: var(--header-background-color);
+    background-color: var(--pannel);
     border-bottom: 2px solid var(--border-color);
 }
 
@@ -87,7 +86,7 @@ nav {
 }
 
 .sidebar {
-    background-color: var(--sidebar-background-color);
+    background-color: var(--pannel);
     width: 250px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -158,7 +157,7 @@ canvas {
     bottom: 0;
     position: fixed;
     font-size: 18px;
-    background-color: var(--generation-counter-background-color);
+    background-color: var(--pannel);
     width: 100%;
     display: flex;
     justify-content: center;
