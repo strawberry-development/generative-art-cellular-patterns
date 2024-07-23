@@ -24,21 +24,25 @@
 </header>
 
 <nav class="main-nav">
-    <button id="themeToggle" style="left:10px;top:10px;position: absolute;">Switch Theme</button>
-    <div>
-        <button id="reset">🔄 Reset</button>
-        <button id="startButton">▶️ Start</button>
-        <button id="record">📝 Record</button>
-        <button id="randomizeButton">🎲 Randomize</button>
-        <!-- <button id="exportSettings">Export Settings</button> -->
-        <!-- <input type="file" id="importSettings" style="display: none;"> -->
-        <!-- <button id="importSettingsButton">Import Settings</button> -->
-    </div>
+    <button id="themeToggle">Switch Theme</button>
+    <button id="reset">🔄 Reset generation</button>
+    <button id="startButton">▶️ Start</button>
+    <button id="record">📝 Record</button>
+    <button id="randomizeButton">🎲 Randomize</button>
+    <!-- <button id="exportSettings">Export Settings</button> -->
+    <!-- <input type="file" id="importSettings" style="display: none;"> -->
+    <!-- <button id="importSettingsButton">Import Settings</button> -->
 </nav>
 
 <main class="main-container">
     <aside class="sidebar">
         <section class="controls">
+            <!--<div class="control-group">
+                <button id="resetConfig">🔄 Reset Value</button>
+            </div>
+
+            <hr>-->
+
             <div class="control-group">
                 <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
                 <input type="text" id="seedInput" placeholder="Enter a new seed value">
@@ -112,9 +116,12 @@
     <span>Generation: <span id="generationCount">0</span></span>
 </footer>
 
+<script src="data/config.js"></script>
+
+<script src="js/seed.js"></script>
+
 <script src="js/controls.js"></script>
 <script src="js/colorPalette.js"></script>
-<script src="js/seed.js"></script>
 <script src="js/render.js"></script>
 <script src="js/animation.js"></script>
 <script src="js/main.js"></script>

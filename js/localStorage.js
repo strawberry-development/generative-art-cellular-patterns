@@ -69,11 +69,12 @@ function importSettings(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     loadSettings();
-
+    /*
     document.getElementById('exportSettings').addEventListener('click', exportSettings);
 
     document.getElementById('importSettingsButton').addEventListener('click', function() {
         document.getElementById('importSettings').click();
     });
     document.getElementById('importSettings').addEventListener('change', importSettings);
+    */
 });
