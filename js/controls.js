@@ -146,7 +146,10 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
 }
 
 document.getElementById('resetConfig').addEventListener('click', () => {
+    reset();
+});
 
+function reset(){
     document.getElementById("seedInput").value = Number(config.seedValue);
     document.getElementById("cellSize").value = config.cellSize;
     document.getElementById("cellSizeValue").innerText = config.cellSize;
@@ -175,4 +178,4 @@ document.getElementById('resetConfig').addEventListener('click', () => {
     updateBirthRules(config.birthRules);
 
     updateCanvas(true);
-});
+}

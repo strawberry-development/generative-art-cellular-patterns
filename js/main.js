@@ -3,7 +3,7 @@ const originalCtx = originalCanvas.getContext('2d');
 const slowedCanvas = document.getElementById('slowedCanvas');
 const slowedCtx = slowedCanvas.getContext('2d');
 
-let CANVAS_WIDTH = 800;
+let CANVAS_WIDTH = config.canvasWidth;
 let CANVAS_HEIGHT = 450;
 let CELL_SIZE = 12;
 let ASPECT_RATIO = 16 / 9;
