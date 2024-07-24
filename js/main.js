@@ -43,7 +43,7 @@ function updateCanvasSize() {
 }
 
 function parseRules(ruleString) {
-    return ruleString.split(',').map(Number);
+    return String(ruleString).split(',').map(Number);
 }
 
 updateCanvasSize();

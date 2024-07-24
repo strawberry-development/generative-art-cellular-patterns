@@ -7,6 +7,6 @@ const config = {
     canvasWidth: 800,
     backgroundColor: "#1f1f1f",
     colorPalette: "blackWhite",
-    surviveRules: [2,3],
+    surviveRules: [2, 3],
     birthRules: [3]
 };

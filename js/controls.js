@@ -145,9 +145,9 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
     draw(slowedCtx);
 }
 
-/*
 document.getElementById('resetConfig').addEventListener('click', () => {
-    //document.getElementById("seedInput").value = config.seedValue;
+
+    document.getElementById("seedInput").value = Number(config.seedValue);
     document.getElementById("cellSize").value = config.cellSize;
     document.getElementById("cellSizeValue").innerText = config.cellSize;
     document.getElementById("animationSpeed").value = config.animationSpeed;
@@ -166,14 +166,13 @@ document.getElementById('resetConfig').addEventListener('click', () => {
     updateCellSize(config.cellSize);
     updateAnimationSpeed(config.animationSpeed);
     updateRecordDuration(config.recordDuration);
-    updateAspectRatio(config.aspectRatio);
+    updateAspectRatio(config.aspectRatio.split('/'));
+
     updateCanvasWidth(config.canvasWidth);
     updateBackgroundColor(config.backgroundColor);
     updateColorPalette(config.colorPalette);
     updateSurviveRules(config.surviveRules);
     updateBirthRules(config.birthRules);
 
-    //const seed = config.seedValue;
     updateCanvas(true);
-    console.log("test");
-});*/
+});
