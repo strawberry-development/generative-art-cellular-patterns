@@ -4,7 +4,7 @@ document.getElementById('cellSize').addEventListener('input', (e) => {
     updateCanvas(true, true, seed);
 });
 
-function updateCellSize(target){
+function updateCellSize(target) {
     CELL_SIZE = parseInt(target);
     document.getElementById('cellSizeValue').innerText = target;
 }
@@ -45,7 +45,7 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
     updateCanvas(true, true, seed);
 });
 
-function updateCanvasWidth(target){
+function updateCanvasWidth(target) {
     CANVAS_WIDTH = parseInt(target);
     document.getElementById('canvasWidthValue').innerText = target;
 }
@@ -55,7 +55,7 @@ document.getElementById('backgroundColor').addEventListener('input', (e) => {
     updateCanvas();
 });
 
-function updateBackgroundColor(target){
+function updateBackgroundColor(target) {
     backgroundColor = target;
 }
 
@@ -64,7 +64,7 @@ document.getElementById('colorPalette').addEventListener('change', (e) => {
     updateCanvas();
 });
 
-function updateColorPalette(target){
+function updateColorPalette(target) {
     colorPalette = target;
 }
 
@@ -72,7 +72,7 @@ document.getElementById('surviveRules').addEventListener('input', (e) => {
     updateSurviveRules(e.target.value);
 });
 
-function updateSurviveRules(target){
+function updateSurviveRules(target) {
     surviveRules = parseRules(target);
 }
 
@@ -80,7 +80,7 @@ document.getElementById('birthRules').addEventListener('input', (e) => {
     updateBirthRules(e.target.value);
 });
 
-function updateBirthRules(target){
+function updateBirthRules(target) {
     surviveRules = parseRules(target);
 }
 
@@ -134,14 +134,19 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
     }
 
     if (initFlag) {
-        init(seed === true ? seed : undefined);
+        if (seed) {
+            init(seed);
+        } else {
+            init();
+        }
     }
 
     draw(originalCtx);
     draw(slowedCtx);
 }
 
-/*document.getElementById('resetConfig').addEventListener('click', () => {
+/*
+document.getElementById('resetConfig').addEventListener('click', () => {
     //document.getElementById("seedInput").value = config.seedValue;
     document.getElementById("cellSize").value = config.cellSize;
     document.getElementById("cellSizeValue").innerText = config.cellSize;
