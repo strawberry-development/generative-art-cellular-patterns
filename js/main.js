@@ -20,8 +20,6 @@ let surviveRules = config.surviveRules;
 let birthRules = config.birthRules;
 let colorPalette = config.colorPalette;
 
-reset();
-
 function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
 
@@ -54,7 +52,9 @@ function parseRules(ruleString) {
     return String(ruleString).split(',').map(Number);
 }
 
-updateCanvasSize();
-init();
-draw(originalCtx);
-draw(slowedCtx);
+document.addEventListener("DOMContentLoaded", (event) => {
+    updateCanvasSize();
+    init();
+    draw(originalCtx);
+    draw(slowedCtx);
+});
