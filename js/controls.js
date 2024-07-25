@@ -7,6 +7,7 @@ document.getElementById('cellSize').addEventListener('input', (e) => {
 function updateCellSize(target) {
     CELL_SIZE = parseInt(target);
     document.getElementById('cellSizeValue').innerText = target;
+    updateGridDimensions();
 }
 
 document.getElementById('animationSpeed').addEventListener('input', (e) => {
@@ -34,9 +35,9 @@ document.getElementById('aspectRatio').addEventListener('change', (e) => {
 });
 
 function updateAspectRatio(target) {
-    const aspectRatioValue = target;
-    ASPECT_RATIO = parseInt(aspectRatioValue[0]) / parseInt(aspectRatioValue[1]);
+    ASPECT_RATIO = parseInt(target[0]) / parseInt(target[1]);
     document.getElementById('aspectRatioValue').innerText = target;
+    updateGridDimensions();
 }
 
 document.getElementById('canvasWidth').addEventListener('input', (e) => {
@@ -48,6 +49,7 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
 function updateCanvasWidth(target) {
     CANVAS_WIDTH = parseInt(target);
     document.getElementById('canvasWidthValue').innerText = target;
+    updateGridDimensions();
 }
 
 document.getElementById('backgroundColor').addEventListener('input', (e) => {
@@ -81,7 +83,7 @@ document.getElementById('birthRules').addEventListener('input', (e) => {
 });
 
 function updateBirthRules(target) {
-    surviveRules = parseRules(target);
+    birthRules = parseRules(target);
 }
 
 document.getElementById('reset').addEventListener('click', () => {
@@ -90,7 +92,6 @@ document.getElementById('reset').addEventListener('click', () => {
     document.getElementById('generationCount').innerText = generationCount;
     updateCanvas(false, true, seed);
 });
-
 
 document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
@@ -149,7 +150,8 @@ document.getElementById('resetConfig').addEventListener('click', () => {
     reset();
 });
 
-function reset(){
+function reset() {
+    document.getElementById('seedValue').innerText = config.seedValue;
     document.getElementById("seedInput").value = Number(config.seedValue);
     document.getElementById("cellSize").value = config.cellSize;
     document.getElementById("cellSizeValue").innerText = config.cellSize;
@@ -170,7 +172,6 @@ function reset(){
     updateAnimationSpeed(config.animationSpeed);
     updateRecordDuration(config.recordDuration);
     updateAspectRatio(config.aspectRatio.split('/'));
-
     updateCanvasWidth(config.canvasWidth);
     updateBackgroundColor(config.backgroundColor);
     updateColorPalette(config.colorPalette);

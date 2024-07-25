@@ -3,7 +3,7 @@ function draw(ctx) {
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     for (let x = 0; x < GRID_WIDTH; x++) {
         for (let y = 0; y < GRID_HEIGHT; y++) {
-            if (cells[x][y] === 1) {
+            if (cells[x] && cells[x][y] === 1) {
                 ctx.fillStyle = getCellColor();
                 ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
             }
@@ -35,7 +35,7 @@ function countNeighbors(cx, cy) {
         for (let j = -1; j <= 1; j++) {
             const x = (cx + i + GRID_WIDTH) % GRID_WIDTH;
             const y = (cy + j + GRID_HEIGHT) % GRID_HEIGHT;
-            if (cells[x][y] === 1 && !(i === 0 && j === 0)) {
+            if (cells[x] && cells[x][y] === 1 && !(i === 0 && j === 0)) {
                 count++;
             }
         }
