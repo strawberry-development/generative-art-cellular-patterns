@@ -52,11 +52,12 @@
         .recording-indicator {
             width: 10px;
             height: 10px;
-            background-color: red;
+            background-color: transparent;
             border-radius: 50%;
             display: inline-block;
         }
         .recording-indicator.blink {
+            background-color: red;
             animation: blink 1s step-start infinite;
         }
         @keyframes blink {
