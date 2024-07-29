@@ -99,18 +99,27 @@ document.getElementById('startButton').addEventListener('click', () => {
         document.getElementById('startButton').innerText = '▶️ Start';
     } else {
         animationRunning = true;
+        document.getElementById('startButton').innerText = '⏸ Pause';
         animateOriginal();
-        animateSlowed();
-        document.getElementById('startButton').innerText = '🛑 Stop';
+        if (document.getElementById('showSlowedCanvas').checked) {
+            animateSlowed();
+        }
     }
 });
 
 document.getElementById('record').addEventListener('click', () => {
-    animationRunning = true;
-    animateOriginal();
-    animateSlowed();
-    recordAnimation(originalCanvas, 'generative_art_original');
-    recordAnimation(slowedCanvas, 'generative_art_slowed');
+    if (!animationRunning) {
+        animationRunning = true;
+        document.getElementById('startButton').innerText = '⏸ Pause';
+        animateOriginal();
+        if (document.getElementById('showSlowedCanvas').checked) {
+            animateSlowed();
+        }
+    }
+    recordAnimation(originalCanvas, 'original');
+    if (document.getElementById('showSlowedCanvas').checked) {
+        recordAnimation(slowedCanvas, 'slowed');
+    }
 });
 
 document.getElementById('randomizeButton').addEventListener('click', () => {

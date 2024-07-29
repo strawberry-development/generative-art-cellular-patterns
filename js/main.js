@@ -58,3 +58,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     draw(originalCtx);
     draw(slowedCtx);
 });
+
+reset();

@@ -9,12 +9,67 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="img/site.webmanifest">
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+        .recording-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .recording-indicator.blink {
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { visibility: hidden; }
+        }
+    </style>
 </head>
 <body>
 <header>
     <div class="header-logo">
         <img src="img/logo_blank.png" alt="Generative Art Logo" class="logo">
         <h1>GACP just like /ɡapt/</h1>
+        <span class="recording-indicator" id="recordingIndicator"></span>
     </div>
     <nav class="header-nav">
         <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Access Source Code</a>
@@ -37,6 +92,16 @@
 <main class="main-container">
     <aside class="sidebar">
         <section class="controls">
+            <div class="control-group">
+                <label for="showSlowedCanvas">use Slowed Canvas:</label>
+                <label class="switch">
+                    <input type="checkbox" id="showSlowedCanvas">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <hr>
+
             <div class="control-group">
                 <button id="resetConfig">🔄 Reset Value</button>
             </div>
@@ -105,7 +170,7 @@
             <h2>Original</h2>
             <canvas id="originalCanvas"></canvas>
         </div>
-        <div class="canvas-panel">
+        <div class="canvas-panel" id="slowedCanvasContainer" style="display: none;">
             <h2>Slowed</h2>
             <canvas id="slowedCanvas"></canvas>
         </div>
@@ -124,8 +189,19 @@
 <script src="js/colorPalette.js"></script>
 <script src="js/render.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/record.js"></script>
 <script src="js/main.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/localStorage.js"></script>
+<script>
+    document.getElementById('showSlowedCanvas').addEventListener('change', function() {
+        const slowedCanvasContainer = document.getElementById('slowedCanvasContainer');
+        if (this.checked) {
+            slowedCanvasContainer.style.display = 'flex';
+        } else {
+            slowedCanvasContainer.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
