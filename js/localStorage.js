@@ -38,7 +38,7 @@ function exportSettings() {
     const settings = localStorage.getItem('settings');
 
     if (settings) {
-        const blob = new Blob([settings], { type: 'application/json' });
+        const blob = new Blob([settings], {type: 'application/json'});
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -55,7 +55,7 @@ function importSettings(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         const settings = JSON.parse(e.target.result);
 
         if (settings) {
@@ -67,14 +67,12 @@ function importSettings(event) {
     reader.readAsText(file);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    loadSettings();
-    /*
-    document.getElementById('exportSettings').addEventListener('click', exportSettings);
+loadSettings();
+/*
+document.getElementById('exportSettings').addEventListener('click', exportSettings);
 
-    document.getElementById('importSettingsButton').addEventListener('click', function() {
-        document.getElementById('importSettings').click();
-    });
-    document.getElementById('importSettings').addEventListener('change', importSettings);
-    */
+document.getElementById('importSettingsButton').addEventListener('click', function() {
+    document.getElementById('importSettings').click();
 });
+document.getElementById('importSettings').addEventListener('change', importSettings);
+*/
