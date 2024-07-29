@@ -160,32 +160,32 @@ document.getElementById('resetConfig').addEventListener('click', () => {
 });
 
 function reset() {
-    document.getElementById('seedValue').innerText = config.seedValue;
-    document.getElementById("seedInput").value = Number(config.seedValue);
-    document.getElementById("cellSize").value = config.cellSize;
-    document.getElementById("cellSizeValue").innerText = config.cellSize;
-    document.getElementById("animationSpeed").value = config.animationSpeed;
-    document.getElementById("animationSpeedValue").innerText = config.animationSpeed;
-    document.getElementById("recordDuration").value = config.recordDuration;
-    document.getElementById("recordDurationValue").innerText = config.recordDuration;
-    document.getElementById("aspectRatio").value = config.aspectRatio;
-    document.getElementById("aspectRatioValue").innerText = config.aspectRatio;
-    document.getElementById("canvasWidth").value = config.canvasWidth;
-    document.getElementById("canvasWidthValue").innerText = config.canvasWidth;
-    document.getElementById("backgroundColor").value = config.backgroundColor;
-    document.getElementById("colorPalette").value = config.colorPalette;
-    document.getElementById("surviveRules").value = config.surviveRules;
-    document.getElementById("birthRules").value = config.birthRules;
+    document.getElementById('seedValue').innerText = defaultConfig.seedValue;
+    document.getElementById("seedInput").value = Number(defaultConfig.seedValue);
+    document.getElementById("cellSize").value = defaultConfig.cellSize;
+    document.getElementById("cellSizeValue").innerText = defaultConfig.cellSize;
+    document.getElementById("animationSpeed").value = defaultConfig.animationSpeed;
+    document.getElementById("animationSpeedValue").innerText = defaultConfig.animationSpeed;
+    document.getElementById("recordDuration").value = defaultConfig.recordDuration;
+    document.getElementById("recordDurationValue").innerText = defaultConfig.recordDuration;
+    document.getElementById("aspectRatio").value = defaultConfig.aspectRatio;
+    document.getElementById("aspectRatioValue").innerText = defaultConfig.aspectRatio;
+    document.getElementById("canvasWidth").value = defaultConfig.canvasWidth;
+    document.getElementById("canvasWidthValue").innerText = defaultConfig.canvasWidth;
+    document.getElementById("backgroundColor").value = defaultConfig.backgroundColor;
+    document.getElementById("colorPalette").value = defaultConfig.colorPalette;
+    document.getElementById("surviveRules").value = defaultConfig.surviveRules;
+    document.getElementById("birthRules").value = defaultConfig.birthRules;
 
-    updateCellSize(config.cellSize);
-    updateAnimationSpeed(config.animationSpeed);
-    updateRecordDuration(config.recordDuration);
-    updateAspectRatio(config.aspectRatio.split('/'));
-    updateCanvasWidth(config.canvasWidth);
-    updateBackgroundColor(config.backgroundColor);
-    updateColorPalette(config.colorPalette);
-    updateSurviveRules(config.surviveRules);
-    updateBirthRules(config.birthRules);
+    updateCellSize(defaultConfig.cellSize);
+    updateAnimationSpeed(defaultConfig.animationSpeed);
+    updateRecordDuration(defaultConfig.recordDuration);
+    updateAspectRatio(defaultConfig.aspectRatio.split('/'));
+    updateCanvasWidth(defaultConfig.canvasWidth);
+    updateBackgroundColor(defaultConfig.backgroundColor);
+    updateColorPalette(defaultConfig.colorPalette);
+    updateSurviveRules(defaultConfig.surviveRules);
+    updateBirthRules(defaultConfig.birthRules);
 
     updateCanvas(true);
 }

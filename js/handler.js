@@ -1,14 +1,16 @@
-const scripts = [
-    'js/seed.js',
-    'js/controls.js',
-    'js/colorPalette.js',
-    'js/render.js',
-    'js/hideSlowedCanvas.js',
-    'js/animation.js',
-    'js/record.js',
-    'js/main.js',
-    'js/theme.js',
-    'js/localStorage.js'
+const paths = [
+    'js/data/defaultConfig.js',
+
+    'js/core/seed.js',
+    'js/ui/controls.js',
+    'js/ui/colorPalette.js',
+    'js/core/render.js',
+    'js/ui/hideSlowedCanvas.js',
+    'js/animations/animation.js',
+    'js/core/record.js',
+    'js/core/main.js',
+    'js/ui/theme.js',
+    'js/data/localStorage.js'
 ];
 
 function loadScript(src) {
@@ -22,7 +24,7 @@ function loadScript(src) {
 }
 
 async function loadAllScripts() {
-    for (const script of scripts) {
+    for (const script of paths) {
         try {
             await loadScript(script);
             console.log(`Successfully loaded ${script}`);

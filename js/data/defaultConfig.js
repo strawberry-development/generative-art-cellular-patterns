@@ -1,4 +1,4 @@
-const config = {
+const defaultConfig = {
     seedValue: "12345667890",
     cellSize: 12,
     animationSpeed: 1,
