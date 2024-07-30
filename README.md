@@ -11,7 +11,7 @@ This is the version **1.4.3** of the project.
 
 ## Setup
 
-Work by launching `index.html`
+Work by launching `app.html` in a browser
 
 ## Example
 
