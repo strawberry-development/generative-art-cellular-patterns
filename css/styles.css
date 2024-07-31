@@ -1,27 +1,31 @@
-/* Default Light Theme */
 :root {
-    --background-color: #f0f1f5; /* Light gray */
-    --panel: #ffffff; /* White */
-    --button-background-color: #e0e0e0; /* Light gray */
-    --button-hover-background-color: #d0d0d0; /* Slightly darker gray */
-    --input-background-color: #ffffff; /* White */
-    --border-color: #e1e1e1; /* Very light gray */
-    --text-color: #333333; /* Dark gray for good readability */
-    --link-color: #f8bbd0; /* Soft pink */
-    --canvas-border-color: #cccccc; /* Light gray */
+    --background-color: #f5f5f5;
+    --panel: #ffffff;
+    --button-background-color: #d9d9d9;
+    --button-hover-background-color: #a8a8a8;
+    --input-background-color: #ffffff;
+    --input-border-color: #e0e0e0;
+    --input-focus-border-color: #674bd3;
+    --input-text-color: #1e202d;
+    --border-color: #e0e0e0;
+    --text-color: #1e202d;
+    --link-color: #674bd3;
+    --canvas-border-color: #d0d0d0;
 }
 
-/* Dark Theme */
 [data-theme='dark'] {
-    --background-color: #1e1e1e; /* Very dark gray */
-    --panel: #2d2d2d; /* Slightly lighter dark gray */
-    --button-background-color: #3a3a3a; /* Darker gray */
-    --button-hover-background-color: #4a4a4a; /* Slightly lighter dark gray */
-    --input-background-color: #222222; /* Almost black */
-    --border-color: #444444; /* Medium dark gray */
-    --text-color: #dddddd; /* Light gray for good readability */
-    --link-color: #f8bbd0; /* Soft pink */
-    --canvas-border-color: #666666; /* Medium gray */
+    --background-color: #20222f;
+    --panel: #1f212d;
+    --button-background-color: #3b3b3b;
+    --button-hover-background-color: #505050;
+    --input-background-color: #2a2c36;
+    --input-border-color: #444444;
+    --input-focus-border-color: #a962d8;
+    --input-text-color: #e0e0e0;
+    --border-color: #444444;
+    --text-color: #e0e0e0;
+    --link-color: #a962d8;
+    --canvas-border-color: #555555;
 }
 
 body {
@@ -93,9 +97,15 @@ main {
 .sidebar {
     background-color: var(--panel);
     width: 250px;
+    min-width: 250px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     overflow-y: auto;
+}
+
+.controls > h3 {
+    border-top: 2px solid var(--border-color);
+    background: var(--background-color);
+    padding: 20px 10px;
 }
 
 .controls {
@@ -104,6 +114,7 @@ main {
 
 .control-group {
     margin-bottom: 20px;
+    padding-left: 20px;
 }
 
 label {
@@ -112,13 +123,21 @@ label {
     font-weight: bold;
 }
 
-input[type="range"], select, input[type="color"], input[type="text"] {
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
+input, textarea, select {
     background-color: var(--input-background-color);
-    color: var(--text-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    color: var(--input-text-color);
+    padding: 8px 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Styles for Inputs */
+input:focus, textarea:focus, select:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 150, 136, 0.3);
 }
 
 button {
@@ -138,7 +157,8 @@ button:hover {
 }
 
 .main-window {
-    width:100%;
+    width: 100%;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.3);
 }
 
 .main-window > nav {
@@ -204,7 +224,8 @@ footer > span {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: grey;
+    border: 1px solid var(--input-border-color);
     transition: .4s;
     border-radius: 34px;
 }
@@ -220,7 +241,7 @@ footer > span {
     border-radius: 50%;
 }
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--link-color);
 }
 input:checked + .slider:before {
     transform: translateX(14px);

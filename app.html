@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generative Art Cellular Patterns</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="img/logo/site.webmanifest">
 </head>
 <body>
 <header>
     <div class="header-logo">
-        <img src="img/favicon-16x16.png" alt="Generative Art Logo" class="logo">
+        <img src="img/logo/favicon-16x16.png" alt="Generative Art Logo" class="logo">
         <em>GACP just like /ɡapt/</em>
         <span class="recording-indicator" id="recordingIndicator"></span>
     </div>
@@ -76,8 +76,8 @@
                 <input type="range" id="recordDuration" min="5" max="20" value="10">
             </div>
 
+            <h3>Dimension</h3>
             <div class="control-group">
-                <h3>Dimension</h3>
                 <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
                 <select id="aspectRatio">
                     <option value="16/9">16:9</option>
@@ -88,8 +88,8 @@
                 <input type="range" id="canvasWidth" min="200" max="1200" value="800">
             </div>
 
+            <h3>Color</h3>
             <div class="control-group">
-                <h3>Color</h3>
                 <label for="backgroundColor">Background Color:</label>
                 <input type="color" id="backgroundColor" value="#1f1f1f">
                 <label for="colorPalette">Color Palette:</label>
@@ -108,8 +108,8 @@
                 </select>
             </div>
 
+            <h3>Rule</h3>
             <div class="control-group">
-                <h3>Rule</h3>
                 <label for="surviveRules">Survive Rules (comma-separated):</label>
                 <input type="text" id="surviveRules" value="2,3">
                 <label for="birthRules">Birth Rules (comma-separated):</label>
