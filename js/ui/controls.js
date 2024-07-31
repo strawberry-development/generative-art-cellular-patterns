@@ -113,6 +113,7 @@ document.getElementById('record').addEventListener('click', () => {
     if (!animationRunning) {
         animationRunning = true;
         document.getElementById('startButton').innerText = '⏸ Pause';
+        startTimer();
         animateOriginal();
         if (document.getElementById('showSlowedCanvas').checked) {
             animateSlowed();

@@ -250,6 +250,7 @@ input:checked + .slider:before {
     width: 10px;
     height: 10px;
     background-color: transparent;
+    border: 2px solid red;
     border-radius: 50%;
     display: inline-block;
 }
