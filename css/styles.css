@@ -137,6 +137,14 @@ button:hover {
     background-color: var(--button-hover-background-color);
 }
 
+.main-window {
+    width:100%;
+}
+
+.main-window > nav {
+    height: 20px;
+}
+
 .canvas-container {
     display: flex;
     gap: 10px;
@@ -144,7 +152,7 @@ button:hover {
     overflow: auto;
     align-items: center;
     justify-content: center;
-    height: calc(100% - 80px);
+    height: calc(100% - 100px);
 }
 
 .canvas-panel {
