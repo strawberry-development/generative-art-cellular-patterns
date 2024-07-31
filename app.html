@@ -117,21 +117,23 @@
         </section>
     </aside>
 
-    <section class="canvas-container">
-        <div class="canvas-panel">
-            <h2>Original</h2>
-            <canvas id="originalCanvas"></canvas>
-        </div>
-        <div class="canvas-panel" id="slowedCanvasContainer" style="display: none;">
-            <h2>Slowed</h2>
-            <canvas id="slowedCanvas"></canvas>
-        </div>
-    </section>
+    <aside style="width:100%;">
+        <section class="canvas-container">
+            <div class="canvas-panel">
+                <h2>Original</h2>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+            <div class="canvas-panel" id="slowedCanvasContainer" style="display: none;">
+                <h2>Slowed</h2>
+                <canvas id="slowedCanvas"></canvas>
+            </div>
+        </section>
+        <footer>
+            <span>Generation: <span id="generationCount">0</span></span>
+            <span>Elapsed Time: <span id="elapsedTime">00:00:00</span></span>
+        </footer>
+    </aside>
 </main>
-
-<footer class="generation-counter">
-    <span>Generation: <span id="generationCount">0</span></span>
-</footer>
 
 <script src="js/handler.js"></script>
 </body>

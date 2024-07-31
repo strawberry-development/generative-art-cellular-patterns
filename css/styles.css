@@ -149,13 +149,13 @@ button:hover {
 }
 
 .canvas-container {
-    flex: 1;
     display: flex;
     gap: 10px;
     padding: 20px;
     overflow: auto;
     align-items: center;
     justify-content: center;
+    height: calc(100% - 80px);
 }
 
 .canvas-panel {
@@ -171,7 +171,7 @@ canvas {
     max-height: 100%;
 }
 
-.generation-counter {
+footer {
     font-size: 18px;
     background-color: var(--panel);
     width: 100%;
@@ -181,6 +181,12 @@ canvas {
     padding: 10px;
     color: var(--text-color);
     border-top: 2px solid var(--border-color);
+    height: 20px;
+}
+
+footer > span {
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .switch {

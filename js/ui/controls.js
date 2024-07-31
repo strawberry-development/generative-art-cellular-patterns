@@ -89,6 +89,7 @@ function updateBirthRules(target) {
 document.getElementById('reset').addEventListener('click', () => {
     const seed = document.getElementById('seedValue').innerText;
     generationCount = 0;
+    stopTimer();
     document.getElementById('generationCount').innerText = generationCount;
     updateCanvas(false, true, seed);
 });
@@ -100,6 +101,7 @@ document.getElementById('startButton').addEventListener('click', () => {
     } else {
         animationRunning = true;
         document.getElementById('startButton').innerText = '⏸ Pause';
+        startTimer();
         animateOriginal();
         if (document.getElementById('showSlowedCanvas').checked) {
             animateSlowed();
