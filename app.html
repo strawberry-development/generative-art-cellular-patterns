@@ -89,7 +89,7 @@
 
             <h3>Color</h3>
             <div class="control-group">
-                <label for="backgroundColor">Background Color:</label>
+                <label for="backgroundColor">Background Color</label>
                 <input type="color" id="backgroundColor" value="#1f1f1f">
                 <label for="colorPalette">Color Palette:</label>
                 <select id="colorPalette">
@@ -114,13 +114,27 @@
                 <label for="birthRules">Birth Rules (comma-separated):</label>
                 <input type="text" id="birthRules" value="3">
             </div>
+
+
+            <!--
+            <h3>Output</h3>
+            <div class="control-group">
+                <label for="videoFormat">Video Format</label>
+                <select id="videoFormat">
+                    <option value="webm">WebM</option>
+                    <option value="mp4">MP4</option>
+                </select>
+            </div>
+            -->
         </section>
     </aside>
 
     <aside class="main-window">
         <nav>
-            <span>Main Window</span>
-            <span class="recording-indicator" id="recordingIndicator"></span>
+            <div class="windows">
+                <span class="recording-indicator" id="recordingIndicator"></span>
+                <span>Main Window</span>
+            </div>
         </nav>
         <section class="canvas-container">
             <div class="canvas-panel">
