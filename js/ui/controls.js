@@ -158,6 +158,11 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
     draw(slowedCtx);
 }
 
+document.getElementById('refreshLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    location.reload();
+});
+
 document.getElementById('resetConfig').addEventListener('click', () => {
     reset();
 });

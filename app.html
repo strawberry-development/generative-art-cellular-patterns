@@ -13,11 +13,12 @@
 <body>
 <header>
     <div class="header-logo">
-        <img src="img/logo/favicon-16x16.png" alt="Generative Art Logo" class="logo">
+        <a href="#" id="refreshLink">
+            <img src="img/logo/favicon-16x16.png" alt="Generative Art Logo" class="logo">
+        </a>
         <em>GACP just like /ɡapt/</em>
     </div>
     <nav class="header-nav">
-        <span>Welcome to version <strong>1.4</strong></span>
         <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Access Source Code</a>
         <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a Bug</a>
         <a href="mailto:strawberry-development@protonmail.com">Send Email</a>
@@ -36,98 +37,91 @@
 </nav>
 
 <main class="main-container">
-    <aside class="sidebar">
-        <section class="controls">
-            <div class="control-group">
-                <label for="showSlowedCanvas">use Slowed Canvas</label>
-                <label class="switch">
-                    <input type="checkbox" id="showSlowedCanvas">
-                    <span class="slider"></span>
-                </label>
-            </div>
+    <div style="display: grid;">
+        <div style="padding-top: 10px;padding-left: 20px;">
+            <span>Welcome to version <strong>1.4</strong></span>
+            <button id="resetConfig">🔄 Reset Value</button>
+        </div>
 
-            <hr>
+        <aside class="sidebar">
+            <section class="controls">
+                <div class="control-group">
+                    <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
+                    <input type="text" id="seedInput" placeholder="Enter a new seed value">
+                    <button onclick="seedApply()">Apply Seed</button>
+                </div>
 
-            <div class="control-group">
-                <button id="resetConfig">🔄 Reset Value</button>
-            </div>
+                <div class="control-group">
+                    <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
+                    <input type="range" id="cellSize" min="4" max="20" value="12">
+                </div>
 
-            <hr>
+                <div class="control-group">
+                    <label for="animationSpeed">Animation Speed: <span
+                            id="animationSpeedValue">Loading...</span></label>
+                    <input type="range" id="animationSpeed" min="1" max="10" value="1">
+                </div>
 
-            <div class="control-group">
-                <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
-                <input type="text" id="seedInput" placeholder="Enter a new seed value">
-                <button onclick="seedApply()">Apply Seed</button>
-            </div>
+                <div class="control-group">
+                    <label for="recordDuration">Record Duration (s): <span
+                            id="recordDurationValue">Loading...</span></label>
+                    <input type="range" id="recordDuration" min="5" max="20" value="10">
+                </div>
 
-            <div class="control-group">
-                <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
-                <input type="range" id="cellSize" min="4" max="20" value="12">
-            </div>
+                <h3>Dimension</h3>
+                <div class="control-group">
+                    <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
+                    <select id="aspectRatio">
+                        <option value="16/9">16:9</option>
+                        <option value="4/3">4:3</option>
+                        <option value="1/1">1:1</option>
+                    </select>
+                    <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">Loading...</span></label>
+                    <input type="range" id="canvasWidth" min="200" max="1200" value="800">
+                </div>
 
-            <div class="control-group">
-                <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">Loading...</span></label>
-                <input type="range" id="animationSpeed" min="1" max="10" value="1">
-            </div>
+                <h3>Color</h3>
+                <div class="control-group">
+                    <label for="backgroundColor">Background Color</label>
+                    <input type="color" id="backgroundColor" value="#1f1f1f">
+                    <label for="colorPalette">Color Palette:</label>
+                    <select id="colorPalette">
+                        <option value="blackWhite">Black & White</option>
+                        <option value="grey">Grey</option>
+                        <option value="random">Random Colors</option>
+                        <option value="warm">Warm Colors</option>
+                        <option value="cold">Cold Colors</option>
+                        <option value="pastel">Spring Beauty Colors</option>
+                        <option value="neon">Neon Colors</option>
+                        <option value="earth">Earth Colors</option>
+                        <option value="ocean">Ocean Colors</option>
+                        <option value="sunset">Sunset Colors</option>
+                        <option value="forest">Forest Colors</option>
+                    </select>
+                </div>
 
-            <div class="control-group">
-                <label for="recordDuration">Record Duration (s): <span id="recordDurationValue">Loading...</span></label>
-                <input type="range" id="recordDuration" min="5" max="20" value="10">
-            </div>
-
-            <h3>Dimension</h3>
-            <div class="control-group">
-                <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
-                <select id="aspectRatio">
-                    <option value="16/9">16:9</option>
-                    <option value="4/3">4:3</option>
-                    <option value="1/1">1:1</option>
-                </select>
-                <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">Loading...</span></label>
-                <input type="range" id="canvasWidth" min="200" max="1200" value="800">
-            </div>
-
-            <h3>Color</h3>
-            <div class="control-group">
-                <label for="backgroundColor">Background Color</label>
-                <input type="color" id="backgroundColor" value="#1f1f1f">
-                <label for="colorPalette">Color Palette:</label>
-                <select id="colorPalette">
-                    <option value="blackWhite">Black & White</option>
-                    <option value="grey">Grey</option>
-                    <option value="random">Random Colors</option>
-                    <option value="warm">Warm Colors</option>
-                    <option value="cold">Cold Colors</option>
-                    <option value="pastel">Spring Beauty Colors</option>
-                    <option value="neon">Neon Colors</option>
-                    <option value="earth">Earth Colors</option>
-                    <option value="ocean">Ocean Colors</option>
-                    <option value="sunset">Sunset Colors</option>
-                    <option value="forest">Forest Colors</option>
-                </select>
-            </div>
-
-            <h3>Rule</h3>
-            <div class="control-group">
-                <label for="surviveRules">Survive Rules (comma-separated):</label>
-                <input type="text" id="surviveRules" value="2,3">
-                <label for="birthRules">Birth Rules (comma-separated):</label>
-                <input type="text" id="birthRules" value="3">
-            </div>
+                <h3>Rule</h3>
+                <div class="control-group">
+                    <label for="surviveRules">Survive Rules (comma-separated):</label>
+                    <input type="text" id="surviveRules" value="2,3">
+                    <label for="birthRules">Birth Rules (comma-separated):</label>
+                    <input type="text" id="birthRules" value="3">
+                </div>
 
 
-            <!--
-            <h3>Output</h3>
-            <div class="control-group">
-                <label for="videoFormat">Video Format</label>
-                <select id="videoFormat">
-                    <option value="webm">WebM</option>
-                    <option value="mp4">MP4</option>
-                </select>
-            </div>
-            -->
-        </section>
-    </aside>
+                <!--
+                <h3>Output</h3>
+                <div class="control-group">
+                    <label for="videoFormat">Video Format</label>
+                    <select id="videoFormat">
+                        <option value="webm">WebM</option>
+                        <option value="mp4">MP4</option>
+                    </select>
+                </div>
+                -->
+            </section>
+        </aside>
+    </div>
 
     <aside class="main-window">
         <nav>
@@ -150,6 +144,23 @@
             <span>Generation: <span id="generationCount">0</span></span>
             <span>Elapsed Time: <span id="elapsedTime">00:00:00</span></span>
         </footer>
+    </aside>
+
+    <aside class="sidebar">
+        <section class="controls">
+            <div class="control-group">
+                <label for="showSlowedCanvas">use Slowed Canvas</label>
+                <label class="switch">
+                    <input type="checkbox" id="showSlowedCanvas">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!--<h3>Navigator</h3>
+            <div class="control-group">
+
+            </div>-->
+        </section>
     </aside>
 </main>
 

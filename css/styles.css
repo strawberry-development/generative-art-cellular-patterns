@@ -3,14 +3,17 @@
     --panel: #ffffff;
     --border-color: #e0e0e0;
 
+    --text-color: #1e202d;
+    --link-color: #674bd3;
+    --title-color: #1e202d;
+
     --button-background-color: #d9d9d9;
     --button-hover-background-color: #a8a8a8;
     --input-background-color: #ffffff;
     --input-border-color: #e0e0e0;
     --input-focus-border-color: #674bd3;
     --input-text-color: #1e202d;
-    --text-color: #1e202d;
-    --link-color: #674bd3;
+
     --canvas-border-color: #d0d0d0;
 }
 
@@ -18,8 +21,10 @@
     --background-color: #1c1a25;
     --panel: #1c1a25;
     --border-color: #272530;
+
     --text-color: #abaaaf;
     --title-color: #fff;
+    --link-color: #a962d8;
 
     --button-background-color: #3b3b3b;
     --button-hover-background-color: #505050;
@@ -27,7 +32,7 @@
     --input-border-color: #444444;
     --input-focus-border-color: #a962d8;
     --input-text-color: #e0e0e0;
-    --link-color: #a962d8;
+
     --canvas-border-color: #555555;
 }
 
@@ -77,7 +82,7 @@ header {
 }
 
 .main-nav button {
-    padding: 10px 15px;
+    padding: 5px 7px;
     font-size: 16px;
     cursor: pointer;
     background-color: var(--button-background-color);
@@ -99,7 +104,7 @@ main {
 
 .sidebar {
     background-color: var(--panel);
-    width: 250px;
+    width: 275px;
     min-width: 250px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
@@ -181,6 +186,10 @@ button:hover {
     width: fit-content;
 }
 
+.windows:hover {
+    cursor: pointer;
+}
+
 .canvas-container {
     display: flex;
     gap: 10px;
@@ -195,6 +204,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 100%;
 }
 
 canvas {
