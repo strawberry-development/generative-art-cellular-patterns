@@ -6,7 +6,7 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 - Awful design made by me (will be fixed)
 - Issue with record and play
 - Responsiveness issues
-- **Many bug are knowed and will be fixed in the next day**
+- **Many bug are knowed and will be fixed**
 
 ## Setup
 
