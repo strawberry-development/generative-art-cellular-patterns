@@ -3,7 +3,6 @@ function saveSettings() {
     const settings = {
         seed: document.getElementById('seedInput').value,
         cellSize: document.getElementById('cellSize').value,
-        animationSpeed: document.getElementById('animationSpeed').value,
         recordDuration: document.getElementById('recordDuration').value,
         aspectRatio: document.getElementById('aspectRatio').value,
         canvasWidth: document.getElementById('canvasWidth').value,
@@ -22,7 +21,6 @@ function loadSettings() {
     if (settings) {
         document.getElementById('seedInput').value = settings.seed || '1234567890';
         document.getElementById('cellSize').value = settings.cellSize || 12;
-        document.getElementById('animationSpeed').value = settings.animationSpeed || 1;
         document.getElementById('recordDuration').value = settings.recordDuration || 10;
         document.getElementById('aspectRatio').value = settings.aspectRatio || '16/9';
         document.getElementById('canvasWidth').value = settings.canvasWidth || 800;

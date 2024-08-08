@@ -1,7 +1,6 @@
 const defaultConfig = {
     seedValue: "12345667890",
     cellSize: 12,
-    animationSpeed: 1,
     recordDuration: 10,
     aspectRatio: "16/9",
     canvasWidth: 800,

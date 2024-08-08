@@ -38,7 +38,7 @@
 
 <main class="main-container">
     <div style="display: grid;">
-        <div style="padding-top: 10px;padding-left: 20px;">
+        <div style="padding-top: 10px;padding-left: 20px;height: 0;">
             <span>Welcome to version <strong>1.4</strong></span>
             <button id="resetConfig">🔄 Reset Value</button>
         </div>
@@ -54,12 +54,6 @@
                 <div class="control-group">
                     <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
                     <input type="range" id="cellSize" min="4" max="20" value="12">
-                </div>
-
-                <div class="control-group">
-                    <label for="animationSpeed">Animation Speed: <span
-                            id="animationSpeedValue">Loading...</span></label>
-                    <input type="range" id="animationSpeed" min="1" max="10" value="1">
                 </div>
 
                 <div class="control-group">
@@ -144,15 +138,15 @@
                 <select id="colorPalette">
                     <option value="blackWhite">Black & White</option>
                     <option value="grey">Grey</option>
-                    <option value="random">Random Colors</option>
-                    <option value="warm">Warm Colors</option>
-                    <option value="cold">Cold Colors</option>
-                    <option value="pastel">Spring Colors</option>
-                    <option value="neon">Neon Colors</option>
-                    <option value="earth">Earth Colors</option>
-                    <option value="ocean">Ocean Colors</option>
-                    <option value="sunset">Sunset Colors</option>
-                    <option value="forest">Forest Colors</option>
+                    <option value="random">Random</option>
+                    <option value="warm">Warm</option>
+                    <option value="cold">Cold</option>
+                    <option value="pastel">Spring</option>
+                    <option value="neon">Neon</option>
+                    <option value="earth">Earth</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="forest">Forest</option>
                 </select>
             </div>
 

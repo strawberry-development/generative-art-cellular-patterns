@@ -10,7 +10,6 @@ let CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
 let CELL_SIZE = defaultConfig.cellSize;
 let GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
 let GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
-let animationSpeed = defaultConfig.animationSpeed;
 let recordDuration = defaultConfig.recordDuration * 100;
 let generationCount = 0;
 let animationRunning = false;

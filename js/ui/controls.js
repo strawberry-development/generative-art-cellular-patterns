@@ -10,15 +10,6 @@ function updateCellSize(target) {
     updateGridDimensions();
 }
 
-document.getElementById('animationSpeed').addEventListener('input', (e) => {
-    updateAnimationSpeed(e.target.value);
-    document.getElementById('animationSpeedValue').innerText = e.target.value;
-});
-
-function updateAnimationSpeed(target) {
-    animationSpeed = parseInt(target);
-}
-
 document.getElementById('recordDuration').addEventListener('input', (e) => {
     updateRecordDuration(e.target.value);
     document.getElementById('recordDurationValue').innerText = e.target.value;
@@ -172,8 +163,6 @@ function reset() {
     document.getElementById("seedInput").value = Number(defaultConfig.seedValue);
     document.getElementById("cellSize").value = defaultConfig.cellSize;
     document.getElementById("cellSizeValue").innerText = defaultConfig.cellSize;
-    document.getElementById("animationSpeed").value = defaultConfig.animationSpeed;
-    document.getElementById("animationSpeedValue").innerText = defaultConfig.animationSpeed;
     document.getElementById("recordDuration").value = defaultConfig.recordDuration;
     document.getElementById("recordDurationValue").innerText = defaultConfig.recordDuration;
     document.getElementById("aspectRatio").value = defaultConfig.aspectRatio;
@@ -186,7 +175,6 @@ function reset() {
     document.getElementById("birthRules").value = defaultConfig.birthRules;
 
     updateCellSize(defaultConfig.cellSize);
-    updateAnimationSpeed(defaultConfig.animationSpeed);
     updateRecordDuration(defaultConfig.recordDuration);
     updateAspectRatio(defaultConfig.aspectRatio.split('/'));
     updateCanvasWidth(defaultConfig.canvasWidth);
