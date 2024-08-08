@@ -100,20 +100,29 @@ document.getElementById('startButton').addEventListener('click', () => {
     }
 });
 
-document.getElementById('record').addEventListener('click', () => {
+document.getElementById('record').addEventListener('click', async () => {
     if (!animationRunning) {
         animationRunning = true;
         document.getElementById('startButton').innerText = '⏸ Pause';
         startTimer();
         animateOriginal();
+
         if (document.getElementById('showSlowedCanvas').checked) {
             animateSlowed();
         }
     }
-    recordAnimation(originalCanvas, 'original');
+
+    // Record the original canvas
+    await recordAnimation(originalCanvas, 'original');
+
+    // If the checkbox is checked, record the slowed canvas
     if (document.getElementById('showSlowedCanvas').checked) {
-        recordAnimation(slowedCanvas, 'slowed');
+        await recordAnimation(slowedCanvas, 'slowed');
     }
+
+    // Stop the animations and reset the UI
+    animationRunning = false;
+    document.getElementById('startButton').innerText = '▶️ Start';
 });
 
 document.getElementById('randomizeButton').addEventListener('click', () => {

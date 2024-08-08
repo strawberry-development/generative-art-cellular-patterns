@@ -1,6 +1,6 @@
 async function recordAnimation(canvas, prefix) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    let filename = `${prefix}_${timestamp}.mp4`;
+    let filename = `${prefix}_${timestamp}.webm`;
     const stream = canvas.captureStream();
     const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp8' });
     const chunks = [];
@@ -17,17 +17,32 @@ async function recordAnimation(canvas, prefix) {
         const blob = new Blob(chunks, { type: 'video/webm' });
         const url = URL.createObjectURL(blob);
 
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        // Dynamically update the modal content
+        const modal = document.getElementById('exportModal');
+        const videoPreview = document.getElementById('videoPreview');
+        videoPreview.src = url;
+        modal.style.display = 'block';
+
+        const downloadButton = document.getElementById('downloadButton');
+        downloadButton.onclick = () => {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            modal.style.display = 'none';
+        };
+
+        const cancelButton = document.getElementById('cancelButton');
+        cancelButton.onclick = () => {
+            modal.style.display = 'none';
+            URL.revokeObjectURL(url);
+        };
 
         recordingIndicator.classList.remove('blink');
-        animationRunning = false;
-        document.getElementById('startButton').innerText = '▶️ Start';
     };
 
     mediaRecorder.start();
