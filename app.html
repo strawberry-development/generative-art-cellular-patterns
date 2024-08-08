@@ -80,34 +80,6 @@
                     <input type="range" id="canvasWidth" min="200" max="1200" value="800">
                 </div>
 
-                <h3>Color</h3>
-                <div class="control-group">
-                    <label for="backgroundColor">Background Color</label>
-                    <input type="color" id="backgroundColor" value="#1f1f1f">
-                    <label for="colorPalette">Color Palette:</label>
-                    <select id="colorPalette">
-                        <option value="blackWhite">Black & White</option>
-                        <option value="grey">Grey</option>
-                        <option value="random">Random Colors</option>
-                        <option value="warm">Warm Colors</option>
-                        <option value="cold">Cold Colors</option>
-                        <option value="pastel">Spring Colors</option>
-                        <option value="neon">Neon Colors</option>
-                        <option value="earth">Earth Colors</option>
-                        <option value="ocean">Ocean Colors</option>
-                        <option value="sunset">Sunset Colors</option>
-                        <option value="forest">Forest Colors</option>
-                    </select>
-                </div>
-
-                <h3>Rule</h3>
-                <div class="control-group">
-                    <label for="surviveRules">Survive Rules (comma-separated):</label>
-                    <input type="text" id="surviveRules" value="2,3">
-                    <label for="birthRules">Birth Rules (comma-separated):</label>
-                    <input type="text" id="birthRules" value="3">
-                </div>
-
 
                 <!--
                 <h3>Output</h3>
@@ -124,9 +96,12 @@
     </div>
 
     <aside class="main-window">
-        <nav>
+        <nav style="display: flex;">
             <div class="windows">
                 <span class="recording-indicator" id="recordingIndicator"></span>
+                <span>Record status</span>
+            </div>
+            <div class="windows">
                 <span>Main Window</span>
             </div>
         </nav>
@@ -157,9 +132,37 @@
             </div>
 
             <!--<h3>Navigator</h3>
-            <div class="control-group">
+<div class="control-group">
 
-            </div>-->
+</div>-->
+
+            <h3>Color</h3>
+            <div class="control-group">
+                <label for="backgroundColor">Background Color</label>
+                <input type="color" id="backgroundColor" value="#1f1f1f">
+                <label for="colorPalette">Color Palette:</label>
+                <select id="colorPalette">
+                    <option value="blackWhite">Black & White</option>
+                    <option value="grey">Grey</option>
+                    <option value="random">Random Colors</option>
+                    <option value="warm">Warm Colors</option>
+                    <option value="cold">Cold Colors</option>
+                    <option value="pastel">Spring Colors</option>
+                    <option value="neon">Neon Colors</option>
+                    <option value="earth">Earth Colors</option>
+                    <option value="ocean">Ocean Colors</option>
+                    <option value="sunset">Sunset Colors</option>
+                    <option value="forest">Forest Colors</option>
+                </select>
+            </div>
+
+            <h3>Rule</h3>
+            <div class="control-group">
+                <label for="surviveRules">Survive Rules (comma-separated):</label>
+                <input type="text" id="surviveRules" value="2,3">
+                <label for="birthRules">Birth Rules (comma-separated):</label>
+                <input type="text" id="birthRules" value="3">
+            </div>
         </section>
     </aside>
 </main>
