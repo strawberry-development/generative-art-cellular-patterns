@@ -17,6 +17,5 @@ Work by launching `app.html` in a browser
 
 There can be great beauty in chaos
 
-| ![Example Art](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-07-30T18-43-31-593Z.gif) | ![Example Art Slowed](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/slowed_2024-07-30T18-43-31-593Z.gif) |
-|:---:|:---:|
-| Example Art | Example Art Slowed |
+| ![Example Art](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-07-30T18-43-31-593Z.gif) |
+|:---:|
