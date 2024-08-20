@@ -17,7 +17,6 @@
             <img src="img/logo/favicon-32x32.png" alt="Generative Art Logo" class="logo">
         </a>
         <em>GACP just like /ɡapt/</em>
-        <span class="recording-indicator" id="recordingIndicator"></span>
 
     </div>
     <nav class="header-nav">
@@ -32,8 +31,6 @@
         <button id="startButton">Start</button>
         <button id="randomizeButton">Randomize</button>
         <button id="reset">Reset</button>
-        <br>
-        <button id="record">Record</button>
         <!-- <button id="exportSettings">Export Settings</button> -->
         <!-- <input type="file" id="importSettings" style="display: none;"> -->
         <!-- <button id="importSettingsButton">Import Settings</button> -->
@@ -86,6 +83,10 @@
                 <h2>Slowed</h2>
                 <canvas id="slowedCanvas"></canvas>
             </div>
+        </div>
+        <div style="width: 100px">
+            <span class="recording-indicator" id="recordingIndicator"></span>
+            <button id="record">Record</button>
         </div>
         <footer>
             <span>Generation: <span id="generationCount">0</span></span>
