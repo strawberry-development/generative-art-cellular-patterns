@@ -29,7 +29,6 @@
     <nav class="main-nav">
         <button id="themeToggle">Switch Theme</button>
         <button id="startButton">Start</button>
-        <button id="randomizeButton">Randomize</button>
         <button id="reset">Reset</button>
         <!-- <button id="exportSettings">Export Settings</button> -->
         <!-- <input type="file" id="importSettings" style="display: none;"> -->
@@ -38,14 +37,14 @@
 
     <aside class="sidebar">
         <section class="controls">
+            <button id="resetConfig">Reset All Value</button>
+            <br>
+            <br>
             <div class="control-group">
-                <button id="resetConfig">Reset Value</button>
-                <br>
-                <hr>
-                <br>
                 <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
                 <input type="text" id="seedInput" placeholder="Enter a new seed value">
                 <button onclick="seedApply()">Apply</button>
+                <button id="randomizeButton">Randomize</button>
             </div>
 
             <div class="control-group">
@@ -74,6 +73,10 @@
     </aside>
 
     <section class="main-content">
+        <div style="width: 100px;padding-bottom: 10px;">
+            <span class="recording-indicator" id="recordingIndicator"></span>
+            <button id="record">Record</button>
+        </div>
         <div class="canvas-container">
             <div class="canvas-panel">
                 <h2>Original</h2>
@@ -83,10 +86,6 @@
                 <h2>Slowed</h2>
                 <canvas id="slowedCanvas"></canvas>
             </div>
-        </div>
-        <div style="width: 100px">
-            <span class="recording-indicator" id="recordingIndicator"></span>
-            <button id="record">Record</button>
         </div>
         <footer>
             <span>Generation: <span id="generationCount">0</span></span>
