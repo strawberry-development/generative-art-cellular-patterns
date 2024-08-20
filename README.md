@@ -11,11 +11,12 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 Work by launching `app.html` in a browser
 
 ## Overview
-![Overview of the page](example/Screenshot.png "Screenshot")
+![Overview of the page](.example/Screenshot.png "Screenshot")
 
 ## Example
 
 There can be great beauty in chaos
 
-| ![Example Art](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-07-30T18-43-31-593Z.gif) |
-|:---:|
+<p align="left">
+    <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/.example/original_2024-08-20T19-35-24-583Z.gif" alt="Example Art">
+</p>
