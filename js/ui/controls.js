@@ -79,7 +79,7 @@ function updateBirthRules(target) {
 document.getElementById('reset').addEventListener('click', () => {
     const seed = document.getElementById('seedValue').innerText;
     generationCount = 0;
-    stopTimer();
+    resetTimer();
     document.getElementById('generationCount').innerText = generationCount;
     updateCanvas(false, true, seed);
 });
@@ -88,6 +88,7 @@ document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
         animationRunning = false;
         document.getElementById('startButton').innerText = 'Start';
+        stopTimer();
     } else {
         animationRunning = true;
         document.getElementById('startButton').innerText = 'Pause';
@@ -159,10 +160,10 @@ function updateAnimationSpeed(target) {
 }
 
 document.getElementById('resetConfig').addEventListener('click', () => {
-    reset();
+    resetConfig();
 });
 
-function reset() {
+function resetConfig() {
     document.getElementById('seedValue').innerText = defaultConfig.seedValue;
     document.getElementById("seedInput").value = Number(defaultConfig.seedValue);
     document.getElementById("cellSize").value = defaultConfig.cellSize;

@@ -56,4 +56,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
     draw(originalCtx);
 });
 
-reset();
+resetConfig();

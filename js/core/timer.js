@@ -1,17 +1,25 @@
 let timerInterval;
 let startTime;
 let storedElapsedTime = 0;
+
 function startTimer() {
     startTime = Date.now() - storedElapsedTime;
+
+    timerInterval = setInterval(updateTimer, 10);
+}
+
+function resetTimer() {
+    document.getElementById('elapsedTime').innerText = '00:00:00';
+    storedElapsedTime = 0;
+    startTime = Date.now();
+    startTimer()
 }
 
 function stopTimer() {
     clearInterval(timerInterval);
-    document.getElementById('elapsedTime').innerText = '00:00:00';
-    storedElapsedTime = 0;
-    startTime = Date.now();
-}
 
+    storedElapsedTime = Date.now() - startTime;
+}
 
 function updateTimer() {
     let minutes, seconds, milliseconds;

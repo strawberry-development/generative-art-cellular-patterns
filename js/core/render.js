@@ -26,7 +26,6 @@ function update() {
     }
     cells = nextCells;
     generationCount++;
-    updateTimer();
     document.getElementById('generationCount').innerText = generationCount;
 }
 
