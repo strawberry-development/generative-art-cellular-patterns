@@ -7,7 +7,6 @@ document.getElementById('cellSize').addEventListener('input', (e) => {
 function updateCellSize(target) {
     CELL_SIZE = parseInt(target);
     document.getElementById('cellSizeValue').innerText = target;
-    updateGridDimensions();
 }
 
 document.getElementById('recordDuration').addEventListener('input', (e) => {
