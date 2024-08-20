@@ -90,7 +90,8 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
 }
 
 .main-nav > button {
@@ -263,13 +264,13 @@ footer {
 
 .recording-indicator {
     width: 10px;
+    min-width: 10px;
     height: 10px;
+    min-height: 10px;
     background-color: transparent;
     border: 2px solid red;
     border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+    display: block;
 }
 
 .recording-indicator.blink {
