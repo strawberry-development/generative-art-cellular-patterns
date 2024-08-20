@@ -88,10 +88,10 @@ document.getElementById('reset').addEventListener('click', () => {
 document.getElementById('startButton').addEventListener('click', () => {
     if (animationRunning) {
         animationRunning = false;
-        document.getElementById('startButton').innerText = '▶️ Start';
+        document.getElementById('startButton').innerText = 'Start';
     } else {
         animationRunning = true;
-        document.getElementById('startButton').innerText = '⏸ Pause';
+        document.getElementById('startButton').innerText = 'Pause';
         startTimer();
         animateOriginal();
         if (document.getElementById('showSlowedCanvas').checked) {
@@ -103,7 +103,7 @@ document.getElementById('startButton').addEventListener('click', () => {
 document.getElementById('record').addEventListener('click', async () => {
     if (!animationRunning) {
         animationRunning = true;
-        document.getElementById('startButton').innerText = '⏸ Pause';
+        document.getElementById('startButton').innerText = 'Pause';
         startTimer();
         animateOriginal();
 
@@ -122,7 +122,7 @@ document.getElementById('record').addEventListener('click', async () => {
 
     // Stop the animations and reset the UI
     animationRunning = false;
-    document.getElementById('startButton').innerText = '▶️ Start';
+    document.getElementById('startButton').innerText = 'Start';
 });
 
 document.getElementById('randomizeButton').addEventListener('click', () => {
