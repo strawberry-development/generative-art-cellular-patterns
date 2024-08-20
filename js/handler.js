@@ -6,7 +6,6 @@ const paths = [
     'js/ui/colorPalette.js',
     'js/core/timer.js',
     'js/core/render.js',
-    'js/ui/hideSlowedCanvas.js',
     'js/animations/animation.js',
     'js/core/record.js',
     'js/core/main.js',

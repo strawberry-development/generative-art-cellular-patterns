@@ -7,5 +7,6 @@ const defaultConfig = {
     backgroundColor: "#1f1f1f",
     colorPalette: "blackWhite",
     surviveRules: [2, 3],
-    birthRules: [3]
+    birthRules: [3],
+    animationSpeed: 1
 };

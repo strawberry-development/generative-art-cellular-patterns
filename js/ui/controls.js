@@ -92,10 +92,7 @@ document.getElementById('startButton').addEventListener('click', () => {
         animationRunning = true;
         document.getElementById('startButton').innerText = 'Pause';
         startTimer();
-        animateOriginal();
-        if (document.getElementById('showSlowedCanvas').checked) {
-            animateSlowed();
-        }
+        animate();
     }
 });
 
@@ -104,20 +101,11 @@ document.getElementById('record').addEventListener('click', async () => {
         animationRunning = true;
         document.getElementById('startButton').innerText = 'Pause';
         startTimer();
-        animateOriginal();
-
-        if (document.getElementById('showSlowedCanvas').checked) {
-            animateSlowed();
-        }
+        animate();
     }
 
     // Record the original canvas
     await recordAnimation(originalCanvas, 'original');
-
-    // If the checkbox is checked, record the slowed canvas
-    if (document.getElementById('showSlowedCanvas').checked) {
-        await recordAnimation(slowedCanvas, 'slowed');
-    }
 
     // Stop the animations and reset the UI
     animationRunning = false;
@@ -154,13 +142,21 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
     }
 
     draw(originalCtx);
-    draw(slowedCtx);
 }
 
-document.getElementById('refreshLink').addEventListener('click', function(event) {
+document.getElementById('refreshLink').addEventListener('click', function (event) {
     event.preventDefault();
     location.reload();
 });
+
+document.getElementById('animationSpeed').addEventListener('input', (event) => {
+    updateAnimationSpeed(parseFloat(event.target.value));
+});
+
+function updateAnimationSpeed(target) {
+    animationSpeed = target;
+    document.getElementById('animationSpeedValue').innerText = `${target}x`;
+}
 
 document.getElementById('resetConfig').addEventListener('click', () => {
     reset();
@@ -181,6 +177,7 @@ function reset() {
     document.getElementById("colorPalette").value = defaultConfig.colorPalette;
     document.getElementById("surviveRules").value = defaultConfig.surviveRules;
     document.getElementById("birthRules").value = defaultConfig.birthRules;
+    document.getElementById("animationSpeed").value = defaultConfig.animationSpeed;
 
     updateCellSize(defaultConfig.cellSize);
     updateRecordDuration(defaultConfig.recordDuration);
@@ -190,6 +187,7 @@ function reset() {
     updateColorPalette(defaultConfig.colorPalette);
     updateSurviveRules(defaultConfig.surviveRules);
     updateBirthRules(defaultConfig.birthRules);
+    updateAnimationSpeed(defaultConfig.animationSpeed);
 
     updateCanvas(true);
 }

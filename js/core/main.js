@@ -1,7 +1,5 @@
 const originalCanvas = document.getElementById('originalCanvas');
 const originalCtx = originalCanvas.getContext('2d');
-const slowedCanvas = document.getElementById('slowedCanvas');
-const slowedCtx = slowedCanvas.getContext('2d');
 
 const aspectRatioValue = defaultConfig.aspectRatio.split('/');
 let ASPECT_RATIO = parseInt(aspectRatioValue[0]) / parseInt(aspectRatioValue[1]);
@@ -18,6 +16,7 @@ let backgroundColor = defaultConfig.backgroundColor;
 let surviveRules = defaultConfig.surviveRules;
 let birthRules = defaultConfig.birthRules;
 let colorPalette = defaultConfig.colorPalette;
+let animationSpeed = defaultConfig.animationSpeed;
 
 function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
@@ -36,8 +35,8 @@ function init(seed = generateRandomSeed()) {
 function updateCanvasSize() {
     CANVAS_WIDTH = parseInt(document.getElementById('canvasWidth').value);
     CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
-    originalCanvas.width = slowedCanvas.width = CANVAS_WIDTH;
-    originalCanvas.height = slowedCanvas.height = CANVAS_HEIGHT;
+    originalCanvas.width = CANVAS_WIDTH;
+    originalCanvas.height = CANVAS_HEIGHT;
     updateGridDimensions();
 }
 
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     updateCanvasSize();
     init();
     draw(originalCtx);
-    draw(slowedCtx);
 });
 
 reset();

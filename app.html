@@ -58,6 +58,11 @@
                 <input type="range" id="recordDuration" min="1" max="20" value="10">
             </div>
 
+            <div class="control-group">
+                <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1x</span></label>
+                <input type="range" id="animationSpeed" min="0.1" max="4" step="0.1" value="1">
+            </div>
+
             <h3>Canvas Settings</h3>
             <div class="control-group">
                 <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
@@ -82,10 +87,6 @@
                 <h2>Original</h2>
                 <canvas id="originalCanvas"></canvas>
             </div>
-            <div class="canvas-panel" id="slowedCanvasContainer" style="display: none;">
-                <h2>Slowed</h2>
-                <canvas id="slowedCanvas"></canvas>
-            </div>
         </div>
         <footer>
             <span>Generation: <span id="generationCount">0</span></span>
@@ -95,14 +96,6 @@
 
     <aside class="sidebar">
         <section class="controls">
-            <div class="control-group">
-                <label for="showSlowedCanvas">Use Slowed Canvas</label>
-                <label class="switch">
-                    <input type="checkbox" id="showSlowedCanvas">
-                    <span class="slider"></span>
-                </label>
-            </div>
-
             <h3>Color Settings</h3>
             <div class="control-group">
                 <label for="backgroundColor">Background Color</label>
