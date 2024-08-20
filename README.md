@@ -11,7 +11,7 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 Work by launching `app.html` in a browser
 
 ## Overview
-![Overview of the page](example/Screenshot.png "Screenshot")
+![Overview of the page](.example/Screenshot.png "Screenshot")
 
 ## Example
 
