@@ -35,7 +35,7 @@
         <!-- <button id="importSettingsButton">Import Settings</button> -->
     </nav>
 
-    <aside class="sidebar">
+    <aside class="sidebar border-left border-right">
         <section class="controls">
             <button id="resetConfig">Reset All Value</button>
             <br>
@@ -78,7 +78,7 @@
     </aside>
 
 
-    <div style="width: 100%;">
+    <div class="main-content">
         <div class="panel record-header">
             <span class="recording-indicator" id="recordingIndicator"></span>
             <div>
@@ -86,21 +86,18 @@
             </div>
         </div>
 
-        <section class="main-content">
+        <div style="height: 100%;max-height: 100%;">
             <div class="canvas-container">
-                <div class="canvas-panel">
-                    <h2>Original</h2>
-                    <canvas id="originalCanvas"></canvas>
-                </div>
+                <canvas id="originalCanvas"></canvas>
             </div>
             <footer>
                 <span>Generation: <strong><span id="generationCount">0</span></strong></span>
                 <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
             </footer>
-        </section>
+        </div>
     </div>
 
-    <aside class="sidebar">
+    <aside class="sidebar border-left">
         <section class="controls">
             <h3>Color Settings</h3>
             <div class="control-group">

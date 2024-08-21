@@ -128,10 +128,17 @@ button:focus {
 .sidebar {
     background-color: var(--panel);
     padding: 20px;
-    border-left: 2px solid var(--border-color);
     overflow-y: auto;
     max-width: 175px;
     min-width: 175px;
+}
+
+.border-left {
+    border-left: 2px solid var(--border-color);
+}
+
+.border-right {
+    border-right: 2px solid var(--border-color);
 }
 
 .panel {
@@ -140,8 +147,7 @@ button:focus {
 
 .record-header {
     width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -205,43 +211,32 @@ h3 {
 }
 
 .main-content {
-    flex-grow: 1;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-left: 2px solid var(--border-color);
-    height: calc(100% - 60px);
+    width: 100%;
 }
 
 .canvas-container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-grow: 1;
-}
+    justify-content: center;
+    align-items: center;
 
-.canvas-panel {
-    border: 2px solid var(--canvas-border-color);
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--panel);
-    width: 100%;
-    height: calc(100% - 30px);
-    margin: 10px;
+    height: 100%;
+    max-height: calc(100% - 82px);
+    width: auto;
+
+    padding: 14px;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 canvas {
     max-width: 100%;
-    height: auto;
-    display: block;
+    max-height: 100%;
     border-radius: 8px;
 }
 
 footer {
     height: 20px;
     padding: 10px 5px;
-    margin-top: 20px;
     font-size: 16px;
     color: var(--text-color);
     background-color: var(--panel);

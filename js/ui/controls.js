@@ -27,7 +27,6 @@ document.getElementById('aspectRatio').addEventListener('change', (e) => {
 function updateAspectRatio(target) {
     ASPECT_RATIO = parseInt(target[0]) / parseInt(target[1]);
     document.getElementById('aspectRatioValue').innerText = target;
-    updateGridDimensions();
 }
 
 document.getElementById('canvasWidth').addEventListener('input', (e) => {
@@ -39,7 +38,6 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
 function updateCanvasWidth(target) {
     CANVAS_WIDTH = parseInt(target);
     document.getElementById('canvasWidthValue').innerText = target;
-    updateGridDimensions();
 }
 
 document.getElementById('backgroundColor').addEventListener('input', (e) => {
