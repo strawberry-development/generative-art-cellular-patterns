@@ -1,5 +1,5 @@
 const defaultConfig = {
-    seedValue: "123456",
+    seedValue: "123456789",
     cellSize: 12,
     recordDuration: 10,
     aspectRatio: "16/9",
