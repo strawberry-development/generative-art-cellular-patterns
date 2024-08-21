@@ -3,8 +3,7 @@
 This web-based/ prototype showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns. 
 
 ## Know issue
-- Awful design
-- **Many bug are knowed and will be fixed**
+- None yet
 
 ## Setup
 
