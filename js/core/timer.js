@@ -12,7 +12,6 @@ function resetTimer() {
     document.getElementById('elapsedTime').innerText = '00:00:00';
     storedElapsedTime = 0;
     startTime = Date.now();
-    startTimer()
 }
 
 function stopTimer() {
