@@ -6,7 +6,7 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 - Responsive (Mobile UI)
 - 1/1 AR overflow
 - Review some interface element
-- Interface is broken on width screen (16/9)
+- Interface is broken on widescreen (16/9)
 
 ## Setup
 
