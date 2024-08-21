@@ -1,5 +1,5 @@
 :root {
-    --background-color: #ffffff;
+    --background-color: #f4f4f4;
     --panel: #ffffff;
     --border-color: #e0e0e0;
 
@@ -18,22 +18,22 @@
 }
 
 [data-theme='dark'] {
-    --background-color: #1c1a25;
-    --panel: #1c1a25;
-    --border-color: #272530;
+    --background-color: #121212;
+    --panel: #1e1e1e;
+    --border-color: #333333;
 
-    --text-color: #abaaaf;
-    --title-color: #fff;
-    --link-color: #a962d8;
+    --text-color: #e0e0e0;
+    --title-color: #ffffff;
+    --link-color: #bb86fc;
 
-    --button-background-color: #3b3b3b;
-    --button-hover-background-color: #505050;
-    --input-background-color: #2a2c36;
+    --button-background-color: #292929;
+    --button-hover-background-color: #3a3a3a;
+    --input-background-color: #2a2a2a;
     --input-border-color: #444444;
-    --input-focus-border-color: #a962d8;
+    --input-focus-border-color: #bb86fc;
     --input-text-color: #e0e0e0;
 
-    --canvas-border-color: #555555;
+    --canvas-border-color: #444444;
 }
 
 body {
@@ -228,6 +228,7 @@ footer {
     color: var(--text-color);
 }
 
+/*pop up for download*/
 .modal {
     display: none;
     position: fixed;
@@ -247,19 +248,6 @@ footer {
     padding: 20px;
     border: 1px solid var(--border-color);
     width: 80%;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 .recording-indicator {

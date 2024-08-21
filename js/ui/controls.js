@@ -77,14 +77,22 @@ function updateBirthRules(target) {
 }
 
 document.getElementById('reset').addEventListener('click', () => {
+    resetLaunch();
+});
+
+function resetLaunch(){
     const seed = document.getElementById('seedValue').innerText;
     generationCount = 0;
     resetTimer();
     document.getElementById('generationCount').innerText = generationCount;
     updateCanvas(false, true, seed);
-});
+}
 
 document.getElementById('startButton').addEventListener('click', () => {
+    startButtonLaunch();
+});
+
+function startButtonLaunch(){
     if (animationRunning) {
         animationRunning = false;
         document.getElementById('startButton').innerText = 'Start';
@@ -95,7 +103,7 @@ document.getElementById('startButton').addEventListener('click', () => {
         startTimer();
         animate();
     }
-});
+}
 
 document.getElementById('record').addEventListener('click', async () => {
     if (!animationRunning) {

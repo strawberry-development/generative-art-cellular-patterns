@@ -9,6 +9,7 @@ const paths = [
     'js/animations/animation.js',
     'js/core/record.js',
     'js/core/main.js',
+    'js/core/shortcut.js',
     'js/ui/theme.js',
     'js/data/localStorage.js'
 ];
