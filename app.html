@@ -77,22 +77,28 @@
         </section>
     </aside>
 
-    <section class="main-content">
-        <div style="width: 100px; padding-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+
+    <div style="width: 100%;">
+        <div class="panel record-header">
             <span class="recording-indicator" id="recordingIndicator"></span>
-            <button id="record">Record</button>
-        </div>
-        <div class="canvas-container">
-            <div class="canvas-panel">
-                <h2>Original</h2>
-                <canvas id="originalCanvas"></canvas>
+            <div>
+                <button id="record" style="margin-top: 0;">Record</button>
             </div>
         </div>
-        <footer>
-            <span>Generation: <span id="generationCount">0</span></span>
-            <span>Elapsed Time: <span id="elapsedTime">00:00:00</span></span>
-        </footer>
-    </section>
+
+        <section class="main-content">
+            <div class="canvas-container">
+                <div class="canvas-panel">
+                    <h2>Original</h2>
+                    <canvas id="originalCanvas"></canvas>
+                </div>
+            </div>
+            <footer>
+                <span>Generation: <strong><span id="generationCount">0</span></strong></span>
+                <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
+            </footer>
+        </section>
+    </div>
 
     <aside class="sidebar">
         <section class="controls">
