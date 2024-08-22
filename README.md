@@ -4,7 +4,9 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 ## Know issue
 - Responsive (Mobile UI)
-- 1/1 AR overflow: with a large width and aspect ratio 1:1 the canvas will make the footer dissapear by getting the div bigger, I have no idea why it do that and I can't figure out a solution yet.
+
+## Working On
+- Better interface
 
 ## Setup
 
