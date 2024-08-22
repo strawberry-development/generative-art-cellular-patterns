@@ -203,6 +203,11 @@ select {
     border-radius: 5px;
     color: var(--input-text-color);
     font-size: 14px;
+    transition: 0.2s;
+}
+
+input:hover, button:hover {
+    transition: 0.2s;
 }
 
 input[type="range"] {
@@ -283,4 +288,14 @@ canvas {
     50% {
         visibility: hidden;
     }
+}
+
+#record {
+    padding: 20px;
+    margin: 0;
+    border: 2px solid var(--input-border-color);
+}
+
+#record:hover {
+    border: 2px solid var(--input-focus-border-color);
 }
