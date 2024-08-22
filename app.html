@@ -11,35 +11,33 @@
     <link rel="manifest" href="img/logo/site.webmanifest">
 </head>
 <body>
-<header>
-    <div class="header-logo">
-        <a href="#" id="refreshLink">
-            <img src="img/logo/favicon-32x32.png" alt="Generative Art Logo" class="logo">
-        </a>
-        <em>GACP just like /ɡapt/</em>
 
+<div class="bento-grid">
+    <div class="grid header">
+        <div class="header-content">
+            <div class="header-logo">
+                <a href="#" id="refreshLink">
+                    <img src="img/logo/favicon-32x32.png" alt="Generative Art Logo" class="logo">
+                </a>
+                <em>GACP just like /ɡapt/</em>
+
+            </div>
+
+
+            <nav class="header-nav">
+                <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Source Code</a>
+                <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a
+                    Bug</a>
+            </nav>
+        </div>
     </div>
-    <nav class="header-nav">
-        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Source Code</a>
-        <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a Bug</a>
-    </nav>
-</header>
 
-<main class="main-container">
-    <nav class="main-nav">
-        <button id="themeToggle">Switch Theme</button>
-        <button id="startButton">Start</button>
-        <button id="reset">Reset</button>
-        <!-- <button id="exportSettings">Export Settings</button> -->
-        <!-- <input type="file" id="importSettings" style="display: none;"> -->
-        <!-- <button id="importSettingsButton">Import Settings</button> -->
-    </nav>
-
-    <aside class="sidebar border-left border-right">
-        <section class="controls">
+    <div class="grid panel">
+        <div class="controls">
             <button id="resetConfig">Reset All Value</button>
-            <br>
-            <br>
+        </div>
+
+        <div class="controls">
             <div class="control-group">
                 <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
                 <input type="text" id="seedInput" placeholder="Enter a new seed value">
@@ -62,7 +60,9 @@
                 <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1x</span></label>
                 <input type="range" id="animationSpeed" min="0.1" max="4" step="0.1" value="1">
             </div>
+        </div>
 
+        <div class="controls">
             <h3>Canvas Settings</h3>
             <div class="control-group">
                 <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
@@ -74,31 +74,9 @@
                 <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">Loading...</span></label>
                 <input type="range" id="canvasWidth" min="200" max="1200" value="800">
             </div>
-        </section>
-    </aside>
-
-
-    <div class="main-content">
-        <div class="panel record-header">
-            <span class="recording-indicator" id="recordingIndicator"></span>
-            <div>
-                <button id="record" style="margin-top: 0;">Record</button>
-            </div>
         </div>
 
-        <div style="height: 100%;max-height: 100%;">
-            <div class="canvas-container">
-                <canvas id="originalCanvas"></canvas>
-            </div>
-            <footer>
-                <span>Generation: <strong><span id="generationCount">0</span></strong></span>
-                <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
-            </footer>
-        </div>
-    </div>
-
-    <aside class="sidebar border-left">
-        <section class="controls">
+        <div class="controls">
             <h3>Color Settings</h3>
             <div class="control-group">
                 <label for="backgroundColor">Background Color</label>
@@ -126,9 +104,49 @@
                 <label for="birthRules">Birth Rules:</label>
                 <input type="text" id="birthRules" value="3">
             </div>
-        </section>
-    </aside>
-</main>
+        </div>
+    </div>
+
+    <div class="grid action">
+        <div class="controls" style="width: fit-content;">
+            <span class="recording-indicator" id="recordingIndicator"></span>
+        </div>
+        <div class="controls">
+            <button id="startButton">Start</button>
+            <button id="reset">Reset</button>
+            <br>
+            <br>
+            <button id="record" style="margin-top: 0;">Record</button>
+        </div>
+        <div class="controls">
+            <button id="themeToggle">Switch Theme</button>
+        </div>
+        <!-- <button id="exportSettings">Export Settings</button> -->
+        <!-- <input type="file" id="importSettings" style="display: none;"> -->
+        <!-- <button id="importSettingsButton">Import Settings</button> -->
+    </div>
+
+    <div class="status">
+        <div class="controls" style="width: fit-content;">
+            <span id="load-time">Calculating...</span>
+        </div>
+    </div>
+
+    <div class="grid main">
+        <div class="canvas-container">
+            <canvas id="originalCanvas"></canvas>
+        </div>
+    </div>
+
+    <div class="grid footer">
+        <div class="controls">
+            <span>Generation: <strong><span id="generationCount">0</span></strong></span>
+        </div>
+        <div class="controls">
+            <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
+        </div>
+    </div>
+</div>
 
 <div id="exportModal" class="modal">
     <div class="modal-content">

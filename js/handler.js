@@ -1,3 +1,11 @@
+const pageLoad = performance.now();
+
+window.addEventListener('load', () => {
+    const loadTime = performance.now() - pageLoad;
+    const loadTimeElement = document.getElementById('load-time');
+    loadTimeElement.textContent = `Page load in ${loadTime.toFixed(2)} ms`;
+});
+
 const paths = [
     'js/data/defaultConfig.js',
 
