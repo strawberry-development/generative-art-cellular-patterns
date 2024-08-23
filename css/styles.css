@@ -269,13 +269,8 @@ canvas {
 }
 
 .recording-indicator {
-    width: 10px;
-    min-width: 10px;
-    height: 10px;
-    min-height: 10px;
     background-color: transparent;
     border: 2px solid red;
-    border-radius: 50%;
     display: block;
 }
 
@@ -290,14 +285,17 @@ canvas {
     }
 }
 
-#record {
-    padding: 20px;
+.button-fullsize {
     margin: 0;
     border: 2px solid var(--input-border-color);
 }
 
-#record:hover {
+.button-fullsize:hover {
     border: 2px solid var(--input-focus-border-color);
+}
+
+.button-padding{
+    padding: 10px;
 }
 .hidden-content {
     display: none;
@@ -327,4 +325,8 @@ canvas {
 .toggle-icon {
     font-weight: bold;
     transition: transform 0.3s ease;
+}
+
+.shortcut-legend {
+    margin-left: 20px;
 }
