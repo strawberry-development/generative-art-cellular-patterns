@@ -18,6 +18,8 @@ let birthRules = defaultConfig.birthRules;
 let colorPalette = defaultConfig.colorPalette;
 let animationSpeed = defaultConfig.animationSpeed;
 
+const sizeInfoElement = document.getElementById('sizeInfo');
+
 function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
 
@@ -30,6 +32,7 @@ function init(seed = generateRandomSeed()) {
             cells[x][y] = rng.random() > 0.85 ? 1 : 0;
         }
     }
+    updateSizeInfo();
 }
 
 function updateCanvasSize() {
@@ -38,6 +41,7 @@ function updateCanvasSize() {
     originalCanvas.width = CANVAS_WIDTH;
     originalCanvas.height = CANVAS_HEIGHT;
     updateGridDimensions();
+    updateSizeInfo();
 }
 
 function updateGridDimensions() {
@@ -49,6 +53,25 @@ function updateGridDimensions() {
 function parseRules(ruleString) {
     return String(ruleString).split(',').map(Number);
 }
+
+function updateSizeInfo() {
+    const intrinsicWidth = originalCanvas.width;
+    const intrinsicHeight = originalCanvas.height;
+
+    const actualWidth = originalCanvas.clientWidth;
+    const actualHeight = originalCanvas.clientHeight;
+
+    const widthRatio = ((actualWidth / intrinsicWidth) * 100).toFixed(2);
+    const heightRatio = ((actualHeight / intrinsicHeight) * 100).toFixed(2);
+
+    sizeInfoElement.textContent = `Intrinsic Size: ${intrinsicWidth}px x ${intrinsicHeight}px, ` +
+        `Actual Size: ${actualWidth}px x ${actualHeight}px, ` +
+        `Width Ratio: ${widthRatio}%, Height Ratio: ${heightRatio}%`;
+}
+
+window.addEventListener('resize', () => {
+    updateSizeInfo();
+});
 
 document.addEventListener("DOMContentLoaded", (event) => {
     updateCanvasSize();

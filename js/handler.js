@@ -12,6 +12,7 @@ const paths = [
     'js/core/seed.js',
     'js/ui/controls.js',
     'js/ui/colorPalette.js',
+    'js/ui/windows.js',
     'js/core/timer.js',
     'js/core/render.js',
     'js/animations/animation.js',

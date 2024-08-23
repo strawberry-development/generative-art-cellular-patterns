@@ -39,92 +39,108 @@
 
         <div class="controls">
             <h3>Canvas</h3>
-            <div class="control-group">
-                <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
-                <input type="text" id="seedInput" placeholder="Enter a new seed value">
-                <button onclick="seedApply()">Apply</button>
-                <button id="randomizeButton">Randomize</button>
-            </div>
+            <em onclick="toggleContent(this)" class="toggleEm">Click to Expand <span class="toggle-icon">▼</span></em>
+            <div class="hidden-content">
+                <div class="control-group">
+                    <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
+                    <input type="text" id="seedInput" placeholder="Enter a new seed value">
+                    <button onclick="seedApply()">Apply</button>
+                    <button id="randomizeButton">Randomize</button>
+                </div>
 
-            <div class="control-group">
-                <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
-                <input type="range" id="cellSize" min="4" max="20" value="12">
-            </div>
+                <div class="control-group">
+                    <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
+                    <input type="range" id="cellSize" min="4" max="20" value="12">
+                </div>
 
-            <div class="control-group">
-                <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
-                <select id="aspectRatio">
-                    <option value="16/9">16:9</option>
-                    <option value="4/3">4:3</option>
-                    <option value="1/1">1:1</option>
-                </select>
-            </div>
+                <div class="control-group">
+                    <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
+                    <select id="aspectRatio">
+                        <option value="16/9">16:9</option>
+                        <option value="4/3">4:3</option>
+                        <option value="1/1">1:1</option>
+                    </select>
+                </div>
 
-            <div class="control-group">
-                <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">Loading...</span></label>
-                <input type="range" id="canvasWidth" min="200" max="1200" value="800">
+                <div class="control-group">
+                    <label for="canvasWidth">Canvas Width: <span id="canvasWidthValue">Loading...</span></label>
+                    <input type="range" id="canvasWidth" min="200" max="1200" value="800">
+                </div>
             </div>
         </div>
 
         <div class="controls">
             <h3>Color</h3>
-            <div class="control-group">
-                <label for="backgroundColor">Background Color</label>
-                <input type="color" id="backgroundColor" value="#1f1f1f">
+            <em onclick="toggleContent(this)" class="toggleEm">Click to Expand <span class="toggle-icon">▼</span></em>
+            <div class="hidden-content">
+                <div class="control-group">
+                    <label for="backgroundColor">Background Color</label>
+                    <input type="color" id="backgroundColor" value="#1f1f1f">
+                </div>
+                <div class="control-group">
+                    <label for="colorPalette">Color Palette:</label>
+                    <select id="colorPalette">
+                        <option value="blackWhite">Black & White</option>
+                        <option value="grey">Grey</option>
+                        <option value="random">Random</option>
+                        <option value="warm">Warm</option>
+                        <option value="cold">Cold</option>
+                        <option value="pastel">Spring</option>
+                        <option value="neon">Neon</option>
+                        <option value="earth">Earth</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="forest">Forest</option>
+                    </select>
+                </div>
             </div>
-            <div class="control-group">
-                <label for="colorPalette">Color Palette:</label>
-                <select id="colorPalette">
-                    <option value="blackWhite">Black & White</option>
-                    <option value="grey">Grey</option>
-                    <option value="random">Random</option>
-                    <option value="warm">Warm</option>
-                    <option value="cold">Cold</option>
-                    <option value="pastel">Spring</option>
-                    <option value="neon">Neon</option>
-                    <option value="earth">Earth</option>
-                    <option value="ocean">Ocean</option>
-                    <option value="sunset">Sunset</option>
-                    <option value="forest">Forest</option>
-                </select>
-            </div>
+        </div>
 
+        <div class="controls">
             <h3>Rules</h3>
-            <div class="control-group">
-                <label for="surviveRules">Survive Rules:</label>
-                <input type="text" id="surviveRules" value="2,3">
-            </div>
-            <div class="control-group">
-                <label for="birthRules">Birth Rules:</label>
-                <input type="text" id="birthRules" value="3">
+            <em onclick="toggleContent(this)" class="toggleEm">Click to Expand <span class="toggle-icon">▼</span></em>
+            <div class="hidden-content">
+                <div class="control-group">
+                    <label for="surviveRules">Survive Rules:</label>
+                    <input type="text" id="surviveRules" value="2,3">
+                </div>
+                <div class="control-group">
+                    <label for="birthRules">Birth Rules:</label>
+                    <input type="text" id="birthRules" value="3">
+                </div>
             </div>
         </div>
 
         <div class="controls">
             <h3>Record</h3>
-            <div class="control-group">
-                <label for="recordDuration">Record Duration (s): <span
-                        id="recordDurationValue">Loading...</span></label>
-                <input type="range" id="recordDuration" min="1" max="20" value="10">
-            </div>
+            <em onclick="toggleContent(this)" class="toggleEm">Click to Expand <span class="toggle-icon">▼</span></em>
+            <div class="hidden-content">
+                <div class="control-group">
+                    <label for="recordDuration">Record Duration (s): <span
+                            id="recordDurationValue">Loading...</span></label>
+                    <input type="range" id="recordDuration" min="1" max="20" value="10">
+                </div>
 
-            <div class="control-group">
-                <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1x</span></label>
-                <input type="range" id="animationSpeed" min="0.1" max="4" step="0.1" value="1">
+                <div class="control-group">
+                    <label for="animationSpeed">Animation Speed: <span id="animationSpeedValue">1x</span></label>
+                    <input type="range" id="animationSpeed" min="0.1" max="4" step="0.1" value="1">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="grid action">
-        <div class="controls" style="width: fit-content;">
-            <span class="recording-indicator" id="recordingIndicator"></span>
+        <div style="display: flex">
+            <div class="controls" style="padding: 0;">
+                <button id="record">Record</button>
+            </div>
+            <div class="controls" style="width: fit-content;">
+                <span class="recording-indicator" id="recordingIndicator"></span>
+            </div>
         </div>
         <div class="controls">
             <button id="startButton">Start</button>
             <button id="reset">Reset</button>
-        </div>
-        <div class="controls" style="padding: 0;">
-            <button id="record">Record</button>
         </div>
         <div class="controls">
             <button id="themeToggle">Switch Theme</button>
@@ -146,12 +162,17 @@
         </div>
     </div>
 
-    <div class="grid footer">
-        <div class="controls">
-            <span>Generation: <strong><span id="generationCount">0</span></strong></span>
-        </div>
-        <div class="controls">
-            <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
+    <div class="grid footer" style="display: flex; align-items: flex-end;">
+        <div style="display: flex;">
+            <div class="controls">
+                <span>Generation: <strong><span id="generationCount">0</span></strong></span>
+            </div>
+            <div class="controls">
+                <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
+            </div>
+            <div class="controls">
+                <em id="sizeInfo"></em>
+            </div>
         </div>
     </div>
 </div>
