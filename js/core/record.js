@@ -14,6 +14,8 @@ async function recordAnimation(canvas, prefix) {
     };
 
     mediaRecorder.onstop = async () => {
+        stopTimer();
+        
         const blob = new Blob(chunks, { type: 'video/webm' });
         const url = URL.createObjectURL(blob);
 

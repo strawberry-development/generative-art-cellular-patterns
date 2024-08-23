@@ -33,8 +33,8 @@
     </div>
 
     <div class="grid panel">
-        <div class="controls">
-            <button id="resetConfig">Reset All Value</button>
+        <div class="controls" style="padding: 0">
+            <button id="resetConfig" class="button-padding button-fullsize">Reset All Value</button>
         </div>
 
         <div class="controls">
@@ -134,9 +134,6 @@
             <div class="controls" style="padding: 0;">
                 <button id="record" class="button-padding button-fullsize">Record</button>
             </div>
-            <div id="recordingIndicator" style="width: fit-content;"
-                 class="controls recording-indicator button-padding">
-            </div>
         </div>
         <div class="controls" style="margin-bottom: 5px;padding: 0;width: fit-content;">
             <button id="startButton" class="button-padding button-fullsize">Start</button>
@@ -154,11 +151,31 @@
         <!-- <button id="exportSettings">Export Settings</button> -->
         <!-- <input type="file" id="importSettings" style="display: none;"> -->
         <!-- <button id="importSettingsButton">Import Settings</button> -->
+        <div class="controls">
+            <h3>Statistic</h3>
+            <br>
+            <div class="control-group">
+                <em id="sizeInfo"></em>
+            </div>
+            <div class="control-group">
+                <span id="load-time">Calculating...</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <h3>Log</h3>
+            <pre id="log"></pre>
+        </div>
     </div>
 
-    <div class="status">
-        <div class="controls" style="width: fit-content;">
-            <span id="load-time">Calculating...</span>
+    <div class="grid status">
+        <div style="display: flex">
+            <div id="recordingIndicator" style="width: fit-content;"
+                 class="controls recording-indicator button-padding">
+            </div>
+            <div class="controls" style="width: fit-content">
+                <span id="fps">FPS: 0</span>
+            </div>
         </div>
     </div>
 
@@ -175,9 +192,6 @@
             </div>
             <div class="controls">
                 <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
-            </div>
-            <div class="controls">
-                <em id="sizeInfo"></em>
             </div>
         </div>
     </div>

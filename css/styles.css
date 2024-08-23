@@ -52,7 +52,7 @@ body {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
     gap: 0px 0px;
     grid-template-areas:
     "header header header header header header header header header header header"
@@ -121,6 +121,7 @@ body {
     margin: 20px;
     background-color: var(--panel);
     border-radius: 10px;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .action {
@@ -329,4 +330,13 @@ canvas {
 
 .shortcut-legend {
     margin-left: 20px;
+}
+
+pre {
+    max-width: 100%;
+    max-height: 100px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
 }

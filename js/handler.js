@@ -13,6 +13,8 @@ const paths = [
     'js/ui/controls.js',
     'js/ui/colorPalette.js',
     'js/ui/windows.js',
+    'js/monitoring/log.js',
+    'js/monitoring/fps.js',
     'js/core/timer.js',
     'js/core/render.js',
     'js/animations/animation.js',
