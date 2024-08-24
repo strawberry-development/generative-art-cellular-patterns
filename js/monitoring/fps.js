@@ -1,15 +1,14 @@
 let fpsElement = document.getElementById('fps');
 let lastFrameTime = performance.now();
-let fps = 0;
 let frameCount = 0;
 
-function updateFPS() {
-    let now = performance.now();
-    let deltaTime = now - lastFrameTime;
+function updateFPS(now) {
     frameCount++;
 
+    let deltaTime = now - lastFrameTime;
+
     if (deltaTime >= 1000) { // Update FPS every second
-        fps = Math.round((frameCount / deltaTime) * 1000);
+        let fps = Math.round((frameCount / deltaTime) * 1000);
         fpsElement.textContent = `FPS: ${fps}`;
         frameCount = 0;
         lastFrameTime = now;
