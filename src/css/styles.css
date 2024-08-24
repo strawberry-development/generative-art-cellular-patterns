@@ -184,13 +184,6 @@ label {
     color: var(--title-color);
 }
 
-h3 {
-    color: var(--title-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin: 0;
-}
-
 input[type="text"],
 input[type="range"],
 input[type="color"],
@@ -303,7 +296,16 @@ canvas {
     max-height: 0;
 }
 
+h3 {
+    color: var(--title-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin: 0;
+}
+
 .visible-content {
+    border-top: 2px solid var(--border-color);
+    padding-top: 10px;
     max-height: fit-content;
 }
 
@@ -317,6 +319,7 @@ canvas {
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-size: 18px;
 }
 
 .toggleEm:hover {
