@@ -4,7 +4,6 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 ## Know issue
 - Responsive (Mobile UI)
-- Timer keep going when recording and doesn't stop
 
 ## Working On
 - Better interface
