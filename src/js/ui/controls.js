@@ -74,6 +74,17 @@ function updateBirthRules(target) {
     birthRules = parseRules(target);
 }
 
+document.getElementById('apparitionFrequency').addEventListener('input', (e) => {
+    updateApparitionFrequency(e.target.value);
+});
+
+function updateApparitionFrequency(target) {
+    const seed = document.getElementById('seedValue').innerText;
+    document.getElementById('apparitionFrequencyValue').innerText = target;
+    apparitionFrequency = parseRules(target);
+    updateCanvas(false, true, seed);
+}
+
 document.getElementById('reset').addEventListener('click', () => {
     resetLaunch();
 });

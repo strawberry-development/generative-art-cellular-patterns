@@ -8,5 +8,6 @@ const defaultConfig = {
     colorPalette: "blackWhite",
     surviveRules: [2, 3],
     birthRules: [3],
-    animationSpeed: 1
+    animationSpeed: 1,
+    apparitionFrequency: 0.85
 };

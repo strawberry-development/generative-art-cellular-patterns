@@ -17,6 +17,7 @@ let surviveRules = defaultConfig.surviveRules;
 let birthRules = defaultConfig.birthRules;
 let colorPalette = defaultConfig.colorPalette;
 let animationSpeed = defaultConfig.animationSpeed;
+let apparitionFrequency = defaultConfig.apparitionFrequency
 
 const sizeInfoElement = document.getElementById('sizeInfo');
 
@@ -29,7 +30,7 @@ function init(seed = generateRandomSeed()) {
     for (let x = 0; x < GRID_WIDTH; x++) {
         cells[x] = [];
         for (let y = 0; y < GRID_HEIGHT; y++) {
-            cells[x][y] = rng.random() > 0.85 ? 1 : 0;
+            cells[x][y] = rng.random() > apparitionFrequency ? 1 : 0;
         }
     }
     updateSizeInfo();
