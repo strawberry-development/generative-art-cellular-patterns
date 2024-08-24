@@ -10,15 +10,15 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 ## Setup
 
-Work by launching `app.html` in a browser
+Work by launching `src/app.html` in a browser
 
 ## Overview
-![Overview of the page](.example/Screenshot.png "Screenshot")
+![Overview of the page](example/Screenshot.png "Screenshot")
 
 ## Example
 
 There can be great beauty in chaos
 
 <p align="left">
-    <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/.example/original_2024-08-20T19-35-24-583Z.gif" alt="Example Art">
+    <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-08-20T19-35-24-583Z.gif" alt="Example Art">
 </p>
