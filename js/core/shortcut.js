@@ -1,11 +1,14 @@
 document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.key === 's') {
-        event.preventDefault();
-        startButtonLaunch();
-    }
-
-    if (event.ctrlKey && event.key === 'r') {
-        event.preventDefault();
-        resetLaunch();
+    if (event.ctrlKey) {
+        switch(event.key.toLowerCase()) {
+            case 's':
+                event.preventDefault();
+                startButtonLaunch();
+                break;
+            case 'r':
+                event.preventDefault();
+                resetLaunch();
+                break;
+        }
     }
 });
