@@ -4,9 +4,10 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 
 ## Know issue
 - Responsive (Mobile UI)
+- Some gap in the canvas
 
 ## Working On
-- Better interface
+- ...
 
 ## Setup
 
