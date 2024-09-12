@@ -1,3 +1,6 @@
+let animationRunning = false;
+let isRecording = false;
+
 document.getElementById('cellSize').addEventListener('input', (e) => {
     updateCellSize(e.target.value);
     const seed = document.getElementById('seedValue').innerText;
@@ -115,15 +118,22 @@ function startButtonLaunch(){
 }
 
 document.getElementById('record').addEventListener('click', async () => {
-    if (!animationRunning) {
-        animationRunning = true;
-        document.getElementById('startButton').innerText = 'Pause';
-        startTimer();
-        animate();
-    }
+    // Check if animation or recording is already running
+    if (animationRunning || isRecording) return;
 
-    // Record the original canvas
-    await recordAnimation(originalCanvas, 'original');
+    animationRunning = true;
+    document.getElementById('startButton').innerText = 'Pause';
+
+    startTimer();
+    animate();
+
+    isRecording = true;
+
+    try {
+        await recordAnimation(originalCanvas, 'original');
+    } finally {
+        isRecording = false;
+    }
 
     // Stop the animations and reset the UI
     animationRunning = false;
