@@ -19,7 +19,10 @@ let colorPalette = defaultConfig.colorPalette;
 let animationSpeed = defaultConfig.animationSpeed;
 let apparitionFrequency = defaultConfig.apparitionFrequency;
 
-const sizeInfoElement = document.getElementById('sizeInfo');
+const IntrinsicSizeElement = document.getElementById('IntrinsicSize');
+const ActualSizeElement = document.getElementById('ActualSize');
+const WidthRatioElement = document.getElementById('WidthRatio');
+const HeightRatioElement = document.getElementById('HeightRatio');
 
 function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
@@ -65,9 +68,10 @@ function updateSizeInfo() {
     const widthRatio = ((actualWidth / intrinsicWidth) * 100).toFixed(2);
     const heightRatio = ((actualHeight / intrinsicHeight) * 100).toFixed(2);
 
-    sizeInfoElement.textContent = `Intrinsic Size: ${intrinsicWidth}px x ${intrinsicHeight}px, ` +
-        `Actual Size: ${actualWidth}px x ${actualHeight}px, ` +
-        `Width Ratio: ${widthRatio}%, Height Ratio: ${heightRatio}%`;
+    IntrinsicSizeElement.textContent = `${intrinsicWidth}px x ${intrinsicHeight}px, `;
+    ActualSizeElement.textContent = `${actualWidth}px x ${actualHeight}px, `;
+    WidthRatioElement.textContent = `Width Ratio: ${widthRatio}%`;
+    HeightRatioElement.textContent = `Height Ratio: ${heightRatio}%`;
 }
 
 window.addEventListener('resize', () => {

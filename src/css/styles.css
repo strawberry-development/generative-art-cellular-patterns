@@ -112,8 +112,6 @@ body {
 .panel {
     grid-area: panel;
     margin-top: 2px;
-    overflow-x: clip;
-    overflow-y: scroll;
 }
 
 .controls {

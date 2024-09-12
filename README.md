@@ -1,5 +1,18 @@
-# Generative Art Cellular Patterns
-This web-based/ prototype showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns. 
+<div align="center">
+
+<picture>
+  <img alt="github-logo" src="/src/img/logo/android-chrome-192x192.png" width="60%" height="60%">
+</picture>
+
+Generative Art Cellular Patterns
+</div>
+
+<br>
+
+## Overview
+
+This web-based/ prototype showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns.
+![Overview of the page](example/Screenshot.png "Screenshot")
 
 ## Know issue
 - Responsive (Mobile UI)
@@ -11,9 +24,6 @@ This web-based/ prototype showcases generative art inspired by cellular automata
 ## Setup
 
 Work by launching `src/app.html` in a browser
-
-## Overview
-![Overview of the page](example/Screenshot.png "Screenshot")
 
 ## Example
 
