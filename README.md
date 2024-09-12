@@ -1,7 +1,7 @@
 <div align="center">
 
 <picture>
-  <img alt="github-logo" src="/src/img/logo/android-chrome-192x192.png" width="60%" height="60%">
+  <img alt="github-logo" src="/src/img/logo/android-chrome-512x512.png" width="50%" height="50%">
 </picture>
 
 Generative Art Cellular Patterns
@@ -11,15 +11,9 @@ Generative Art Cellular Patterns
 
 ## Overview
 
-This web-based/ prototype showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns.
+This web-based application showcases generative art inspired by cellular automata and game of life (cf Conway), leveraging HTML, JavaScript, and Canvas for creating patterns. Many option for configuration are available.
+
 ![Overview of the page](example/Screenshot.png "Screenshot")
-
-## Know issue
-- Responsive (Mobile UI)
-- Some gap in the canvas
-
-## Working On
-- ...
 
 ## Setup
 
@@ -32,6 +26,13 @@ There can be great beauty in chaos
 <p align="left">
     <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-08-20T19-35-24-583Z.gif" alt="Example Art">
 </p>
+
+## Know issue
+- Responsive (Mobile UI)
+- Some gap in the canvas
+
+Working On
+- ...
 
 ## License
 [![GNU License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/LICENSE)
