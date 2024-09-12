@@ -17,7 +17,7 @@ let surviveRules = defaultConfig.surviveRules;
 let birthRules = defaultConfig.birthRules;
 let colorPalette = defaultConfig.colorPalette;
 let animationSpeed = defaultConfig.animationSpeed;
-let apparitionFrequency = defaultConfig.apparitionFrequency
+let apparitionFrequency = defaultConfig.apparitionFrequency;
 
 const sizeInfoElement = document.getElementById('sizeInfo');
 

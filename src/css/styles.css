@@ -259,13 +259,15 @@ canvas {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid var(--border-color);
-    width: fit-content
+    width: fit-content;
+    border-radius: 5px;
 }
 
 .recording-indicator {
     background-color: transparent;
     border: 2px solid red;
     display: block;
+    height: fit-content;
 }
 
 .recording-indicator.blink {
