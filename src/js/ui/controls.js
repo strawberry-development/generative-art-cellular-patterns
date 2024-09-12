@@ -118,14 +118,14 @@ function startButtonLaunch(){
 }
 
 document.getElementById('record').addEventListener('click', async () => {
-    // Check if animation or recording is already running
-    if (animationRunning || isRecording) return;
+    if (isRecording) return;
 
-    animationRunning = true;
-    document.getElementById('startButton').innerText = 'Pause';
-
-    startTimer();
-    animate();
+    if (!animationRunning) {
+        animationRunning = true;
+        document.getElementById('startButton').innerText = 'Pause';
+        startTimer();
+        animate();
+    }
 
     isRecording = true;
 
