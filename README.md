@@ -1,5 +1,6 @@
 <div align="center">
-
+<br>
+<br>
 <picture>
   <img alt="github-logo" src="/src/img/logo/android-chrome-512x512.png" width="20%" height="20%">
 </picture>
