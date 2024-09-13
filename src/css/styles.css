@@ -356,7 +356,6 @@ pre {
 #progressContainer {
     width: 100%;
     background: var(--panel);
-    background-color: var(--panel);
     border-radius: 10px;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
     margin: 20px;
@@ -367,4 +366,5 @@ pre {
     height: 20px;
     border-radius: 10px;
     background: var(--link-color);
+    transition: width 0.2s ease-out; /* Smooth transition for width changes */
 }
