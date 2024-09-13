@@ -127,6 +127,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="controls">
+            <em onclick="toggleContent(this)" class="toggleEm">Advanced <span class="toggle-icon">▲</span></em>
+            <div class="visible-content">
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="toggleShortcuts" checked>
+                        Enable Keyboard Shortcuts
+                    </label>
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="grid action">
@@ -192,13 +205,16 @@
     </div>
 
     <div class="grid footer" style="display: flex; align-items: flex-end;">
-        <div style="display: flex;">
+        <div style="display: flex;width: 100%;">
             <div class="controls">
                 <span>Generation: <strong><span id="generationCount">0</span></strong></span>
             </div>
             <div class="controls">
                 <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
             </div>
+        </div>
+        <div id="progressContainer">
+            <div id="progressBar"></div>
         </div>
     </div>
 </div>

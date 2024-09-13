@@ -5,7 +5,15 @@ async function recordAnimation(canvas, prefix) {
     const mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp8' });
     const chunks = [];
     const recordingIndicator = document.getElementById('recordingIndicator');
+    const progressBar = document.getElementById('progressBar');
     recordingIndicator.classList.add('blink');
+
+    let startTime;
+    const updateProgress = () => {
+        const elapsedTime = (new Date() - startTime); // elapsed time in milliseconds
+        const progress = Math.min((elapsedTime / recordDuration) * 100, 100);
+        progressBar.style.width = `${progress}%`;
+    };
 
     mediaRecorder.ondataavailable = e => {
         if (e.data.size > 0) {
@@ -15,7 +23,7 @@ async function recordAnimation(canvas, prefix) {
 
     mediaRecorder.onstop = async () => {
         stopTimer();
-        
+
         const blob = new Blob(chunks, { type: 'video/webm' });
         const url = URL.createObjectURL(blob);
 
@@ -36,15 +44,29 @@ async function recordAnimation(canvas, prefix) {
             URL.revokeObjectURL(url);
 
             modal.style.display = 'none';
+            progressBar.style.width = '0%'; // Reset progress bar when modal is closed
         };
 
         const cancelButton = document.getElementById('cancelButton');
         cancelButton.onclick = () => {
             modal.style.display = 'none';
             URL.revokeObjectURL(url);
+            progressBar.style.width = '0%'; // Reset progress bar when modal is closed
         };
 
         recordingIndicator.classList.remove('blink');
+    };
+
+    mediaRecorder.onstart = () => {
+        startTime = new Date();
+        // Update progress bar every 100ms
+        const intervalId = setInterval(() => {
+            if (mediaRecorder.state === 'inactive') {
+                clearInterval(intervalId);
+            } else {
+                updateProgress();
+            }
+        }, 100);
     };
 
     mediaRecorder.start();

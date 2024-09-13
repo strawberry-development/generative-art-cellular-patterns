@@ -296,9 +296,10 @@ canvas {
     border: 2px solid var(--input-focus-border-color);
 }
 
-.button-padding{
+.button-padding {
     padding: 10px;
 }
+
 .hidden-content {
     display: none;
     max-height: 0;
@@ -350,4 +351,20 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     box-sizing: border-box;
+}
+
+#progressContainer {
+    width: 100%;
+    background: var(--panel);
+    background-color: var(--panel);
+    border-radius: 10px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    border-radius: 10px;
+    background: var(--link-color);
 }
