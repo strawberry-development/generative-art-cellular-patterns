@@ -4,10 +4,10 @@ function toggleContent(element) {
 
     if (content.style.display === 'block' || content.style.display === '') {
         content.style.display = 'none';
-        icon.textContent = '▼';
+        icon.textContent = '+';
     } else {
         content.style.display = 'block';
-        icon.textContent = '▲';
+        icon.textContent = '-';
     }
 
     content.classList.toggle('hidden-content');

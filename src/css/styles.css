@@ -76,7 +76,6 @@ body {
 
 .header {
     background-color: var(--panel);
-
     grid-area: header;
     border-bottom: 2px solid var(--border-color);
 }
@@ -110,6 +109,8 @@ body {
 }
 
 .panel {
+    background: var(--panel);
+    border-left: 2px solid var(--border-color);
     grid-area: panel;
     margin-top: 2px;
     overflow-x: clip;
@@ -117,20 +118,18 @@ body {
 }
 
 .controls {
-    padding: 20px;
     margin: 20px;
-    background-color: var(--panel);
-    border-radius: 10px;
-    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
-.controls:hover {
-    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
+.border-bottom {
+    border-bottom: 2px solid var(--border-color);
 }
 
 .action {
+    border-right: 2px solid var(--border-color);
+    margin-top: 2px;
+    background: var(--panel);
     grid-area: action;
 }
 
@@ -139,6 +138,8 @@ body {
 }
 
 .footer {
+    border-top: 2px solid var(--border-color);
+    background: var(--panel);
     grid-area: footer;
 }
 
@@ -147,6 +148,8 @@ body {
 }
 
 .status {
+    border-right: 2px solid var(--border-color);
+    background: var(--panel);
     grid-area: status;
 }
 
@@ -195,7 +198,7 @@ input[type="range"],
 input[type="color"],
 button,
 select {
-    width: 100%;
+    max-width: 100%;
     padding: 5px;
     margin-top: 5px;
     background-color: var(--input-background-color);
@@ -274,6 +277,7 @@ canvas {
     border: 2px solid red;
     display: block;
     height: fit-content;
+    border-radius: 50%;
 }
 
 .recording-indicator.blink {
@@ -292,10 +296,6 @@ canvas {
     border: 2px solid var(--input-border-color);
 }
 
-.button-fullsize:hover {
-    border: 2px solid var(--input-focus-border-color);
-}
-
 .button-padding {
     padding: 10px;
 }
@@ -307,13 +307,10 @@ canvas {
 
 h3 {
     color: var(--title-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
     margin: 0;
 }
 
 .visible-content {
-    border-top: 2px solid var(--border-color);
     padding-top: 10px;
     max-height: fit-content;
 }
@@ -324,15 +321,8 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--button-background-color);
-    padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
     font-size: 18px;
-}
-
-.toggleEm:hover {
-    background-color: var(--button-hover-background-color);
 }
 
 .toggle-icon {
@@ -367,4 +357,9 @@ pre {
     border-radius: 10px;
     background: var(--link-color);
     transition: width 0.2s ease-out; /* Smooth transition for width changes */
+}
+
+#record {
+    background: var(--link-color);
+    color: #fff;
 }
