@@ -34,7 +34,7 @@ There can be great beauty in chaos
 - Some gap in the canvas
 
 **Working On**
-- ...
+- UI Prototype and other small improvement
 
 ## License
 [![GNU License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/LICENSE)
