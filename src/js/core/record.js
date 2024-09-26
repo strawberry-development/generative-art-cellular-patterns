@@ -73,3 +73,12 @@ async function recordAnimation(canvas, prefix) {
     await new Promise(resolve => setTimeout(resolve, recordDuration));
     mediaRecorder.stop();
 }
+
+function downloadCanvasAsPNG() {
+    const canvas = document.getElementById('originalCanvas');
+    const dataURL = canvas.toDataURL('image/png');
+    const downloadLink = document.createElement('a');
+    downloadLink.href = dataURL;
+    downloadLink.download = 'canvas_image.png';
+    downloadLink.click();
+}

@@ -23,6 +23,7 @@ const paths = [
     'js/core/shortcut.js',
     'js/ui/theme.js',
     'js/ui/hover-change.js',
+    'js/ui/responsive.js',
     'js/data/localStorage.js'
 ];
 
