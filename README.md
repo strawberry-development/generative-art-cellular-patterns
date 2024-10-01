@@ -4,7 +4,9 @@
     <img alt="Generative Art Logo" src="/src/img/logo/android-chrome-512x512.png" width="20%" height="20%">
   </picture>
   <br><br>
-  <p>Generative Art Cellular Patterns</p>
+  <h1>Generative Art Cellular Patterns</h1>
+  <p>A web-based application for creating generative art inspired by cellular automata, built using HTML, JavaScript, and Canvas.</p>
+  <br>
   <br>
 </div>
 
