@@ -17,8 +17,8 @@
     <div class="grid header">
         <div class="header-content">
             <div class="header-logo">
-                <a href="#" id="refreshLink">
-                    <img src="img/logo/favicon-32x32.png" alt="Generative Art Logo" class="logo">
+                <a draggable="false" href="#" id="refreshLink">
+                    <img src="img/logo/android-chrome-192x192.png" draggable="false" alt="Generative Art Logo" class="logo">
                 </a>
                 <em>GACP just like /ɡapt/</em>
 
@@ -26,22 +26,25 @@
 
 
             <nav class="header-nav">
-                <a href="https://github.com/strawberry-development/generative-art-cellular-patterns">Source Code</a>
-                <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a
+                <a draggable="false" href="https://github.com/strawberry-development/generative-art-cellular-patterns">Source Code</a>
+                <a draggable="false" href="https://github.com/strawberry-development/generative-art-cellular-patterns/issues/new">Report a
                     Bug</a>
             </nav>
         </div>
     </div>
 
     <div class="grid panel">
+        <div class="controls ">
+            <h2>Config</h2>
+        </div>
         <div class="controls" style="padding: 0">
             <button id="resetConfig" class="button-padding button-fullsize">Reset All Value</button>
         </div>
 
         <div class="controls border-bottom">
-            <em onclick="toggleContent(this)" class="toggleEm">Canvas <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
+            <em onclick="toggleContent(this)" class="toggleEm">Cell <span class="toggle-icon"><i
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display:none;">
                 <div class="control-group">
                     <label for="seedInput">Seed Value: <span id="seedValue"></span></label>
                     <input type="text" id="seedInput" placeholder="Enter a new seed value">
@@ -53,7 +56,13 @@
                     <label for="cellSize">Cell Size: <span id="cellSizeValue">Loading...</span></label>
                     <input type="range" id="cellSize" min="4" max="20" value="12">
                 </div>
+            </div>
+        </div>
 
+        <div class="controls border-bottom">
+            <em onclick="toggleContent(this)" class="toggleEm">Canvas <span class="toggle-icon"><i
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display:none;">
                 <div class="control-group">
                     <label for="aspectRatio">Aspect Ratio: <span id="aspectRatioValue">Loading...</span></label>
                     <select id="aspectRatio">
@@ -72,8 +81,8 @@
 
         <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">Color <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
                 <div class="control-group">
                     <label for="backgroundColor">Background Color</label>
                     <input type="color" id="backgroundColor" value="#1f1f1f">
@@ -99,8 +108,8 @@
 
         <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">Rules <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
                 <div class="control-group">
                     <label for="surviveRules">Survive Rules:</label>
                     <input type="text" id="surviveRules" value="2,3">
@@ -118,8 +127,8 @@
 
         <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">Record <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
                 <div class="control-group">
                     <label for="recordDuration">Record Duration (s): <span
                             id="recordDurationValue">Loading...</span></label>
@@ -135,8 +144,8 @@
 
         <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">Advanced <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
                 <div class="control-group">
                     <label for="toggleShortcuts">Enable Keyboard Shortcuts</label>
                     <input type="checkbox" id="toggleShortcuts" checked>
@@ -146,30 +155,10 @@
     </div>
 
     <div class="grid action">
-        <div class="controls border-bottom">
-            <em onclick="toggleContent(this)" class="toggleEm">Statistic <span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
-                <div class="control-group">
-                    <em><strong>Height information</strong></em>
-                    <div class="control-group">
-                        <em id="IntrinsicSize"></em><br>
-                    </div>
-                    <div class="control-group">
-                        <em>Real Size</em><br>
-                        <em id="ActualSize"></em><br>
-                    </div>
-
-                    <em id="WidthRatio"></em><br>
-                    <em id="HeightRatio"></em><br>
-                </div>
-                <div class="control-group">
-                    <span id="load-time">Calculating...</span>
-                </div>
-            </div>
+        <div class="controls ">
+            <h2>Action</h2>
         </div>
-
-        <div class="border-bottom">
+        <div>
             <div class="controls" style="padding: 0;">
                 <button id="record" class="button-padding button-fullsize">
                     <i class="fa-solid fa-record-vinyl"></i>
@@ -206,15 +195,40 @@
             <!-- <button id="importSettingsButton">Import Settings</button> -->
         </div>
 
-        <div class="controls">
+        <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">Shortcut<span class="toggle-icon"><i
-                    class="fa fa-angle-down" aria-hidden="true"></i></span></em>
-            <div class="visible-content">
-                <b>Start</b><br>
-                <em>(ctrl + s)</em>
-                <br><br>
-                <b>Reset</b><br>
-                <em>(ctrl + r)</em>
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
+                <div class="control-group">
+                    <b>Start</b><br>
+                    <em>(ctrl + s)</em>
+                    <br><br>
+                    <b>Reset</b><br>
+                    <em>(ctrl + r)</em>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls border-bottom">
+            <em onclick="toggleContent(this)" class="toggleEm">Statistic <span class="toggle-icon"><i
+                    class="fa fa-angle-up" aria-hidden="true"></i></span></em>
+            <div class="visible-content" style="display: none;">
+                <div class="control-group">
+                    <em><strong>Height information</strong></em>
+                    <div class="control-group">
+                        <em id="IntrinsicSize"></em><br>
+                    </div>
+                    <div class="control-group">
+                        <em>Real Size</em><br>
+                        <em id="ActualSize"></em><br>
+                    </div>
+
+                    <em id="WidthRatio"></em><br>
+                    <em id="HeightRatio"></em><br>
+                </div>
+                <div class="control-group">
+                    <span id="load-time">Calculating...</span>
+                </div>
             </div>
         </div>
     </div>
