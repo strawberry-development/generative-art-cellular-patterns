@@ -60,8 +60,6 @@ We welcome contributions! If you find a bug, have ideas for improvements, or wan
 
 This project is licensed under the **GNU General Public License v3.0**. For more details, please see the [LICENSE](./LICENSE) file.
 
-[![GNU License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/LICENSE)
-
 ### Additional Resources
 - [Conway’s Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - [Cellular Automata](https://en.wikipedia.org/wiki/Cellular_automaton)
