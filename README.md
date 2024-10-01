@@ -4,7 +4,7 @@
     <img alt="Generative Art Logo" src="/src/img/logo/android-chrome-512x512.png" width="20%" height="20%">
   </picture>
   <br><br>
-  <h2>Generative Art Cellular Patterns</h2>
+  <p>Generative Art Cellular Patterns</p>
   <br>
 </div>
 
