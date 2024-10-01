@@ -6,9 +6,8 @@
   <br><br>
   <h1>Generative Art Cellular Patterns</h1>
   <p>A web-based application for creating beautiful generative art inspired by cellular automata, built using HTML, JavaScript, and Canvas.</p>
+  <br>
 </div>
-
----
 
 ## 📑 Table of Contents
 - [Overview](#overview)
@@ -18,15 +17,11 @@
 - [Contributing](#contributing)
 - [License](#license)
 
----
-
 ## 🖼️ Overview
 
 This application showcases **generative art** inspired by cellular automata and **Conway’s Game of Life**. It leverages **HTML**, **JavaScript**, and **Canvas** to create unique and evolving patterns. Users can explore and customize various options to generate their own cellular artwork.
 
 ![Overview of the page](example/Screenshot.png "Screenshot of Generative Art")
-
----
 
 ## 🚀 Setup
 
@@ -40,8 +35,6 @@ To run the application, simply launch `src/app.html` in your browser. No additio
   - Rules
   - Record
 
----
-
 ## 🎨 Examples
 
 There can be great beauty in chaos
@@ -50,13 +43,9 @@ There can be great beauty in chaos
     <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-08-20T19-35-24-583Z.gif" alt="Generative Art Example" width="400">
 </p>
 
----
-
 ## 🛠️ Known Issues
 - **Responsive Design**: The UI is not optimized for mobile devices.
 - **Canvas Gaps**: Minor gaps may appear in the generated canvas at certain settings.
-
----
 
 ## 🌱 Contributing
 
@@ -66,15 +55,11 @@ We welcome contributions! If you find a bug, have ideas for improvements, or wan
 - UI Prototype and improvements
 - Small fixes and optimizations
 
----
-
 ## 📜 License
 
 This project is licensed under the **GNU General Public License v3.0**. For more details, please see the [LICENSE](./LICENSE) file.
 
 [![GNU License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/LICENSE)
-
----
 
 ### 🔗 Additional Resources
 - [Conway’s Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
