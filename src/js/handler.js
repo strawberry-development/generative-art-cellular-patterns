@@ -1,18 +1,24 @@
-const pageLoad = performance.now();
+performance.mark('pageStart');
 
-window.addEventListener('load', () => {
-    const loadTime = performance.now() - pageLoad;
+window.addEventListener('load', function() {
+    performance.mark('pageEnd');
+    performance.measure('pageLoad', 'pageStart', 'pageEnd');
+
+    const [measure] = performance.getEntriesByName('pageLoad');
     const loadTimeElement = document.getElementById('load-time');
-    loadTimeElement.textContent = `Page load in ${loadTime.toFixed(2)} ms`;
+    loadTimeElement.textContent = `Page loaded in ${measure.duration.toFixed(2)} ms`;
+
+    // Clear performance entries to prevent memory leaks
+    performance.clearMarks();
+    performance.clearMeasures();
 });
 
 const paths = [
     'js/data/defaultConfig.js',
-
     'js/core/seed.js',
     'js/ui/controls.js',
     'js/ui/colorPalette.js',
-    'js/ui/windows.js',
+    'js/ui/menu.js',
     'js/monitoring/log.js',
     'js/monitoring/fps.js',
     'js/core/timer.js',
@@ -27,27 +33,37 @@ const paths = [
     'js/data/localStorage.js'
 ];
 
+// Load a single script and return a promise
 function loadScript(src) {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
         const script = document.createElement('script');
         script.src = src;
-        script.onload = () => resolve(src);
-        script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+        script.onload = function() {
+            resolve(src);
+        };
+        script.onerror = function() {
+            reject(new Error(`Failed to load script: ${src}`));
+        };
         document.head.appendChild(script);
     });
 }
 
-async function loadAllScripts() {
-    for (const script of paths) {
-        try {
-            await loadScript(script);
-            console.log(`Successfully loaded ${script}`);
-        } catch (error) {
+// Sequentially load all scripts
+function loadAllScriptsInOrder(scripts) {
+    scripts.reduce(function(promise, script) {
+        return promise.then(function() {
+            return loadScript(script).then(function(loadedScript) {
+                console.log(`Successfully loaded ${loadedScript}`);
+            });
+        });
+    }, Promise.resolve()) // Start with a resolved Promise
+        .then(function() {
+            console.log('All scripts have been loaded.');
+        })
+        .catch(function(error) {
             console.error(error);
-        }
-    }
+        });
 }
 
-loadAllScripts().then(() => {
-    console.log('All scripts have been loaded.');
-});
+// Start loading scripts in order
+loadAllScriptsInOrder(paths);
