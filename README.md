@@ -29,12 +29,12 @@ This application showcases **generative art** inspired by cellular automata and 
 To run the application, simply launch `src/app.html` in your browser. No additional installations are required.
 
 ### Configuration Options
-- You can modify various settings in the app to customize the generated patterns:
-  - Cell
-  - Canvas
-  - Color
-  - Rules
-  - Record
+You can modify various settings in the app to customize the generated patterns:
+- Cell
+- Canvas
+- Color
+- Rules
+ - Record
 
 ## Examples
 
@@ -46,7 +46,6 @@ There can be great beauty in chaos
 
 ## Known Issues
 - **Responsive Design**: The UI is not optimized for mobile devices.
-- **Canvas Gaps**: Minor gaps may appear in the generated canvas at certain settings.
 
 ## Contributing
 

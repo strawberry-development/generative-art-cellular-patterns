@@ -41,15 +41,25 @@ function init(seed = generateRandomSeed()) {
 function updateCanvasSize() {
     CANVAS_WIDTH = parseInt(document.getElementById('canvasWidth').value);
     CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+
+    // Ensure that the canvas width and height are multiples of the cell size
+    // = no gap
+    CANVAS_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE) * CELL_SIZE;
+    CANVAS_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE) * CELL_SIZE;
+
     originalCanvas.width = CANVAS_WIDTH;
     originalCanvas.height = CANVAS_HEIGHT;
+
     updateGridDimensions();
     updateSizeInfo();
 }
 
 function updateGridDimensions() {
+    // Set grid dimensions to match the new canvas size
     GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
     GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
+
+    // Reinitialize the cells with the new grid size
     init();
 }
 
