@@ -6,7 +6,6 @@ async function recordAnimation(canvas, prefix) {
     const chunks = [];
     const recordingIndicator = document.getElementById('recordingIndicator');
     const progressBar = document.getElementById('progressBar');
-    recordingIndicator.classList.add('blink');
 
     let startTime;
     const updateProgress = () => {
@@ -53,8 +52,6 @@ async function recordAnimation(canvas, prefix) {
             URL.revokeObjectURL(url);
             progressBar.style.width = '0%'; // Reset progress bar when modal is closed
         };
-
-        recordingIndicator.classList.remove('blink');
     };
 
     mediaRecorder.onstart = () => {
