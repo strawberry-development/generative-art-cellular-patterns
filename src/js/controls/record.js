@@ -16,7 +16,6 @@ document.getElementById('record').addEventListener('click', async () => {
 
     if (!animationRunning) {
         animationRunning = true;
-        document.getElementById('start-text').innerText = 'Pause';
         startTimer();
         animate();
     }
@@ -31,7 +30,6 @@ document.getElementById('record').addEventListener('click', async () => {
 
     // Stop the animations and reset the UI
     animationRunning = false;
-    document.getElementById('start-text').innerText = 'Start';
 });
 
 document.getElementById('startButton').addEventListener('click', () => {
@@ -41,11 +39,9 @@ document.getElementById('startButton').addEventListener('click', () => {
 function startButtonLaunch(){
     if (animationRunning) {
         animationRunning = false;
-        document.getElementById('start-text').innerText = 'Start';
         stopTimer();
     } else {
         animationRunning = true;
-        document.getElementById('start-text').innerText = 'Pause';
         startTimer();
         animate();
     }

@@ -41,7 +41,7 @@
 
     <div class="grid panel">
         <div class="controls ">
-            <h2>Config</h2>
+            <h3>Config</h3>
         </div>
         <div class="controls" style="padding: 0">
             <button id="resetConfig" class="button-padding button-fullsize">Reset All Value</button>
@@ -209,48 +209,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="grid action">
-        <div class="controls ">
-            <h2>Action</h2>
-        </div>
-        <div>
-            <div class="controls" style="padding: 0;">
-                <button id="record" class="button-padding button-fullsize">
-                    <i class="fa-solid fa-record-vinyl"></i>
-                    Record
-                </button>
-            </div>
-
-            <div class="controls" style="padding: 0;">
-                <button class="button-padding button-fullsize" onclick="downloadCanvasAsPNG()">
-                    <i class="fa-solid fa-download"></i>
-                    Download as PNG
-                </button>
-            </div>
-
-            <div class="controls" style="margin-bottom: 5px;margin-top: 30px;">
-                <button id="startButton" class="button-padding button-fullsize">
-                    <i class="fa-solid fa-play"></i> <em id="start-text">Start</em>
-                </button>
-            </div>
-
-            <div class="controls" style="margin-bottom: 5px;padding: 0;">
-                <button id="reset" class="button-padding button-fullsize">
-                    <i class="fa-solid fa-arrows-rotate"></i> Reset
-                </button>
-            </div>
-
-            <div class="controls" style="padding: 0;">
-                <button id="themeToggle" class="button-padding button-fullsize"><i
-                        class="fa-solid fa-circle-half-stroke"></i> Switch Theme
-                </button>
-            </div>
-            <!-- <button id="exportSettings">Export Settings</button> -->
-            <!-- <input type="file" id="importSettings" style="display: none;"> -->
-            <!-- <button id="importSettingsButton">Import Settings</button> -->
-        </div>
+        <hr>
 
         <div class="controls border-bottom">
             <em onclick="toggleContent(this)" class="toggleEm">
@@ -296,6 +256,37 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="grid action">
+        <div class="separate">
+            <button id="record" class="button-padding button-fullsize" title="Record">
+                <i class="fa-solid fa-record-vinyl"></i>
+            </button>
+
+            <button id="startButton" class="button-padding button-fullsize" title="Play">
+                <i class="fa-solid fa-play"></i> <em id="start-text"></em>
+            </button>
+
+            <button id="reset" class="button-padding button-fullsize" title="Reset">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+        </div>
+
+        <div class="separate">
+            <button class="button-padding button-fullsize" onclick="downloadCanvasAsPNG()" title="Download as a png">
+                <i class="fa-solid fa-download"></i>
+            </button>
+        </div>
+
+        <div class="separate">
+            <button id="themeToggle" class="button-padding button-fullsize" title="Switch theme"><i
+                    class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+        </div>
+        <!-- <button id="exportSettings">Export Settings</button> -->
+        <!-- <input type="file" id="importSettings" style="display: none;"> -->
+        <!-- <button id="importSettingsButton">Import Settings</button> -->
     </div>
 
 
