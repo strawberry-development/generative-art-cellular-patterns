@@ -39,17 +39,28 @@ function init(seed = generateRandomSeed()) {
 }
 
 function updateCanvasSize() {
-    CANVAS_WIDTH = parseInt(document.getElementById('canvasWidth').value);
-    CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+    // TODO move the logic out of there and only get CANVAS WIDTH and CANVAS HEIGHT
+    const isCustomSizeEnabled = document.getElementById('customSizeCheckbox').checked;
+
+    if (isCustomSizeEnabled) {
+        // Use custom width and height provided by the user
+        CANVAS_WIDTH = parseInt(document.getElementById('customWidth').value);
+        CANVAS_HEIGHT = parseInt(document.getElementById('customHeight').value);
+    } else {
+        // Use aspect-ratio-based width and height
+        CANVAS_WIDTH = parseInt(document.getElementById('canvasWidth').value);
+        CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+    }
 
     // Ensure that the canvas width and height are multiples of the cell size
-    // = no gap
     CANVAS_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE) * CELL_SIZE;
     CANVAS_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE) * CELL_SIZE;
 
+    // Update the canvas size
     originalCanvas.width = CANVAS_WIDTH;
     originalCanvas.height = CANVAS_HEIGHT;
 
+    // Update grid dimensions and size information display
     updateGridDimensions();
     updateSizeInfo();
 }
