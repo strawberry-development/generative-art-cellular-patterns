@@ -54,6 +54,7 @@ We welcome contributions! If you find a bug, have ideas for improvements, or wan
 ### Current Work in Progress
 - UI Prototype and improvements
 - Small fixes and optimizations
+- Improving customizability
 
 ## License
 
