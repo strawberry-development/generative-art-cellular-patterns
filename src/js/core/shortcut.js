@@ -10,7 +10,7 @@ document.addEventListener('keydown', function(event) {
                     break;
                 case 'r':
                     event.preventDefault();
-                    resetLaunch();
+                    resetAction();
                     break;
             }
         }

@@ -13,10 +13,20 @@ window.addEventListener('load', function() {
     performance.clearMeasures();
 });
 
+/*
+*   File need to be included in this order otherwise there well be error due to missing function.
+*/
 const paths = [
+    // initial values
     'js/data/defaultConfig.js',
     'js/core/seed.js',
-    'js/ui/controls.js',
+    //controls
+    'js/controls/animation.js',
+    'js/controls/canvas.js',
+    'js/controls/cell.js',
+    'js/controls/main.js',
+    'js/controls/record.js',
+    'js/controls/resetConfig.js',
     'js/ui/colorPalette.js',
     'js/ui/menu.js',
     'js/monitoring/log.js',
