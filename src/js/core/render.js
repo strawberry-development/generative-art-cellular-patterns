@@ -1,14 +1,19 @@
 function draw(ctx) {
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.save();
+
+    ctx.scale(zoomLevel, zoomLevel);
+    ctx.translate(panX, panY);
+
+    // Drawing the grid/cells
     for (let x = 0; x < GRID_WIDTH; x++) {
         for (let y = 0; y < GRID_HEIGHT; y++) {
-            if (cells[x] && cells[x][y] === 1) {
-                ctx.fillStyle = getCellColor();
-                ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-            }
+            ctx.fillStyle = cells[x][y] ? getCellColor() : backgroundColor;
+            ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
         }
     }
+
+    ctx.restore();
 }
 
 function update() {

@@ -23,7 +23,7 @@ The project primarily uses JavaScript without any external frameworks or librari
 ## Directories Overview
 
 ### 1. **CSS**
-Contains the main stylesheet. There is only one file: `styles.css`. Additionally, Font Awesome is used locally for icons.
+Contains the main stylesheet with the grid apart. Additionally, Font Awesome is used locally for icons.
 
 ### 2. **IMG**
 This directory holds all images used in the project.

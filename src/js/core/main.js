@@ -26,7 +26,6 @@ const HeightRatioElement = document.getElementById('HeightRatio');
 
 function init(seed = generateRandomSeed()) {
     const rng = new MersenneTwister(seed);
-
     document.getElementById('seedValue').innerText = seed;
 
     cells = [];
@@ -41,25 +40,20 @@ function init(seed = generateRandomSeed()) {
 }
 
 function updateCanvasSize() {
-    // Ensure that the canvas width and height are multiples of the cell size
     CANVAS_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE) * CELL_SIZE;
     CANVAS_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE) * CELL_SIZE;
 
-    // Update the canvas size
     originalCanvas.width = CANVAS_WIDTH;
     originalCanvas.height = CANVAS_HEIGHT;
 
-    // Update grid dimensions and size information display
     updateGridDimensions();
     updateSizeInfo();
 }
 
 function updateGridDimensions() {
-    // Set grid dimensions to match the new canvas size
     GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
     GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
 
-    // Reinitialize the cells with the new grid size
     init();
 }
 
@@ -93,4 +87,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     draw(originalCtx);
 });
 
+// Start
 resetConfig();

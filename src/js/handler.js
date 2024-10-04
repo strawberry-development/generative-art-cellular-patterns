@@ -20,13 +20,15 @@ const paths = [
     // initial values
     'js/data/defaultConfig.js',
     'js/core/seed.js',
-    //controls
+    // controls
     'js/controls/animation.js',
     'js/controls/canvas.js',
     'js/controls/cell.js',
     'js/controls/main.js',
+    'js/controls/interaction.js',
     'js/controls/record.js',
     'js/controls/resetConfig.js',
+    // rest
     'js/ui/colorPalette.js',
     'js/ui/menu.js',
     'js/monitoring/log.js',
@@ -34,12 +36,14 @@ const paths = [
     'js/core/timer.js',
     'js/core/render.js',
     'js/animations/animation.js',
+    'js/core/interaction.js',
     'js/core/record.js',
     'js/core/main.js',
     'js/core/shortcut.js',
     'js/ui/theme.js',
     'js/ui/hover-change.js',
     'js/ui/responsive.js',
+    // end
     'js/data/localStorage.js'
 ];
 
