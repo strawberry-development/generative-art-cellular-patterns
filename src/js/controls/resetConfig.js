@@ -28,6 +28,6 @@ function resetConfig() {
     updateSurviveRules(defaultConfig.surviveRules);
     updateBirthRules(defaultConfig.birthRules);
     updateAnimationSpeed(defaultConfig.animationSpeed);
-
+    
     updateCanvas(true);
 }

@@ -10,7 +10,9 @@ document.getElementById('reset').addEventListener('click', () => {
 function resetAction(){
     const seed = document.getElementById('seedValue').innerText;
     generationCount = 0;
+    aliveCount = countAliveCells();
     resetTimer();
     document.getElementById('generationCount').innerText = generationCount;
+    document.getElementById('aliveCount').innerText = aliveCount;
     updateCanvas(false, true, seed);
 }

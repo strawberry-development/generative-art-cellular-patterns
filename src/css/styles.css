@@ -353,7 +353,7 @@ pre {
 #progressContainer {
     width: 100%;
     background: var(--panel);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
     margin: 20px;
 }
@@ -361,7 +361,7 @@ pre {
 #progressBar {
     width: 0%;
     height: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: var(--contrast-color);
     transition: width 0.2s ease-out; /* Smooth transition for width changes */
 }
