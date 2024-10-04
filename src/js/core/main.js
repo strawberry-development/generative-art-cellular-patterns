@@ -10,7 +10,7 @@ let GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
 let GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
 let recordDuration = defaultConfig.recordDuration * 100;
 let generationCount = 0;
-let aliveCount;
+let aliveCount = 0;
 let cells = [];
 let backgroundColor = defaultConfig.backgroundColor;
 let surviveRules = defaultConfig.surviveRules;
@@ -37,6 +37,7 @@ function init(seed = generateRandomSeed()) {
         }
     }
     updateSizeInfo();
+    update();
 }
 
 function updateCanvasSize() {

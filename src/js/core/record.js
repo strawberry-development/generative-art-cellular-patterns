@@ -71,11 +71,11 @@ async function recordAnimation(canvas, prefix) {
     mediaRecorder.stop();
 }
 
-function downloadCanvasAsPNG() {
+document.getElementById('downloadImage').addEventListener('click', () => {
     const canvas = document.getElementById('originalCanvas');
     const dataURL = canvas.toDataURL('image/png');
     const downloadLink = document.createElement('a');
     downloadLink.href = dataURL;
     downloadLink.download = 'canvas_image.png';
     downloadLink.click();
-}
+});
