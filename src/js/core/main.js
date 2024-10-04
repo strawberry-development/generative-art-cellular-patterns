@@ -37,7 +37,7 @@ function init(seed = generateRandomSeed()) {
         }
     }
     updateSizeInfo();
-    update();
+    document.getElementById('aliveCount').innerText = countAliveCells().toString();
 }
 
 function updateCanvasSize() {

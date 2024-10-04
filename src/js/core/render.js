@@ -35,7 +35,7 @@ function update() {
 
     // Update generation count and alive cells count in the DOM
     document.getElementById('generationCount').innerText = generationCount;
-    document.getElementById('aliveCount').innerText = aliveCount; // Assuming you have an element with id="aliveCount"
+    document.getElementById('aliveCount').innerText = aliveCount;
 }
 
 function countAliveCells() {

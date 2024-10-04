@@ -1,48 +1,47 @@
 /* TODO: optimise this file */
 
 :root {
-    --background-color: #f0f0f0;
+    --background: #f0f0f0;
     --panel: #ffffff;
-    --border-color: #e0e0e0;
+    --border: #f6f6f6;
 
-    --text-color: #1e202d;
+    --text: #1e202d;
     --title-color: #1e202d;
+    --contrast: #674bd3;
 
-    --contrast-color: #674bd3;
-
-    --button-background-color: #d9d9d9;
-    --button-hover-background-color: #a8a8a8;
-    --input-background-color: #ffffff;
-    --input-border-color: #e0e0e0;
-    --input-focus-border-color: #674bd3;
-    --input-text-color: #1e202d;
-
-    --canvas-border-color: #d0d0d0;
+    --button-background: #d9d9d9;
+    --button-hover-background: #a8a8a8;
+    --input-background: #ffffff;
+    --input-border: #e0e0e0;
+    --input-focus-border: #674bd3;
+    --input-text: #1e202d;
 }
 
 [data-theme='dark'] {
-    --background-color: #121212;
+    --background: #121212;
     --panel: #1e1e1e;
-    --border-color: #333333;
+    --border: #333333;
 
-    --text-color: #e0e0e0;
-    --title-color: #ffffff;
-    --contrast-color: #bb86fc;
+    --text: #e0e0e0;
+    --title: #ffffff;
+    --contrast: #bb86fc;
 
-    --button-background-color: #292929;
-    --button-hover-background-color: #3a3a3a;
-    --input-background-color: #2a2a2a;
-    --input-border-color: #444444;
-    --input-focus-border-color: #bb86fc;
-    --input-text-color: #e0e0e0;
+    --button-background: #292929;
+    --button-hover-background: #3a3a3a;
+    --input-background: #2a2a2a;
+    --input-border: #444444;
+    --input-focus-border: #bb86fc;
+    --input-text: #e0e0e0;
+}
 
-    --canvas-border-color: #444444;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background);
+    color: var(--text);
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -73,7 +72,7 @@ body {
     width: 100%;
 }
 
-.grid {
+grid {
     width: 100%;
     height: 100%;
     max-height: 100%;
@@ -83,7 +82,7 @@ body {
 .header {
     background-color: var(--panel);
     grid-area: header;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border);
     user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
@@ -111,7 +110,7 @@ body {
 }
 
 .header-nav a {
-    color: var(--contrast-color);
+    color: var(--contrast);
     text-decoration: none;
     margin-left: 15px;
 }
@@ -122,7 +121,7 @@ body {
 
 .panel {
     background: var(--panel);
-    border-right: 2px solid var(--border-color);
+    border-right: 2px solid var(--border);
     grid-area: panel;
     margin-top: 2px;
     overflow-x: clip;
@@ -135,7 +134,7 @@ body {
 }
 
 .border-bottom {
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border);
 }
 
 .action {
@@ -157,27 +156,33 @@ body {
 }
 
 .footer {
-    border-top: 2px solid var(--border-color);
+    border-top: 2px solid var(--border);
     background: var(--panel);
     grid-area: footer;
+    display: flex;
+    align-items: flex-end;
 }
 
 .footer > .controls {
     width: fit-content;
 }
 
+.footer > div {
+    white-space: nowrap;
+}
+
 .status {
-    border-right: 2px solid var(--border-color);
+    border-right: 2px solid var(--border);
     background: var(--panel);
     display: flex;
     justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
+    align-items: center; /* Centers vertically */
     grid-area: status;
 }
 
 button {
-    background-color: var(--button-background-color);
-    color: var(--text-color);
+    background-color: var(--button-background);
+    color: var(--text);
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -186,7 +191,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--button-hover-background-color);
+    background-color: var(--button-hover-background);
 }
 
 button:active {
@@ -198,11 +203,11 @@ button:focus {
 }
 
 .border-left {
-    border-left: 2px solid var(--border-color);
+    border-left: 2px solid var(--border);
 }
 
 .border-right {
-    border-right: 2px solid var(--border-color);
+    border-right: 2px solid var(--border);
 }
 
 .control-group {
@@ -224,10 +229,10 @@ select {
     max-width: 100%;
     padding: 5px;
     margin-top: 5px;
-    background-color: var(--input-background-color);
-    border: 1px solid var(--input-border-color);
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
     border-radius: 5px;
-    color: var(--input-text-color);
+    color: var(--input-text);
     font-size: 14px;
     transition: 0.2s;
 }
@@ -250,19 +255,18 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 16px;
     height: 16px;
-    background: var(--contrast-color);
+    background: var(--contrast);
     border-radius: 50%;
     cursor: pointer;
 }
 
 input[type="range"]:focus {
-    border-color: var(--input-focus-border-color);
+    border-color: var(--input-focus-border);
 }
 
 canvas {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
+    max-width: 95%;
+    max-height: 95%;
 }
 
 .canvas-container {
@@ -290,14 +294,14 @@ canvas {
     background-color: var(--panel);
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     width: fit-content;
     border-radius: 5px;
 }
 
 .button-fullsize {
     margin: 0;
-    border: 2px solid var(--input-border-color);
+    border: 2px solid var(--input-border);
 }
 
 .button-padding {
@@ -362,33 +366,13 @@ pre {
     width: 0%;
     height: 20px;
     border-radius: 5px;
-    background: var(--contrast-color);
+    background: var(--contrast);
     transition: width 0.2s ease-out; /* Smooth transition for width changes */
 }
 
 #record {
-    background: var(--contrast-color);
+    background: var(--contrast);
     color: #fff;
-}
-
-/* Custom resize handle */
-.resize-handle {
-    width: 10px;
-    height: 100%;
-    background: transparent;
-    cursor: ew-resize;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.panel, .action, .footer, .status {
-    position: relative;
-}
-
-.resize-handle {
-    cursor: ew-resize;
 }
 
 #refreshLink {
@@ -397,5 +381,5 @@ pre {
 }
 
 #refreshLink > svg {
-    fill: var(--contrast-color)
+    fill: var(--contrast)
 }

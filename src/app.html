@@ -14,7 +14,7 @@
 <body>
 
 <div class="bento-grid">
-    <div class="grid header">
+    <grid class="header">
         <div class="header-content">
             <div class="header-logo">
                 <a draggable="false" href="#" id="refreshLink">
@@ -37,9 +37,9 @@
                     Bug</a>
             </nav>
         </div>
-    </div>
+    </grid>
 
-    <div class="grid panel">
+    <grid class="panel">
         <div class="controls">
             <button id="resetConfig" class="button-padding button-fullsize">Reset All Value</button>
         </div>
@@ -253,9 +253,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </grid>
 
-    <div class="grid action">
+    <grid class="action">
         <div class="separate">
             <button id="record" class="button-padding button-fullsize" title="Record">
                 <i class="fa-solid fa-record-vinyl"></i>
@@ -284,35 +284,33 @@
         <!-- <button id="exportSettings">Export Settings</button> -->
         <!-- <input type="file" id="importSettings" style="display: none;"> -->
         <!-- <button id="importSettingsButton">Import Settings</button> -->
-    </div>
+    </grid>
 
 
-    <div class="grid main">
+    <grid class="main">
         <div class="canvas-container">
             <canvas id="originalCanvas"></canvas>
         </div>
-    </div>
+    </grid>
 
-    <div class="grid footer" style="display: flex; align-items: flex-end;">
-        <div style="display: flex;">
-            <div class="controls" style="white-space: nowrap;">
-                <span>Alive: <strong><span id="aliveCount">0</span></strong></span>
-            </div>
-            <div class="controls" style="white-space: nowrap;">
-                <span>Generation: <strong><span id="generationCount">0</span></strong></span>
-            </div>
-            <div class="controls" style="white-space: nowrap;">
-                <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
-            </div>
+    <grid class="footer">
+        <div class="controls">
+            <span>Alive: <strong><span id="aliveCount">0</span></strong></span>
+        </div>
+        <div class="controls">
+            <span>Generation: <strong><span id="generationCount">0</span></strong></span>
+        </div>
+        <div class="controls">
+            <span>Elapsed Time: <strong><span id="elapsedTime">00:00:00</span></strong></span>
         </div>
         <div id="progressContainer">
             <div id="progressBar"></div>
         </div>
-    </div>
+    </grid>
 
-    <div class="grid status">
+    <grid class="status">
         <span id="fps">FPS: 0</span>
-    </div>
+    </grid>
 </div>
 
 <div id="exportModal" class="modal">
