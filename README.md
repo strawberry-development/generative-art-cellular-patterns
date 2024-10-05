@@ -47,7 +47,7 @@ There can be great beauty in chaos
 ## Known Issues
 - **Responsive Design**: The UI is not optimized for mobile devices.
 - Aspect ratio doesn't disable properly
-- Zooming and canvas size
+
 ## Contributing
 
 We welcome contributions! If you find a bug, have ideas for improvements, or want to help expand the project, feel free to open an issue or submit a pull request.

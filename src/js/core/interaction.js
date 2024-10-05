@@ -5,23 +5,28 @@ let isPanning = false;
 let startX = 0;
 let startY = 0;
 
+let mouseX;
+let mouseY;
+
 const mouseCoordinatesElement = document.getElementById('mouseCoordinates');
 const zoomLevelElement = document.getElementById('zoomLevel');
+
+originalCanvas.style.cursor = 'grab';
 
 originalCanvas.addEventListener('wheel', (event) => {
     event.preventDefault();
 
-    const mouseX = (event.offsetX - panX * zoomLevel) / zoomLevel;
-    const mouseY = (event.offsetY - panY * zoomLevel) / zoomLevel;
+    const mouseBeforeZoomX = (event.offsetX - panX * zoomLevel) / zoomLevel;
+    const mouseBeforeZoomY = (event.offsetY - panY * zoomLevel) / zoomLevel;
 
     const zoomAmount = event.deltaY > 0 ? 0.9 : 1.1;
     const newZoomLevel = Math.max(0.5, Math.min(zoomLevel * zoomAmount, 10)); // Limit zoom level
 
-    panX -= (mouseX * newZoomLevel - mouseX * zoomLevel);
-    panY -= (mouseY * newZoomLevel - mouseY * zoomLevel);
-
     zoomLevel = newZoomLevel;
     zoomLevelElement.textContent = `Zoom: ${Math.round(zoomLevel * 100)}%`;
+
+    panX = event.offsetX / zoomLevel - mouseBeforeZoomX;
+    panY = event.offsetY / zoomLevel - mouseBeforeZoomY;
 
     draw(originalCtx);
 });
@@ -30,26 +35,30 @@ originalCanvas.addEventListener('mousedown', (event) => {
     isPanning = true;
     startX = event.offsetX - panX * zoomLevel;
     startY = event.offsetY - panY * zoomLevel;
+
+    originalCanvas.style.cursor = 'grabbing';
 });
 
 originalCanvas.addEventListener('mousemove', (event) => {
     if (isPanning) {
-        panX = (event.offsetX - startX) / zoomLevel;
-        panY = (event.offsetY - startY) / zoomLevel;
+        panX = Math.floor((event.offsetX - startX) / zoomLevel);
+        panY = Math.floor((event.offsetY - startY) / zoomLevel);
         draw(originalCtx);
     }
 
-    const mouseX = (event.offsetX - panX * zoomLevel) / zoomLevel;
-    const mouseY = (event.offsetY - panY * zoomLevel) / zoomLevel;
-    mouseCoordinatesElement.textContent = `Mouse Coords: (${Math.floor(mouseX)}, ${Math.floor(mouseY)})`;
+    mouseX = Math.floor((event.offsetX - panX * zoomLevel) / zoomLevel);
+    mouseY = Math.floor((event.offsetY - panY * zoomLevel) / zoomLevel);
+    mouseCoordinatesElement.textContent = `Mouse Coords: (${mouseX}, ${mouseY})`;
 });
 
 originalCanvas.addEventListener('mouseup', () => {
     isPanning = false;
+    originalCanvas.style.cursor = 'grab';
 });
 
 originalCanvas.addEventListener('mouseleave', () => {
     isPanning = false;
+    originalCanvas.style.cursor = 'grab';
 });
 
 function resetZoom() {
