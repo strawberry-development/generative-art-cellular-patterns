@@ -7,14 +7,14 @@
     grid-template-areas:
     "header header header header header header header header header header header"
     "panel panel action action action action action action action action action"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "panel panel main main main main main main main main main"
-    "status status footer footer footer footer footer footer footer footer footer";
+    "panel panel main main main main main main main . ."
+    "panel panel main main main main main main main . ."
+    "panel panel main main main main main main main . ."
+    "panel panel main main main main main main main . ."
+    "panel panel main main main main main main main information information"
+    "panel panel main main main main main main main information information"
+    "panel panel main main main main main main main . ."
+    "panel panel footer footer footer footer footer footer footer footer footer";
     height: 100%;
     width: 100%;
 }
@@ -47,13 +47,14 @@ grid {
     overflow-y: scroll;
 }
 
-.status {
-    grid-area: status;
+.information {
+    grid-area: information;
     border-right: 2px solid var(--border);
     background: var(--panel);
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    overflow-x: clip;
+    overflow-y: scroll;
+    width: 90%;
+    border-radius: 5px;
 }
 
 .action {
@@ -71,4 +72,5 @@ grid {
     background: var(--panel);
     display: flex;
     align-items: flex-end;
+    margin-left: 2px;
 }
