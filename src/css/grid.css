@@ -6,14 +6,14 @@
     gap: 0px 0px;
     grid-template-areas:
     "header header header header header header header header header header header"
-    "panel panel action action action action action action action action action"
-    "panel panel main main main main main main main . ."
-    "panel panel main main main main main main main . ."
-    "panel panel main main main main main main main . ."
-    "panel panel main main main main main main main . ."
-    "panel panel main main main main main main main information information"
-    "panel panel main main main main main main main information information"
-    "panel panel main main main main main main main . ."
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
+    "panel panel main main main main main main main main main"
     "panel panel footer footer footer footer footer footer footer footer footer";
     height: 100%;
     width: 100%;

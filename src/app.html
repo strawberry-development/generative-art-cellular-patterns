@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generative Art Cellular Patterns</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
@@ -213,111 +211,102 @@
         </div>
     </grid>
 
-    <grid class="information">
-        <div class="category">
-            <i class="fa-solid fa-circle-info"></i>
-            Information
-        </div>
-        <div class="scroll">
-            <div class="controls border-bottom">
-                <em onclick="toggleContent(this)" class="toggleEm">
-                    Shortcut
-                    <span class="toggle-icon">
+    <grid class="main">
+        <div class="information">
+            <div class="category">
+                <i class="fa-solid fa-circle-info"></i>
+                Information
+            </div>
+            <div class="scroll">
+                <div class="controls border-bottom">
+                    <em onclick="toggleContent(this)" class="toggleEm">
+                        Shortcut
+                        <span class="toggle-icon">
             <i class="fa fa-angle-up" aria-hidden="true"></i>
              </span>
-                </em>
-                <div class="visible-content">
-                    <div class="control-group">
-                        <b>Start</b><br>
-                        <em>(ctrl + s)</em>
-                        <br><br>
-                        <b>Reset</b><br>
-                        <em>(ctrl + r)</em>
+                    </em>
+                    <div class="visible-content">
+                        <div class="control-group">
+                            <b>Start</b><br>
+                            <em>(ctrl + s)</em>
+                            <br><br>
+                            <b>Reset</b><br>
+                            <em>(ctrl + r)</em>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="controls border-bottom">
-                <em onclick="toggleContent(this)" class="toggleEm">
-                    Statistic
-                    <span class="toggle-icon">
+                <div class="controls border-bottom">
+                    <em onclick="toggleContent(this)" class="toggleEm">
+                        Statistic
+                        <span class="toggle-icon">
             <i class="fa fa-angle-up" aria-hidden="true"></i>
         </span>
-                </em>
-                <div class="visible-content">
-                    <div class="control-group">
-                        <em><strong>Height information</strong></em>
+                    </em>
+                    <div class="visible-content">
                         <div class="control-group">
-                            <em id="IntrinsicSize"></em><br>
-                        </div>
-                        <div class="control-group">
-                            <em>Real Size</em><br>
-                            <em id="ActualSize"></em><br>
-                        </div>
+                            <em><strong>Height information</strong></em>
+                            <div class="control-group">
+                                <em id="IntrinsicSize"></em><br>
+                            </div>
+                            <div class="control-group">
+                                <em>Real Size</em><br>
+                                <em id="ActualSize"></em><br>
+                            </div>
 
-                        <em id="WidthRatio"></em><br>
-                        <em id="HeightRatio"></em><br>
-                    </div>
-                    <div class="control-group">
-                        <span id="load-time">Calculating...</span>
-                    </div>
-                    <div class="control-group">
-                        <span id="fps">FPS: 0</span>
+                            <em id="WidthRatio"></em><br>
+                            <em id="HeightRatio"></em><br>
+                        </div>
+                        <div class="control-group">
+                            <span id="load-time">Calculating...</span>
+                        </div>
+                        <div class="control-group">
+                            <span id="fps">FPS: 0</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </grid>
+        <div class="action">
+            <div class="separate">
+                <button id="record" class="button-padding button-fullsize" title="Record">
+                    <i class="fa-solid fa-record-vinyl"></i>
+                </button>
 
-    <grid class="action">
-        <div class="separate">
-            <button id="record" class="button-padding button-fullsize" title="Record">
-                <i class="fa-solid fa-record-vinyl"></i>
-            </button>
+                <button id="startButton" class="button-padding button-fullsize" title="Play">
+                    <i class="fa-solid fa-play"></i> <em id="start-text"></em>
+                </button>
 
-            <button id="startButton" class="button-padding button-fullsize" title="Play">
-                <i class="fa-solid fa-play"></i> <em id="start-text"></em>
-            </button>
-
-            <button id="reset" class="button-padding button-fullsize" title="Reset">
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-        </div>
-
-        <div class="separate">
-            <button class="button-padding button-fullsize" id="downloadImage" title="Download as a png">
-                <i class="fa-solid fa-download"></i>
-            </button>
-        </div>
-
-        <div class="separate">
-            <button id="themeToggle" class="button-padding button-fullsize" title="Switch theme"><i
-                    class="fa-solid fa-circle-half-stroke"></i>
-            </button>
-        </div>
-        <!-- <button id="exportSettings">Export Settings</button> -->
-        <!-- <input type="file" id="importSettings" style="display: none;"> -->
-        <!-- <button id="importSettingsButton">Import Settings</button> -->
-        <div class="separate" style="margin-left: auto;">
-            <div style="margin: 10px;">
-                <span id="zoomLevel">Zoom: 100%</span>
+                <button id="reset" class="button-padding button-fullsize" title="Reset">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </button>
             </div>
-            <div style="margin: 10px;">
-                <span id="mouseCoordinates">Mouse Coords: (0, 0) </span>
+
+            <div class="separate">
+                <button class="button-padding button-fullsize" id="downloadImage" title="Download as a png">
+                    <i class="fa-solid fa-download"></i>
+                </button>
             </div>
-            <button id="resetZoom">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                &nbsp;
-                Reset Zoom
-            </button>
+
+            <!-- <button id="exportSettings">Export Settings</button> -->
+            <!-- <input type="file" id="importSettings" style="display: none;"> -->
+            <!-- <button id="importSettingsButton">Import Settings</button> -->
+            <div class="separate" style="margin-left: auto;">
+                <div style="margin: 10px;">
+                    <span id="zoomLevel">Zoom: 100%</span>
+                </div>
+                <div style="margin: 10px;">
+                    <span id="mouseCoordinates">Mouse Coords: (0, 0) </span>
+                </div>
+                <button id="resetZoom">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;
+                    Reset Zoom
+                </button>
+            </div>
         </div>
-
-    </grid>
-
-
-    <grid class="main">
-        <div class="canvas-container" style="/*border: solid 1px green;*/">
-            <canvas id="originalCanvas" style="/*border: solid 1px red;*/"></canvas>
+        <div class="canvas-container">
+            <canvas id="canvasElement"></canvas>
         </div>
     </grid>
 

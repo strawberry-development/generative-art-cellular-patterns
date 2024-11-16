@@ -1,13 +1,20 @@
-const originalCanvas = document.getElementById('originalCanvas');
-const originalCtx = originalCanvas.getContext('2d');
+const canvasElement = document.getElementById('canvasElement');
+const canvasCtx = canvasElement.getContext('2d');
+
+function resetCanvasSize() {
+    canvasElement.width = canvasElement.getBoundingClientRect().width;
+    canvasElement.height = canvasElement.getBoundingClientRect().height;
+    draw(canvasCtx);
+}
 
 const aspectRatioValue = defaultConfig.aspectRatio.split('/');
 let ASPECT_RATIO = parseInt(aspectRatioValue[0]) / parseInt(aspectRatioValue[1]);
-let CANVAS_WIDTH = defaultConfig.canvasWidth;
-let CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+
+let RENDER_WIDTH = defaultConfig.canvasWidth;
+let RENDER_HEIGHT = RENDER_WIDTH / ASPECT_RATIO;
 let CELL_SIZE = defaultConfig.cellSize;
-let GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
-let GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
+let GRID_WIDTH = Math.floor(RENDER_WIDTH / CELL_SIZE);
+let GRID_HEIGHT = Math.floor(RENDER_HEIGHT / CELL_SIZE);
 let recordDuration = defaultConfig.recordDuration * 100;
 let generationCount = 0;
 let aliveCount = 0;
@@ -39,20 +46,17 @@ function init(seed = generateRandomSeed()) {
     document.getElementById('aliveCount').innerText = countAliveCells().toString();
 }
 
-function updateCanvasSize() {
-    CANVAS_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE) * CELL_SIZE;
-    CANVAS_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE) * CELL_SIZE;
-
-    originalCanvas.width = CANVAS_WIDTH;
-    originalCanvas.height = CANVAS_HEIGHT;
+function updateDrawSize() {
+    RENDER_WIDTH = Math.floor(RENDER_WIDTH / CELL_SIZE) * CELL_SIZE;
+    RENDER_HEIGHT = Math.floor(RENDER_HEIGHT / CELL_SIZE) * CELL_SIZE;
 
     updateGridDimensions();
     updateSizeInfo();
 }
 
 function updateGridDimensions() {
-    GRID_WIDTH = Math.floor(CANVAS_WIDTH / CELL_SIZE);
-    GRID_HEIGHT = Math.floor(CANVAS_HEIGHT / CELL_SIZE);
+    GRID_WIDTH = Math.floor(RENDER_WIDTH / CELL_SIZE);
+    GRID_HEIGHT = Math.floor(RENDER_HEIGHT / CELL_SIZE);
 
     init();
 }
@@ -62,11 +66,11 @@ function parseRules(ruleString) {
 }
 
 function updateSizeInfo() {
-    const intrinsicWidth = originalCanvas.width;
-    const intrinsicHeight = originalCanvas.height;
+    const intrinsicWidth = canvasElement.width;
+    const intrinsicHeight = canvasElement.height;
 
-    const actualWidth = originalCanvas.clientWidth;
-    const actualHeight = originalCanvas.clientHeight;
+    const actualWidth = canvasElement.clientWidth;
+    const actualHeight = canvasElement.clientHeight;
 
     const widthRatio = ((actualWidth / intrinsicWidth) * 100).toFixed(2);
     const heightRatio = ((actualHeight / intrinsicHeight) * 100).toFixed(2);
@@ -82,10 +86,12 @@ window.addEventListener('resize', () => {
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    updateCanvasSize();
+    updateDrawSize();
     init();
-    draw(originalCtx);
+    draw(canvasCtx);
 });
 
 // Start
 resetConfig();
+resetCanvasSize();
+window.addEventListener('resize', resetCanvasSize);

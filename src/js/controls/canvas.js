@@ -1,6 +1,6 @@
 function updateCanvas(size = false, initFlag = false, seed = null) {
     if (size) {
-        updateCanvasSize();
+        updateDrawSize();
     }
 
     if (initFlag) {
@@ -11,7 +11,7 @@ function updateCanvas(size = false, initFlag = false, seed = null) {
         }
     }
 
-    draw(originalCtx);
+    draw(canvasCtx);
 }
 
 document.getElementById('aspectRatio').addEventListener('change', (e) => {
@@ -23,8 +23,8 @@ document.getElementById('aspectRatio').addEventListener('change', (e) => {
 function updateAspectRatio(target) {
     ASPECT_RATIO = parseInt(target[0]) / parseInt(target[1]);
     document.getElementById('aspectRatioValue').innerText = target.join(':');
-    CANVAS_WIDTH = parseInt(document.getElementById('canvasWidth').value);
-    CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+    RENDER_WIDTH = parseInt(document.getElementById('canvasWidth').value);
+    RENDER_HEIGHT = RENDER_WIDTH / ASPECT_RATIO;
 }
 
 document.getElementById('canvasWidth').addEventListener('input', (e) => {
@@ -34,8 +34,8 @@ document.getElementById('canvasWidth').addEventListener('input', (e) => {
 });
 
 function updateCanvasWidth(target) {
-    CANVAS_WIDTH = parseInt(target);
-    CANVAS_HEIGHT = CANVAS_WIDTH / ASPECT_RATIO;
+    RENDER_WIDTH = parseInt(target);
+    RENDER_HEIGHT = RENDER_WIDTH / ASPECT_RATIO;
     document.getElementById('canvasWidthValue').innerText = target;
 }
 
@@ -77,8 +77,8 @@ document.getElementById('customHeight').addEventListener('input', (e) => {
 });
 
 function updateCustomSize(width, height) {
-    CANVAS_WIDTH = parseInt(width);
-    CANVAS_HEIGHT = parseInt(height);
+    RENDER_WIDTH = parseInt(width);
+    RENDER_HEIGHT = parseInt(height);
     const seed = document.getElementById('seedValue').innerText;
     updateCanvas(true, true, seed);
 }

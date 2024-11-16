@@ -4,7 +4,7 @@ function animate() {
     update();
 
     setTimeout(() => {
-        draw(originalCtx);
+        draw(canvasCtx);
         requestAnimationFrame(animate);
     }, 100 / animationSpeed);
 }

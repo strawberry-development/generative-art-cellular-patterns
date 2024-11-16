@@ -23,7 +23,7 @@ document.getElementById('record').addEventListener('click', async () => {
     isRecording = true;
 
     try {
-        await recordAnimation(originalCanvas, 'original');
+        await recordAnimation(canvasElement, 'original');
     } finally {
         isRecording = false;
     }

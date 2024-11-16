@@ -72,7 +72,7 @@ async function recordAnimation(canvas, prefix) {
 }
 
 document.getElementById('downloadImage').addEventListener('click', () => {
-    const canvas = document.getElementById('originalCanvas');
+    const canvas = document.getElementById('canvasElement');
     const dataURL = canvas.toDataURL('image/png');
     const downloadLink = document.createElement('a');
     downloadLink.href = dataURL;

@@ -11,54 +11,77 @@ let mouseY;
 const mouseCoordinatesElement = document.getElementById('mouseCoordinates');
 const zoomLevelElement = document.getElementById('zoomLevel');
 
-originalCanvas.style.cursor = 'grab';
+canvasElement.style.cursor = 'grab';
 
-originalCanvas.addEventListener('wheel', (event) => {
+canvasElement.addEventListener('wheel', (event) => {
     event.preventDefault();
 
-    const mouseBeforeZoomX = (event.offsetX - panX * zoomLevel) / zoomLevel;
-    const mouseBeforeZoomY = (event.offsetY - panY * zoomLevel) / zoomLevel;
+    // Get the center of the canvas
+    const canvasCenterX = canvasElement.width / 2;
+    const canvasCenterY = canvasElement.height / 2;
 
+    // Calculate mouse position before zoom relative to the center
+    const mouseBeforeZoomX = (event.offsetX - canvasCenterX - panX * zoomLevel) / zoomLevel;
+    const mouseBeforeZoomY = (event.offsetY - canvasCenterY - panY * zoomLevel) / zoomLevel;
+
+    // Adjust zoom level
     const zoomAmount = event.deltaY > 0 ? 0.9 : 1.1;
     const newZoomLevel = Math.max(0.5, Math.min(zoomLevel * zoomAmount, 10)); // Limit zoom level
 
+    // Update zoom level and pan offsets to keep mouse position stable
     zoomLevel = newZoomLevel;
     zoomLevelElement.textContent = `Zoom: ${Math.round(zoomLevel * 100)}%`;
 
-    panX = event.offsetX / zoomLevel - mouseBeforeZoomX;
-    panY = event.offsetY / zoomLevel - mouseBeforeZoomY;
+    // Adjust pan based on the new zoom level
+    panX = (event.offsetX - canvasCenterX) / zoomLevel - mouseBeforeZoomX;
+    panY = (event.offsetY - canvasCenterY) / zoomLevel - mouseBeforeZoomY;
 
-    draw(originalCtx);
+    draw(canvasCtx);
 });
 
-originalCanvas.addEventListener('mousedown', (event) => {
+canvasElement.addEventListener('mousedown', (event) => {
     isPanning = true;
-    startX = event.offsetX - panX * zoomLevel;
-    startY = event.offsetY - panY * zoomLevel;
 
-    originalCanvas.style.cursor = 'grabbing';
+    // Get the center of the canvas
+    const canvasCenterX = canvasElement.width / 2;
+    const canvasCenterY = canvasElement.height / 2;
+
+    // Start positions adjusted to the center
+    startX = event.offsetX - canvasCenterX - panX * zoomLevel;
+    startY = event.offsetY - canvasCenterY - panY * zoomLevel;
+
+    canvasElement.style.cursor = 'grabbing';
 });
 
-originalCanvas.addEventListener('mousemove', (event) => {
+canvasElement.addEventListener('mousemove', (event) => {
     if (isPanning) {
-        panX = Math.floor((event.offsetX - startX) / zoomLevel);
-        panY = Math.floor((event.offsetY - startY) / zoomLevel);
-        draw(originalCtx);
+        // Get the center of the canvas
+        const canvasCenterX = canvasElement.width / 2;
+        const canvasCenterY = canvasElement.height / 2;
+
+        // Update pan positions relative to the center
+        panX = (event.offsetX - canvasCenterX - startX) / zoomLevel;
+        panY = (event.offsetY - canvasCenterY - startY) / zoomLevel;
+        draw(canvasCtx);
     }
 
-    mouseX = Math.floor((event.offsetX - panX * zoomLevel) / zoomLevel);
-    mouseY = Math.floor((event.offsetY - panY * zoomLevel) / zoomLevel);
+    // Update mouse coordinates relative to the center and the current pan/zoom
+    const canvasCenterX = canvasElement.width / 2;
+    const canvasCenterY = canvasElement.height / 2;
+
+    mouseX = Math.floor((event.offsetX - canvasCenterX - panX * zoomLevel) / zoomLevel);
+    mouseY = Math.floor((event.offsetY - canvasCenterY - panY * zoomLevel) / zoomLevel);
     mouseCoordinatesElement.textContent = `Mouse Coords: (${mouseX}, ${mouseY})`;
 });
 
-originalCanvas.addEventListener('mouseup', () => {
+canvasElement.addEventListener('mouseup', () => {
     isPanning = false;
-    originalCanvas.style.cursor = 'grab';
+    canvasElement.style.cursor = 'grab';
 });
 
-originalCanvas.addEventListener('mouseleave', () => {
+canvasElement.addEventListener('mouseleave', () => {
     isPanning = false;
-    originalCanvas.style.cursor = 'grab';
+    canvasElement.style.cursor = 'grab';
 });
 
 function resetZoom() {
@@ -66,5 +89,5 @@ function resetZoom() {
     panX = 0;
     panY = 0;
     zoomLevelElement.textContent = `Zoom: 100%`;
-    draw(originalCtx);
+    draw(canvasCtx);
 }

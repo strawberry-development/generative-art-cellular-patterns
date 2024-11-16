@@ -1,0 +1,33 @@
+:root {
+    --background: #f0f0f0;
+    --panel: #ffffff;
+    --border: #f6f6f6;
+
+    --text: #1e202d;
+    --title-color: #1e202d;
+    --contrast: #674bd3;
+
+    --button-background: #d9d9d9;
+    --button-hover-background: #a8a8a8;
+    --input-background: #ffffff;
+    --input-border: #e0e0e0;
+    --input-focus-border: #674bd3;
+    --input-text: #1e202d;
+}
+
+[data-theme='dark'] {
+    --background: #121212;
+    --panel: #1e1e1e;
+    --border: #333333;
+
+    --text: #e0e0e0;
+    --title: #ffffff;
+    --contrast: #bb86fc;
+
+    --button-background: #292929;
+    --button-hover-background: #3a3a3a;
+    --input-background: #2a2a2a;
+    --input-border: #444444;
+    --input-focus-border: #bb86fc;
+    --input-text: #e0e0e0;
+}

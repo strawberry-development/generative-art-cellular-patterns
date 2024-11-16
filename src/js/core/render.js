@@ -1,6 +1,8 @@
 function draw(ctx) {
-    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
     ctx.save();
+
+    ctx.translate(canvasElement.width / 2, canvasElement.height / 2);
 
     ctx.scale(zoomLevel, zoomLevel);
     ctx.translate(panX, panY);
@@ -9,7 +11,12 @@ function draw(ctx) {
     for (let x = 0; x < GRID_WIDTH; x++) {
         for (let y = 0; y < GRID_HEIGHT; y++) {
             ctx.fillStyle = cells[x][y] ? getCellColor() : backgroundColor;
-            ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            ctx.fillRect(
+                x * CELL_SIZE - (GRID_WIDTH * CELL_SIZE) / 2,
+                y * CELL_SIZE - (GRID_HEIGHT * CELL_SIZE) / 2,
+                CELL_SIZE,
+                CELL_SIZE
+            );
         }
     }
 
