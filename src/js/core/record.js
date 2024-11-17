@@ -22,6 +22,7 @@ async function recordAnimation(canvas, prefix) {
 
     mediaRecorder.onstop = async () => {
         stopTimer();
+        recordingIndicator.classList.remove('blinking'); // Stop blinking
 
         const blob = new Blob(chunks, { type: 'video/webm' });
         const url = URL.createObjectURL(blob);
@@ -56,6 +57,7 @@ async function recordAnimation(canvas, prefix) {
 
     mediaRecorder.onstart = () => {
         startTime = new Date();
+        recordingIndicator.classList.add('blinking'); // Start blinking
         // Update progress bar every 100ms
         const intervalId = setInterval(() => {
             if (mediaRecorder.state === 'inactive') {

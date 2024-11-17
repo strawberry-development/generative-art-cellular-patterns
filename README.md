@@ -7,10 +7,8 @@
   <h1>Generative Art Cellular Patterns</h1>
   <p>A web-based application for creating generative art inspired by cellular automata, built using HTML, JavaScript, and Canvas.</p>
   <br>
-  <br>
 </div>
 
-## Table of Contents
 - [Overview](#overview)
 - [Setup](#setup)
 - [Examples](#examples)
@@ -22,7 +20,7 @@
 
 This application showcases **generative art** inspired by cellular automata and **Conway’s Game of Life**. It leverages **HTML**, **JavaScript**, and **Canvas** to create unique and evolving patterns. Users can explore and customize various options to generate their own cellular artwork.
 
-![Overview of the page](example/Screenshot.png "Screenshot of Generative Art")
+![Overview of the page](github/Screenshot.png "Screenshot of Generative Art")
 
 ## Setup
 
@@ -34,14 +32,14 @@ You can modify various settings in the app to customize the generated patterns:
 - Canvas
 - Color
 - Rules
- - Record
+- Record
 
 ## Examples
 
 There can be great beauty in chaos
 
 <p align="left">
-    <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/example/original_2024-08-20T19-35-24-583Z.gif" alt="Generative Art Example" width="400">
+    <img src="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/github/original_2024-08-20T19-35-24-583Z.gif" alt="Generative Art Example" width="400">
 </p>
 
 ## Known Issues
@@ -51,6 +49,7 @@ There can be great beauty in chaos
 ## Contributing
 
 We welcome contributions! If you find a bug, have ideas for improvements, or want to help expand the project, feel free to open an issue or submit a pull request.
+You can also find <a href="https://github.com/strawberry-development/generative-art-cellular-patterns/blob/main/github/documentation.md">Documentation</a>
 
 ### Current Work in Progress
 - UI Prototype and improvements
@@ -61,6 +60,6 @@ We welcome contributions! If you find a bug, have ideas for improvements, or wan
 
 This project is licensed under the **GNU General Public License v3.0**. For more details, please see the [LICENSE](./LICENSE) file.
 
-### Additional Resources
+## Additional Resources
 - [Conway’s Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - [Cellular Automata](https://en.wikipedia.org/wiki/Cellular_automaton)

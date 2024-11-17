@@ -47,21 +47,6 @@ grid {
     overflow-y: scroll;
 }
 
-.information {
-    grid-area: information;
-    border-right: 2px solid var(--border);
-    background: var(--panel);
-    overflow-x: clip;
-    overflow-y: scroll;
-    width: 90%;
-    border-radius: 5px;
-}
-
-.action {
-    grid-area: action;
-    display: flex;
-}
-
 .main {
     grid-area: main;
 }
